@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* SkateScoreGuideAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* SkateScoreGuideAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
+		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		E74540E0111006D900FD9036 /* NSData-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540C1111006D900FD9036 /* NSData-SQLitePersistence.m */; };
+		E74540E1111006D900FD9036 /* NSDate-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540C3111006D900FD9036 /* NSDate-SQLitePersistence.m */; };
+		E74540E2111006D900FD9036 /* NSMutableArray-MultipleSort.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540C5111006D900FD9036 /* NSMutableArray-MultipleSort.m */; };
+		E74540E3111006D900FD9036 /* NSMutableData-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540C7111006D900FD9036 /* NSMutableData-SQLitePersistence.m */; };
+		E74540E4111006D900FD9036 /* NSNumber-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540C9111006D900FD9036 /* NSNumber-SQLitePersistence.m */; };
+		E74540E5111006D900FD9036 /* NSObject-ClassName.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540CB111006D900FD9036 /* NSObject-ClassName.m */; };
+		E74540E6111006D900FD9036 /* NSObject-MissingKV.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540CD111006D900FD9036 /* NSObject-MissingKV.m */; };
+		E74540E7111006D900FD9036 /* NSObject-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540CF111006D900FD9036 /* NSObject-SQLitePersistence.m */; };
+		E74540E8111006D900FD9036 /* NSString-NumberStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540D1111006D900FD9036 /* NSString-NumberStuff.m */; };
+		E74540E9111006D900FD9036 /* NSString-SQLiteColumnName.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540D3111006D900FD9036 /* NSString-SQLiteColumnName.m */; };
+		E74540EA111006D900FD9036 /* NSString-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540D5111006D900FD9036 /* NSString-SQLitePersistence.m */; };
+		E74540EB111006D900FD9036 /* NSString-UppercaseFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540D7111006D900FD9036 /* NSString-UppercaseFirst.m */; };
+		E74540EC111006D900FD9036 /* SQLiteInstanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540D9111006D900FD9036 /* SQLiteInstanceManager.m */; };
+		E74540ED111006D900FD9036 /* SQLitePersistentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540DB111006D900FD9036 /* SQLitePersistentObject.m */; };
+		E74540EE111006D900FD9036 /* UIColor-SQLitePersistentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540DD111006D900FD9036 /* UIColor-SQLitePersistentObject.m */; };
+		E74540EF111006D900FD9036 /* UIImage-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540DF111006D900FD9036 /* UIImage-SQLitePersistence.m */; };
+		E74540F1111006FD00FD9036 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E74540F0111006FD00FD9036 /* libsqlite3.dylib */; };
+		E7454100111007D900FD9036 /* ApplicationUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540FF111007D900FD9036 /* ApplicationUtilities.m */; };
+		E74541131110095A00FD9036 /* tableBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E74541121110095A00FD9036 /* tableBackground.png */; };
+		E74541821110831400FD9036 /* ProgramGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E74541811110831400FD9036 /* ProgramGroup.m */; };
+		E745419C111087CC00FD9036 /* ProgramGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E745419A111087CC00FD9036 /* ProgramGroupViewController.m */; };
+		E745419D111087CC00FD9036 /* ProgramGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E745419B111087CC00FD9036 /* ProgramGroupViewController.xib */; };
+		E74541E811108F3F00FD9036 /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = E74541E711108F3F00FD9036 /* Program.m */; };
+		E74542791110A95B00FD9036 /* Elements.m in Sources */ = {isa = PBXBuildFile; fileRef = E74542781110A95B00FD9036 /* Elements.m */; };
+		E745427C1110A97900FD9036 /* Element.m in Sources */ = {isa = PBXBuildFile; fileRef = E745427B1110A97900FD9036 /* Element.m */; };
+		E74543A81110C5F800FD9036 /* ProgramElement.m in Sources */ = {isa = PBXBuildFile; fileRef = E74543A71110C5F800FD9036 /* ProgramElement.m */; };
+		E74543DF1110E7ED00FD9036 /* indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = E74543DE1110E7ED00FD9036 /* indicator.png */; };
+		E74543E71110E8D100FD9036 /* imageA.png in Resources */ = {isa = PBXBuildFile; fileRef = E74543E61110E8D100FD9036 /* imageA.png */; };
+		E74543FC1110EAD600FD9036 /* bottomRow.png in Resources */ = {isa = PBXBuildFile; fileRef = E74543F41110EAD600FD9036 /* bottomRow.png */; };
+		E74543FD1110EAD600FD9036 /* bottomRowSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = E74543F51110EAD600FD9036 /* bottomRowSelected.png */; };
+		E74543FE1110EAD600FD9036 /* middleRow.png in Resources */ = {isa = PBXBuildFile; fileRef = E74543F61110EAD600FD9036 /* middleRow.png */; };
+		E74543FF1110EAD600FD9036 /* middleRowSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = E74543F71110EAD600FD9036 /* middleRowSelected.png */; };
+		E74544001110EAD600FD9036 /* topAndBottomRow.png in Resources */ = {isa = PBXBuildFile; fileRef = E74543F81110EAD600FD9036 /* topAndBottomRow.png */; };
+		E74544011110EAD600FD9036 /* topAndBottomRowSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = E74543F91110EAD600FD9036 /* topAndBottomRowSelected.png */; };
+		E74544021110EAD600FD9036 /* topRow.png in Resources */ = {isa = PBXBuildFile; fileRef = E74543FA1110EAD600FD9036 /* topRow.png */; };
+		E74544031110EAD600FD9036 /* topRowSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = E74543FB1110EAD600FD9036 /* topRowSelected.png */; };
+		E74545FA11114D2000FD9036 /* ProgramElementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E74545F811114D2000FD9036 /* ProgramElementsViewController.m */; };
+		E74545FB11114D2000FD9036 /* ProgramElementsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E74545F911114D2000FD9036 /* ProgramElementsViewController.xib */; };
+		E745489C111205C600FD9036 /* score_sheet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E745489B111205C600FD9036 /* score_sheet.jpg */; };
+		E745491A11123C6400FD9036 /* ProgramElementDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E745491811123C6400FD9036 /* ProgramElementDetailViewController.m */; };
+		E745491B11123C6400FD9036 /* ProgramElementDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E745491911123C6400FD9036 /* ProgramElementDetailViewController.xib */; };
+		E7B1E0FA1113712E0053C0B5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B1E0F91113712E0053C0B5 /* MessageUI.framework */; };
+		E7B1E1FC1114071B0053C0B5 /* ProgramDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B1E1FA1114071B0053C0B5 /* ProgramDetailViewController.m */; };
+		E7B1E1FD1114071B0053C0B5 /* ProgramDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B1E1FB1114071B0053C0B5 /* ProgramDetailViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* SkateScoreGuideAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkateScoreGuideAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* SkateScoreGuideAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkateScoreGuideAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* SkateScoreGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkateScoreGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28A0AAE50D9B0CCF005BE974 /* SkateScoreGuide_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkateScoreGuide_Prefix.pch; sourceTree = "<group>"; };
+		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* SkateScoreGuide-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SkateScoreGuide-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		E74540C0111006D900FD9036 /* NSData-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/NSData-SQLitePersistence.h"; sourceTree = "<group>"; };
+		E74540C1111006D900FD9036 /* NSData-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData-SQLitePersistence.m"; path = "sqlitepersistentobjects/src/NSData-SQLitePersistence.m"; sourceTree = "<group>"; };
+		E74540C2111006D900FD9036 /* NSDate-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/NSDate-SQLitePersistence.h"; sourceTree = "<group>"; };
+		E74540C3111006D900FD9036 /* NSDate-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate-SQLitePersistence.m"; path = "sqlitepersistentobjects/src/NSDate-SQLitePersistence.m"; sourceTree = "<group>"; };
+		E74540C4111006D900FD9036 /* NSMutableArray-MultipleSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray-MultipleSort.h"; path = "sqlitepersistentobjects/src/NSMutableArray-MultipleSort.h"; sourceTree = "<group>"; };
+		E74540C5111006D900FD9036 /* NSMutableArray-MultipleSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray-MultipleSort.m"; path = "sqlitepersistentobjects/src/NSMutableArray-MultipleSort.m"; sourceTree = "<group>"; };
+		E74540C6111006D900FD9036 /* NSMutableData-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableData-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/NSMutableData-SQLitePersistence.h"; sourceTree = "<group>"; };
+		E74540C7111006D900FD9036 /* NSMutableData-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableData-SQLitePersistence.m"; path = "sqlitepersistentobjects/src/NSMutableData-SQLitePersistence.m"; sourceTree = "<group>"; };
+		E74540C8111006D900FD9036 /* NSNumber-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/NSNumber-SQLitePersistence.h"; sourceTree = "<group>"; };
+		E74540C9111006D900FD9036 /* NSNumber-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNumber-SQLitePersistence.m"; path = "sqlitepersistentobjects/src/NSNumber-SQLitePersistence.m"; sourceTree = "<group>"; };
+		E74540CA111006D900FD9036 /* NSObject-ClassName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject-ClassName.h"; path = "sqlitepersistentobjects/src/NSObject-ClassName.h"; sourceTree = "<group>"; };
+		E74540CB111006D900FD9036 /* NSObject-ClassName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject-ClassName.m"; path = "sqlitepersistentobjects/src/NSObject-ClassName.m"; sourceTree = "<group>"; };
+		E74540CC111006D900FD9036 /* NSObject-MissingKV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject-MissingKV.h"; path = "sqlitepersistentobjects/src/NSObject-MissingKV.h"; sourceTree = "<group>"; };
+		E74540CD111006D900FD9036 /* NSObject-MissingKV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject-MissingKV.m"; path = "sqlitepersistentobjects/src/NSObject-MissingKV.m"; sourceTree = "<group>"; };
+		E74540CE111006D900FD9036 /* NSObject-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/NSObject-SQLitePersistence.h"; sourceTree = "<group>"; };
+		E74540CF111006D900FD9036 /* NSObject-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject-SQLitePersistence.m"; path = "sqlitepersistentobjects/src/NSObject-SQLitePersistence.m"; sourceTree = "<group>"; };
+		E74540D0111006D900FD9036 /* NSString-NumberStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString-NumberStuff.h"; path = "sqlitepersistentobjects/src/NSString-NumberStuff.h"; sourceTree = "<group>"; };
+		E74540D1111006D900FD9036 /* NSString-NumberStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString-NumberStuff.m"; path = "sqlitepersistentobjects/src/NSString-NumberStuff.m"; sourceTree = "<group>"; };
+		E74540D2111006D900FD9036 /* NSString-SQLiteColumnName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString-SQLiteColumnName.h"; path = "sqlitepersistentobjects/src/NSString-SQLiteColumnName.h"; sourceTree = "<group>"; };
+		E74540D3111006D900FD9036 /* NSString-SQLiteColumnName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString-SQLiteColumnName.m"; path = "sqlitepersistentobjects/src/NSString-SQLiteColumnName.m"; sourceTree = "<group>"; };
+		E74540D4111006D900FD9036 /* NSString-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/NSString-SQLitePersistence.h"; sourceTree = "<group>"; };
+		E74540D5111006D900FD9036 /* NSString-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString-SQLitePersistence.m"; path = "sqlitepersistentobjects/src/NSString-SQLitePersistence.m"; sourceTree = "<group>"; };
+		E74540D6111006D900FD9036 /* NSString-UppercaseFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString-UppercaseFirst.h"; path = "sqlitepersistentobjects/src/NSString-UppercaseFirst.h"; sourceTree = "<group>"; };
+		E74540D7111006D900FD9036 /* NSString-UppercaseFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString-UppercaseFirst.m"; path = "sqlitepersistentobjects/src/NSString-UppercaseFirst.m"; sourceTree = "<group>"; };
+		E74540D8111006D900FD9036 /* SQLiteInstanceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQLiteInstanceManager.h; path = sqlitepersistentobjects/src/SQLiteInstanceManager.h; sourceTree = "<group>"; };
+		E74540D9111006D900FD9036 /* SQLiteInstanceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLiteInstanceManager.m; path = sqlitepersistentobjects/src/SQLiteInstanceManager.m; sourceTree = "<group>"; };
+		E74540DA111006D900FD9036 /* SQLitePersistentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQLitePersistentObject.h; path = sqlitepersistentobjects/src/SQLitePersistentObject.h; sourceTree = "<group>"; };
+		E74540DB111006D900FD9036 /* SQLitePersistentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLitePersistentObject.m; path = sqlitepersistentobjects/src/SQLitePersistentObject.m; sourceTree = "<group>"; };
+		E74540DC111006D900FD9036 /* UIColor-SQLitePersistentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor-SQLitePersistentObject.h"; path = "sqlitepersistentobjects/src/UIColor-SQLitePersistentObject.h"; sourceTree = "<group>"; };
+		E74540DD111006D900FD9036 /* UIColor-SQLitePersistentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor-SQLitePersistentObject.m"; path = "sqlitepersistentobjects/src/UIColor-SQLitePersistentObject.m"; sourceTree = "<group>"; };
+		E74540DE111006D900FD9036 /* UIImage-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/UIImage-SQLitePersistence.h"; sourceTree = "<group>"; };
+		E74540DF111006D900FD9036 /* UIImage-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage-SQLitePersistence.m"; path = "sqlitepersistentobjects/src/UIImage-SQLitePersistence.m"; sourceTree = "<group>"; };
+		E74540F0111006FD00FD9036 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		E74540FE111007D900FD9036 /* ApplicationUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationUtilities.h; sourceTree = "<group>"; };
+		E74540FF111007D900FD9036 /* ApplicationUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationUtilities.m; sourceTree = "<group>"; };
+		E74541121110095A00FD9036 /* tableBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tableBackground.png; path = Images/tableBackground.png; sourceTree = "<group>"; };
+		E74541801110831400FD9036 /* ProgramGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramGroup.h; sourceTree = "<group>"; };
+		E74541811110831400FD9036 /* ProgramGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramGroup.m; sourceTree = "<group>"; };
+		E7454199111087CC00FD9036 /* ProgramGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramGroupViewController.h; sourceTree = "<group>"; };
+		E745419A111087CC00FD9036 /* ProgramGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramGroupViewController.m; sourceTree = "<group>"; };
+		E745419B111087CC00FD9036 /* ProgramGroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProgramGroupViewController.xib; path = Classes/ProgramGroupViewController.xib; sourceTree = "<group>"; };
+		E74541E611108F3F00FD9036 /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		E74541E711108F3F00FD9036 /* Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Program.m; sourceTree = "<group>"; };
+		E74542771110A95B00FD9036 /* Elements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Elements.h; sourceTree = "<group>"; };
+		E74542781110A95B00FD9036 /* Elements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Elements.m; sourceTree = "<group>"; };
+		E745427A1110A97900FD9036 /* Element.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Element.h; sourceTree = "<group>"; };
+		E745427B1110A97900FD9036 /* Element.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Element.m; sourceTree = "<group>"; };
+		E74543A61110C5F800FD9036 /* ProgramElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramElement.h; sourceTree = "<group>"; };
+		E74543A71110C5F800FD9036 /* ProgramElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramElement.m; sourceTree = "<group>"; };
+		E74543DE1110E7ED00FD9036 /* indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = indicator.png; path = Images/indicator.png; sourceTree = "<group>"; };
+		E74543E61110E8D100FD9036 /* imageA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = imageA.png; path = Images/imageA.png; sourceTree = "<group>"; };
+		E74543F41110EAD600FD9036 /* bottomRow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottomRow.png; path = Images/bottomRow.png; sourceTree = "<group>"; };
+		E74543F51110EAD600FD9036 /* bottomRowSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottomRowSelected.png; path = Images/bottomRowSelected.png; sourceTree = "<group>"; };
+		E74543F61110EAD600FD9036 /* middleRow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = middleRow.png; path = Images/middleRow.png; sourceTree = "<group>"; };
+		E74543F71110EAD600FD9036 /* middleRowSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = middleRowSelected.png; path = Images/middleRowSelected.png; sourceTree = "<group>"; };
+		E74543F81110EAD600FD9036 /* topAndBottomRow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = topAndBottomRow.png; path = Images/topAndBottomRow.png; sourceTree = "<group>"; };
+		E74543F91110EAD600FD9036 /* topAndBottomRowSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = topAndBottomRowSelected.png; path = Images/topAndBottomRowSelected.png; sourceTree = "<group>"; };
+		E74543FA1110EAD600FD9036 /* topRow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = topRow.png; path = Images/topRow.png; sourceTree = "<group>"; };
+		E74543FB1110EAD600FD9036 /* topRowSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = topRowSelected.png; path = Images/topRowSelected.png; sourceTree = "<group>"; };
+		E74545F711114D2000FD9036 /* ProgramElementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramElementsViewController.h; sourceTree = "<group>"; };
+		E74545F811114D2000FD9036 /* ProgramElementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramElementsViewController.m; sourceTree = "<group>"; };
+		E74545F911114D2000FD9036 /* ProgramElementsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProgramElementsViewController.xib; path = Classes/ProgramElementsViewController.xib; sourceTree = "<group>"; };
+		E745489B111205C600FD9036 /* score_sheet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = score_sheet.jpg; path = Images/score_sheet.jpg; sourceTree = "<group>"; };
+		E745491711123C6400FD9036 /* ProgramElementDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramElementDetailViewController.h; sourceTree = "<group>"; };
+		E745491811123C6400FD9036 /* ProgramElementDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramElementDetailViewController.m; sourceTree = "<group>"; };
+		E745491911123C6400FD9036 /* ProgramElementDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProgramElementDetailViewController.xib; path = Classes/ProgramElementDetailViewController.xib; sourceTree = "<group>"; };
+		E7B1E0F91113712E0053C0B5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E7B1E1F91114071B0053C0B5 /* ProgramDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramDetailViewController.h; sourceTree = "<group>"; };
+		E7B1E1FA1114071B0053C0B5 /* ProgramDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramDetailViewController.m; sourceTree = "<group>"; };
+		E7B1E1FB1114071B0053C0B5 /* ProgramDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProgramDetailViewController.xib; path = Classes/ProgramDetailViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+				E74540F1111006FD00FD9036 /* libsqlite3.dylib in Frameworks */,
+				E7B1E0FA1113712E0053C0B5 /* MessageUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E745417F1110818300FD9036 /* Model */,
+				E74540FE111007D900FD9036 /* ApplicationUtilities.h */,
+				E74540FF111007D900FD9036 /* ApplicationUtilities.m */,
+				E7B1E1F91114071B0053C0B5 /* ProgramDetailViewController.h */,
+				E7B1E1FA1114071B0053C0B5 /* ProgramDetailViewController.m */,
+				E745491711123C6400FD9036 /* ProgramElementDetailViewController.h */,
+				E745491811123C6400FD9036 /* ProgramElementDetailViewController.m */,
+				E74545F711114D2000FD9036 /* ProgramElementsViewController.h */,
+				E74545F811114D2000FD9036 /* ProgramElementsViewController.m */,
+				E7454199111087CC00FD9036 /* ProgramGroupViewController.h */,
+				E745419A111087CC00FD9036 /* ProgramGroupViewController.m */,
+				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
+				28C286E00D94DF7D0034E888 /* RootViewController.m */,
+				1D3623240D0F684500981E51 /* SkateScoreGuideAppDelegate.h */,
+				1D3623250D0F684500981E51 /* SkateScoreGuideAppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* SkateScoreGuide.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E74540C0111006D900FD9036 /* NSData-SQLitePersistence.h */,
+				E74540C1111006D900FD9036 /* NSData-SQLitePersistence.m */,
+				E74540C2111006D900FD9036 /* NSDate-SQLitePersistence.h */,
+				E74540C3111006D900FD9036 /* NSDate-SQLitePersistence.m */,
+				E74540C4111006D900FD9036 /* NSMutableArray-MultipleSort.h */,
+				E74540C5111006D900FD9036 /* NSMutableArray-MultipleSort.m */,
+				E74540C6111006D900FD9036 /* NSMutableData-SQLitePersistence.h */,
+				E74540C7111006D900FD9036 /* NSMutableData-SQLitePersistence.m */,
+				E74540C8111006D900FD9036 /* NSNumber-SQLitePersistence.h */,
+				E74540C9111006D900FD9036 /* NSNumber-SQLitePersistence.m */,
+				E74540CA111006D900FD9036 /* NSObject-ClassName.h */,
+				E74540CB111006D900FD9036 /* NSObject-ClassName.m */,
+				E74540CC111006D900FD9036 /* NSObject-MissingKV.h */,
+				E74540CD111006D900FD9036 /* NSObject-MissingKV.m */,
+				E74540CE111006D900FD9036 /* NSObject-SQLitePersistence.h */,
+				E74540CF111006D900FD9036 /* NSObject-SQLitePersistence.m */,
+				E74540D0111006D900FD9036 /* NSString-NumberStuff.h */,
+				E74540D1111006D900FD9036 /* NSString-NumberStuff.m */,
+				E74540D2111006D900FD9036 /* NSString-SQLiteColumnName.h */,
+				E74540D3111006D900FD9036 /* NSString-SQLiteColumnName.m */,
+				E74540D4111006D900FD9036 /* NSString-SQLitePersistence.h */,
+				E74540D5111006D900FD9036 /* NSString-SQLitePersistence.m */,
+				E74540D6111006D900FD9036 /* NSString-UppercaseFirst.h */,
+				E74540D7111006D900FD9036 /* NSString-UppercaseFirst.m */,
+				E74540D8111006D900FD9036 /* SQLiteInstanceManager.h */,
+				E74540D9111006D900FD9036 /* SQLiteInstanceManager.m */,
+				E74540DA111006D900FD9036 /* SQLitePersistentObject.h */,
+				E74540DB111006D900FD9036 /* SQLitePersistentObject.m */,
+				E74540DC111006D900FD9036 /* UIColor-SQLitePersistentObject.h */,
+				E74540DD111006D900FD9036 /* UIColor-SQLitePersistentObject.m */,
+				E74540DE111006D900FD9036 /* UIImage-SQLitePersistence.h */,
+				E74540DF111006D900FD9036 /* UIImage-SQLitePersistence.m */,
+				28A0AAE50D9B0CCF005BE974 /* SkateScoreGuide_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E74541111110094700FD9036 /* Images */,
+				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				E7B1E1FB1114071B0053C0B5 /* ProgramDetailViewController.xib */,
+				E745491911123C6400FD9036 /* ProgramElementDetailViewController.xib */,
+				E74545F911114D2000FD9036 /* ProgramElementsViewController.xib */,
+				E745419B111087CC00FD9036 /* ProgramGroupViewController.xib */,
+				28F335F01007B36200424DE2 /* RootViewController.xib */,
+				8D1107310486CEB800E47090 /* SkateScoreGuide-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+				E74540F0111006FD00FD9036 /* libsqlite3.dylib */,
+				E7B1E0F91113712E0053C0B5 /* MessageUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E74541111110094700FD9036 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E745489B111205C600FD9036 /* score_sheet.jpg */,
+				E74543F41110EAD600FD9036 /* bottomRow.png */,
+				E74543F51110EAD600FD9036 /* bottomRowSelected.png */,
+				E74543F61110EAD600FD9036 /* middleRow.png */,
+				E74543F71110EAD600FD9036 /* middleRowSelected.png */,
+				E74543F81110EAD600FD9036 /* topAndBottomRow.png */,
+				E74543F91110EAD600FD9036 /* topAndBottomRowSelected.png */,
+				E74543FA1110EAD600FD9036 /* topRow.png */,
+				E74543FB1110EAD600FD9036 /* topRowSelected.png */,
+				E74543E61110E8D100FD9036 /* imageA.png */,
+				E74543DE1110E7ED00FD9036 /* indicator.png */,
+				E74541121110095A00FD9036 /* tableBackground.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		E745417F1110818300FD9036 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E74541E611108F3F00FD9036 /* Program.h */,
+				E74541E711108F3F00FD9036 /* Program.m */,
+				E74543A61110C5F800FD9036 /* ProgramElement.h */,
+				E74543A71110C5F800FD9036 /* ProgramElement.m */,
+				E74541801110831400FD9036 /* ProgramGroup.h */,
+				E74541811110831400FD9036 /* ProgramGroup.m */,
+				E745427A1110A97900FD9036 /* Element.h */,
+				E745427B1110A97900FD9036 /* Element.m */,
+				E74542771110A95B00FD9036 /* Elements.h */,
+				E74542781110A95B00FD9036 /* Elements.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* SkateScoreGuide */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "SkateScoreGuide" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkateScoreGuide;
+			productName = SkateScoreGuide;
+			productReference = 1D6058910D05DD3D006BFB54 /* SkateScoreGuide.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SkateScoreGuide" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* SkateScoreGuide */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
+				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
+				E74541131110095A00FD9036 /* tableBackground.png in Resources */,
+				E745419D111087CC00FD9036 /* ProgramGroupViewController.xib in Resources */,
+				E74543DF1110E7ED00FD9036 /* indicator.png in Resources */,
+				E74543E71110E8D100FD9036 /* imageA.png in Resources */,
+				E74543FC1110EAD600FD9036 /* bottomRow.png in Resources */,
+				E74543FD1110EAD600FD9036 /* bottomRowSelected.png in Resources */,
+				E74543FE1110EAD600FD9036 /* middleRow.png in Resources */,
+				E74543FF1110EAD600FD9036 /* middleRowSelected.png in Resources */,
+				E74544001110EAD600FD9036 /* topAndBottomRow.png in Resources */,
+				E74544011110EAD600FD9036 /* topAndBottomRowSelected.png in Resources */,
+				E74544021110EAD600FD9036 /* topRow.png in Resources */,
+				E74544031110EAD600FD9036 /* topRowSelected.png in Resources */,
+				E74545FB11114D2000FD9036 /* ProgramElementsViewController.xib in Resources */,
+				E745489C111205C600FD9036 /* score_sheet.jpg in Resources */,
+				E745491B11123C6400FD9036 /* ProgramElementDetailViewController.xib in Resources */,
+				E7B1E1FD1114071B0053C0B5 /* ProgramDetailViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* SkateScoreGuideAppDelegate.m in Sources */,
+				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
+				E74540E0111006D900FD9036 /* NSData-SQLitePersistence.m in Sources */,
+				E74540E1111006D900FD9036 /* NSDate-SQLitePersistence.m in Sources */,
+				E74540E2111006D900FD9036 /* NSMutableArray-MultipleSort.m in Sources */,
+				E74540E3111006D900FD9036 /* NSMutableData-SQLitePersistence.m in Sources */,
+				E74540E4111006D900FD9036 /* NSNumber-SQLitePersistence.m in Sources */,
+				E74540E5111006D900FD9036 /* NSObject-ClassName.m in Sources */,
+				E74540E6111006D900FD9036 /* NSObject-MissingKV.m in Sources */,
+				E74540E7111006D900FD9036 /* NSObject-SQLitePersistence.m in Sources */,
+				E74540E8111006D900FD9036 /* NSString-NumberStuff.m in Sources */,
+				E74540E9111006D900FD9036 /* NSString-SQLiteColumnName.m in Sources */,
+				E74540EA111006D900FD9036 /* NSString-SQLitePersistence.m in Sources */,
+				E74540EB111006D900FD9036 /* NSString-UppercaseFirst.m in Sources */,
+				E74540EC111006D900FD9036 /* SQLiteInstanceManager.m in Sources */,
+				E74540ED111006D900FD9036 /* SQLitePersistentObject.m in Sources */,
+				E74540EE111006D900FD9036 /* UIColor-SQLitePersistentObject.m in Sources */,
+				E74540EF111006D900FD9036 /* UIImage-SQLitePersistence.m in Sources */,
+				E7454100111007D900FD9036 /* ApplicationUtilities.m in Sources */,
+				E74541821110831400FD9036 /* ProgramGroup.m in Sources */,
+				E745419C111087CC00FD9036 /* ProgramGroupViewController.m in Sources */,
+				E74541E811108F3F00FD9036 /* Program.m in Sources */,
+				E74542791110A95B00FD9036 /* Elements.m in Sources */,
+				E745427C1110A97900FD9036 /* Element.m in Sources */,
+				E74543A81110C5F800FD9036 /* ProgramElement.m in Sources */,
+				E74545FA11114D2000FD9036 /* ProgramElementsViewController.m in Sources */,
+				E745491A11123C6400FD9036 /* ProgramElementDetailViewController.m in Sources */,
+				E7B1E1FC1114071B0053C0B5 /* ProgramDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SkateScoreGuide_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				INFOPLIST_FILE = "SkateScoreGuide-Info.plist";
+				PRODUCT_NAME = SkateScoreGuide;
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SkateScoreGuide_Prefix.pch;
+				INFOPLIST_FILE = "SkateScoreGuide-Info.plist";
+				PRODUCT_NAME = SkateScoreGuide;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.1.2;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.1.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "SkateScoreGuide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SkateScoreGuide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
