@@ -29,9 +29,9 @@
 	};
 	28C286E00D94DF7D0034E888 /* RootViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1174, 5460}}";
-			sepNavSelRange = "{5881, 0}";
-			sepNavVisRange = "{4739, 2343}";
+			sepNavIntBoundsRect = "{{0, 0}, {1216, 4927}}";
+			sepNavSelRange = "{9110, 175}";
+			sepNavVisRange = "{7621, 3015}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -662,6 +662,8 @@
 			E7B1E36E111559100053C0B5 /* PBXTextBookmark */ = E7B1E36E111559100053C0B5 /* PBXTextBookmark */;
 			E7B1E36F111559100053C0B5 /* PBXTextBookmark */ = E7B1E36F111559100053C0B5 /* PBXTextBookmark */;
 			E7B1E370111559100053C0B5 /* PBXTextBookmark */ = E7B1E370111559100053C0B5 /* PBXTextBookmark */;
+			E7B1E37511155A8F0053C0B5 /* PBXTextBookmark */ = E7B1E37511155A8F0053C0B5 /* PBXTextBookmark */;
+			E7B1E37A11155B720053C0B5 /* PBXTextBookmark */ = E7B1E37A11155B720053C0B5 /* PBXTextBookmark */;
 		};
 		sourceControlManager = E74540BD1110069B00FD9036 /* Source Control */;
 		userBuildSettings = {
@@ -676,7 +678,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 1;
+		breakpointsEnabled = 0;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -884,7 +886,7 @@
 		ignoreCount = 0;
 		lineNumber = 56;
 		location = SkateScoreGuide;
-		modificationTime = 286611482.643883;
+		modificationTime = 286611731.36003;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -1027,7 +1029,7 @@
 		ignoreCount = 0;
 		lineNumber = 406;
 		location = SkateScoreGuide;
-		modificationTime = 286611482.644929;
+		modificationTime = 286611731.360977;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -1964,7 +1966,7 @@
 		ignoreCount = 0;
 		lineNumber = 293;
 		location = SkateScoreGuide;
-		modificationTime = 286611482.64546;
+		modificationTime = 286611731.361544;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -4378,7 +4380,7 @@
 		ignoreCount = 0;
 		lineNumber = 468;
 		location = SkateScoreGuide;
-		modificationTime = 286611482.646201;
+		modificationTime = 286611731.362359;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -4546,7 +4548,7 @@
 		ignoreCount = 0;
 		lineNumber = 309;
 		location = SkateScoreGuide;
-		modificationTime = 286611482.646922;
+		modificationTime = 286611731.363152;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -4866,9 +4868,9 @@
 	};
 	E7B1E1FA1114071B0053C0B5 /* ProgramDetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1594, 3068}}";
-			sepNavSelRange = "{1862, 0}";
-			sepNavVisRange = "{660, 2603}";
+			sepNavIntBoundsRect = "{{0, 0}, {1376, 3185}}";
+			sepNavSelRange = "{4952, 0}";
+			sepNavVisRange = "{3995, 1059}";
 		};
 	};
 	E7B1E207111409920053C0B5 /* PBXTextBookmark */ = {
@@ -5574,7 +5576,7 @@
 		ignoreCount = 0;
 		lineNumber = 58;
 		location = SkateScoreGuide;
-		modificationTime = 286611482.647554;
+		modificationTime = 286611731.363966;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -5772,7 +5774,7 @@
 		ignoreCount = 0;
 		lineNumber = 267;
 		location = SkateScoreGuide;
-		modificationTime = 286611482.648207;
+		modificationTime = 286611731.364909;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -6104,7 +6106,7 @@
 		ignoreCount = 0;
 		lineNumber = 145;
 		location = SkateScoreGuide;
-		modificationTime = 286611529.112041;
+		modificationTime = 286611735.948268;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -6174,5 +6176,25 @@
 		rType = 0;
 		vrLen = 2343;
 		vrLoc = 4739;
+	};
+	E7B1E37511155A8F0053C0B5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 289";
+		rLen = 0;
+		rLoc = 8867;
+		rType = 0;
+		vrLen = 3301;
+		vrLoc = 6973;
+	};
+	E7B1E37A11155B720053C0B5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 294";
+		rLen = 175;
+		rLoc = 9110;
+		rType = 0;
+		vrLen = 3015;
+		vrLoc = 7621;
 	};
 }

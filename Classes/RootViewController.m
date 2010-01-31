@@ -282,6 +282,15 @@
 		cell.backgroundView = [[[UIImageView alloc] init] autorelease];
 		cell.selectedBackgroundView = [[[UIImageView alloc] init] autorelease];
 		
+		
+    }
+    
+	topLabel = (UILabel *)[cell viewWithTag:TOP_LABEL_TAG];
+	bottomLabel = (UILabel *)[cell viewWithTag:BOTTOM_LABEL_TAG];
+
+	// Configure the cell.
+	Program *program = [self programForRowAtIndexPath:indexPath];
+	if (program != nil) {
 		UIImage *rowBackground;
 		UIImage *selectionBackground;
 		NSInteger sectionRows = [aTableView numberOfRowsInSection:[indexPath section]];
@@ -301,14 +310,7 @@
 		}
 		((UIImageView *)cell.backgroundView).image = rowBackground;
 		((UIImageView *)cell.selectedBackgroundView).image = selectionBackground;
-    }
-    
-	topLabel = (UILabel *)[cell viewWithTag:TOP_LABEL_TAG];
-	bottomLabel = (UILabel *)[cell viewWithTag:BOTTOM_LABEL_TAG];
-
-	// Configure the cell.
-	Program *program = [self programForRowAtIndexPath:indexPath];
-	if (program != nil) {
+		
 		topLabel.text = program.description;
 		bottomLabel.text = program.programSubDescription;
 		
