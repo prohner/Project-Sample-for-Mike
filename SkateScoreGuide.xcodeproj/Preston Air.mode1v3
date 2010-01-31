@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -276,6 +274,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>16</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -310,12 +310,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ProgramDetailViewController.h</string>
+								<string>ProgramDetailViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -323,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ProgramDetailViewController.h</string>
+										<string>ProgramDetailViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E7B1E2671114F0740053C0B5</string>
+										<string>E7B1E2C71115344A0053C0B5</string>
 										<key>history</key>
 										<array>
 											<string>E745412411100AB100FD9036</string>
@@ -335,9 +337,6 @@
 											<string>E74546D111115A2B00FD9036</string>
 											<string>E74547B911116C6200FD9036</string>
 											<string>E74548A01112071F00FD9036</string>
-											<string>E74548D6111219F400FD9036</string>
-											<string>E7B1DF731112B2B90053C0B5</string>
-											<string>E7B1DF741112B2B90053C0B5</string>
 											<string>E7B1DFD2111324500053C0B5</string>
 											<string>E7B1E010111333400053C0B5</string>
 											<string>E7B1E02C11133A6B0053C0B5</string>
@@ -348,17 +347,20 @@
 											<string>E7B1E207111409920053C0B5</string>
 											<string>E7B1E208111409920053C0B5</string>
 											<string>E7B1E209111409920053C0B5</string>
-											<string>E7B1E20A111409920053C0B5</string>
 											<string>E7B1E20C111409920053C0B5</string>
-											<string>E7B1E20E111409920053C0B5</string>
 											<string>E7B1E2601114F0740053C0B5</string>
 											<string>E7B1E2611114F0740053C0B5</string>
 											<string>E7B1E2621114F0740053C0B5</string>
 											<string>E7B1E2631114F0740053C0B5</string>
 											<string>E7B1E2641114F0740053C0B5</string>
-											<string>E7B1E2651114F0740053C0B5</string>
-											<string>E7B1E2661114F0740053C0B5</string>
-											<string>E7B1E20D111409920053C0B5</string>
+											<string>E7B1E26F1114F5450053C0B5</string>
+											<string>E7B1E2701114F5450053C0B5</string>
+											<string>E7B1E294111530110053C0B5</string>
+											<string>E7B1E2BA111533F70053C0B5</string>
+											<string>E7B1E2BB111533F70053C0B5</string>
+											<string>E7B1E2BC111533F70053C0B5</string>
+											<string>E7B1E2BD111533F70053C0B5</string>
+											<string>E7B1E2BE111533F70053C0B5</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -556,6 +558,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>E7B1E2C81115344A0053C0B5</string>
 		<string>E7B1DF231112AAFE0053C0B5</string>
 		<string>E7B1DDCD111285DD0053C0B5</string>
 		<string>E7B1DDCE111285DD0053C0B5</string>
@@ -588,7 +591,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>RootViewController.m</string>
+								<string>ProgramDetailViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

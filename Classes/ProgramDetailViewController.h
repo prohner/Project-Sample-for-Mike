@@ -12,6 +12,8 @@
 @interface ProgramDetailViewController : UITableViewController {
 	Program *program;
 	UITextField *description;
+	NSArray *programGroups;
+	int selectedProgramGroupIndex;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *description;

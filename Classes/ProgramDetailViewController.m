@@ -8,6 +8,7 @@
 
 #import "ProgramDetailViewController.h"
 #import "ApplicationUtilities.h"
+#import "ProgramGroup.h"
 
 @implementation ProgramDetailViewController
 
@@ -32,6 +33,9 @@
 	self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelProgram)] autorelease];
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneWithProgram)] autorelease];
 
+	programGroups = [[ProgramGroup allObjects] retain];
+	selectedProgramGroupIndex = 0;
+	
 	[ApplicationUtilities setupStandardTableLookFor:self.tableView inView:self.parentViewController.view];
 }
 
@@ -91,17 +95,32 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+	if (section == 0) {
+		return 1;
+	} else {
+		return [programGroups count]; 
+	}
 }
 
 - (UIView *)tableView:(UITableView *)aTableView viewForHeaderInSection:(NSInteger)section {
-	UIView *v = [ApplicationUtilities getStandardTableSectionHeaderFor:aTableView with:@"Enter Program Description:"];
+	UIView *v;
+	switch (section) {
+		case 0:
+			v = [ApplicationUtilities getStandardTableSectionHeaderFor:aTableView with:@"Enter Program Description:"];
+			break;
+		case 1:
+			v = [ApplicationUtilities getStandardTableSectionHeaderFor:aTableView with:@"Choose Group for New Program:"];
+			break;
+		default:
+			break;
+	}
+	
 	
 	return v;
 }
@@ -111,23 +130,40 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Cell";
+	NSString *CellIdentifier = [[NSString alloc] initWithFormat: @"Cell", indexPath.section];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-		cell.backgroundColor = [UIColor clearColor];
-		CGRect r = cell.contentView.bounds;
-		r.origin.x = cell.indentationWidth + 2;
-		r.origin.y += 2;
-		r.size.width -= cell.indentationWidth * 2 + 2;
-		r.size.height -= 4;
-//		[description setFrame:r];
-		[cell addSubview:description];
+		if (indexPath.section == 0) {
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+			cell.backgroundColor = [UIColor clearColor];
+			CGRect r = cell.contentView.bounds;
+			r.origin.x = cell.indentationWidth + 2;
+			r.origin.y += 2;
+			r.size.width -= cell.indentationWidth * 2 + 2;
+			r.size.height -= 4;
+			//		[description setFrame:r];
+			[cell addSubview:description];
+		} else {
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+			UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 270, 30)];
+			lbl.tag = 1;
+			[cell addSubview:lbl];
+			[lbl release];
+		}	
     }
     
     // Set up the cell...
-	
+	if (indexPath.section == 1) {
+		if (indexPath.row == selectedProgramGroupIndex) {
+			cell.accessoryType = UITableViewCellAccessoryCheckmark;
+		}
+		UILabel *lbl = (UILabel *)[cell viewWithTag:1];
+#ifdef DEBUG
+		NSLog(@"We're in section 1, looking at row %i", indexPath.row);
+#endif
+		lbl.text = ((ProgramGroup *)[programGroups objectAtIndex:indexPath.row]).description;
+	}
 	
     return cell;
 }
@@ -138,6 +174,19 @@
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
 	// [self.navigationController pushViewController:anotherViewController];
 	// [anotherViewController release];
+	if (indexPath.section == 1) {
+		UITableViewCell *cell;
+		
+		cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedProgramGroupIndex inSection:1]];
+		cell.accessoryType = UITableViewCellAccessoryNone;
+		
+		cell = [self.tableView cellForRowAtIndexPath:indexPath];
+		cell.accessoryType = UITableViewCellAccessoryCheckmark;
+		
+		selectedProgramGroupIndex = indexPath.row;
+		
+		[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	}
 }
 
 
