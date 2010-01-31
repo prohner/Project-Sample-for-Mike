@@ -298,7 +298,11 @@
     return YES;
 }
 
+- (void)refreshDisplay:(UITableView *)tableView {
+	[tableView reloadData]; 
+	[self setScoreLabel];
 
+}
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -412,7 +416,9 @@
 	[self dumpProgramElements:@"After re-assign"];
 #endif
 	
-	[self setScoreLabel];
+	if (fromIndexPath.section != toIndexPath.section) {
+		[self performSelector:(@selector(refreshDisplay:)) withObject:(tableView) afterDelay:0.5];
+	}
 	
 }
 
@@ -425,6 +431,14 @@
 	}
     return YES;
 }
+
+- (void)dealloc {
+    [super dealloc];
+	[programElements dealloc];
+}
+
+
+#pragma mark Email sending methods
 
 - (IBAction)sendEmail:(id)sender {
 	NSLog(@"Need to send email");
@@ -504,11 +518,6 @@
 		NSLog(@"It's away!");
 	}
 	[self dismissModalViewControllerAnimated:YES];
-}
-
-- (void)dealloc {
-    [super dealloc];
-	[programElements dealloc];
 }
 
 

@@ -36,6 +36,7 @@
 - (void) editButtonPushed:(id)sender;
 - (int)arrayIndexFromIndexPath:(NSIndexPath *)indexPath;
 - (IBAction)sendEmail:(id)sender;
+- (void)refreshDisplay:(UITableView *)tableView;
 
 
 #ifdef DEBUG
