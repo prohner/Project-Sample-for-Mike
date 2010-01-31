@@ -30,11 +30,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addElement)] autorelease];
-//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-//	self.editButtonItem.action = @selector(editButtonPushed:);
-	self.editing = YES;
+	toolbarForAddEdit = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 97, 44.01)];
+	toolbarForAddEdit.barStyle = UIBarStyleBlackOpaque;
+	
+	// create the array to hold the buttons, which then gets added to the toolbar
+	NSMutableArray* buttons = [[NSMutableArray alloc] initWithCapacity:3];
+	
+	// create a standard "add" button
+	UIBarButtonItem* bi = [[UIBarButtonItem alloc]
+						   initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addElement)];
+	bi.style = UIBarButtonItemStyleBordered;
+	[buttons addObject:bi];
+	[bi release];
+	
+	// create a spacer
+	bi = [[UIBarButtonItem alloc]
+		  initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+	[buttons addObject:bi];
+	[bi release];
+	
+	// create a standard "edit" button
+	[buttons addObject:self.editButtonItem];
+	
+	// stick the buttons in the toolbar
+	[toolbarForAddEdit setItems:buttons animated:NO];
+	
+	[buttons release];
+	
+	// and put the toolbar in the nav bar
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:toolbarForAddEdit];
+	
 	self.title = program.description;
 	
 	programElements = [program programElements];
@@ -77,7 +102,6 @@
 #endif
 
 - (id) addElement {
-
 	ProgramElementDetailViewController *addController = [[ProgramElementDetailViewController alloc] initWithNibName:@"ProgramElementDetailViewController" bundle:nil];
 	addController.program = program;
 	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addController];
@@ -229,21 +253,25 @@
 			[cell.contentView addSubview:description];
 			[description release];
 
-			UILabel *score = [[UILabel alloc] initWithFrame:CGRectMake(200, 2, 70, 18)];
+			UILabel *score = [[UILabel alloc] initWithFrame:CGRectMake(190, 2, 40, 18)];
 			score.tag = LABEL_SCORE_TAG;
 			score.backgroundColor = [UIColor clearColor];
+			score.backgroundColor = [UIColor greenColor];
 			score.textColor = TABLE_SUB_LABEL_TEXT_COLOR;
 			score.highlightedTextColor = TABLE_SUB_LABEL_HIGHLIGHT_TEXT_COLOR;
 			score.font = [UIFont systemFontOfSize:14];
+			score.textAlignment = UITextAlignmentRight;
 			[cell.contentView addSubview:score];
 			[score release];
 
-			UILabel *goe = [[UILabel alloc] initWithFrame:CGRectMake(200, 20, 70, 18)];
+			UILabel *goe = [[UILabel alloc] initWithFrame:CGRectMake(190, 20, 40, 18)];
 			goe.tag = LABEL_GOE_TAG;
 			goe.backgroundColor = [UIColor clearColor];
+			goe.backgroundColor = [UIColor redColor];
 			goe.textColor = TABLE_SUB_LABEL_TEXT_COLOR;
 			goe.highlightedTextColor = TABLE_SUB_LABEL_HIGHLIGHT_TEXT_COLOR;
 			goe.font = [UIFont systemFontOfSize:14];
+			goe.textAlignment = UITextAlignmentRight;
 			[cell.contentView addSubview:goe];
 			[goe release];
 		} else {
@@ -435,6 +463,7 @@
 - (void)dealloc {
     [super dealloc];
 	[programElements dealloc];
+	[toolbarForAddEdit dealloc];
 }
 
 

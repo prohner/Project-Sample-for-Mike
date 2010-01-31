@@ -21,6 +21,7 @@
 	UILabel *headerLabelRange;
 	UIButton *btnSendEmail;
 	NSIndexPath *indexPathOfDummyElement;
+	UIToolbar* toolbarForAddEdit;
 }
 
 @property (nonatomic, retain) Program *program;
@@ -33,7 +34,6 @@
 - (ProgramElement *)programElementForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)setScoreLabel;
 - (id) addElement;
-- (void) editButtonPushed:(id)sender;
 - (int)arrayIndexFromIndexPath:(NSIndexPath *)indexPath;
 - (IBAction)sendEmail:(id)sender;
 - (void)refreshDisplay:(UITableView *)tableView;
