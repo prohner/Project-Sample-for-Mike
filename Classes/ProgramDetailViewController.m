@@ -63,6 +63,7 @@
 			UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:1]];
 			if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
 				programGroup = (ProgramGroup *)[programGroups objectAtIndex:i];
+				break;
 			}
 		}
 		

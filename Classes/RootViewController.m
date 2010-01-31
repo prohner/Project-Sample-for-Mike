@@ -214,7 +214,10 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+	NSArray *programs = [[programGroupPrograms objectAtIndex:section] retain];
+	int count = [programs count];
+	[programs release];
+    return count;
 }
 
 - (UIView *)tableView:(UITableView *)aTableView viewForHeaderInSection:(NSInteger)section {
