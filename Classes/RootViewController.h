@@ -20,5 +20,5 @@
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
 
 - (id)addProgram;
-
+- (void)loadData;
 @end

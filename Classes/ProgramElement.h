@@ -32,7 +32,7 @@
 
 - (NSString *)description;
 - (float) baseScore;
-- (float)goeScore;
+- (float) goeScore;
 
 - (NSComparisonResult)compareProgramElements:(ProgramElement *)pe;
 - (float)scoreForGOE:(NSString *)GOE;

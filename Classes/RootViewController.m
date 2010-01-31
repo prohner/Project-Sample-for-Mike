@@ -136,6 +136,10 @@
 	tableView.rowHeight = 85;
 	programGroups = [[ProgramGroup findByCriteria: @"WHERE 1 = 1"] retain];
 	
+	[self loadData];
+}
+
+- (void)loadData {
 	programGroupPrograms = [[NSMutableArray alloc] init];
 	// Create an array of arrays of programs for each section (program group)
 	for (int i = 0; i < [programGroups count]; i++) {
@@ -160,6 +164,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+	[self loadData];
 	[self.tableView reloadData];
 }
 

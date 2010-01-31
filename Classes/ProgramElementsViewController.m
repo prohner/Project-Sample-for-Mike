@@ -253,18 +253,6 @@
 			[btnSendEmail setFrame:r];
 			[cell.contentView addSubview:btnSendEmail];
 
-//			cell.backgroundColor = [UIColor clearColor];
-//			cell.opaque = NO;
-//			UILabel *description = [[UILabel alloc] initWithFrame:CGRectMake(12, 2, 190, 38)];
-//			description.tag = LABEL_DESCRIPTION_TAG;
-//			description.backgroundColor = [UIColor clearColor];
-//			description.textColor = TABLE_MAIN_LABEL_TEXT_COLOR;
-//			description.highlightedTextColor = TABLE_MAIN_LABEL_HIGHLIGHT_TEXT_COLOR;
-//			description.adjustsFontSizeToFitWidth = YES;
-//			description.lineBreakMode = UILineBreakModeWordWrap;
-//			description.numberOfLines = 0;
-//			[cell.contentView addSubview:description];
-//			[description release];
 		}
 	}
 
@@ -274,8 +262,12 @@
 
     if ( ! isDummyCell) {
 		description.text = programElement.description;
+#ifdef DEBUG
+		NSLog(@"Scoring %@", programElement.description);
+		NSLog(@"\tGOE Score %.2f", [programElement goeScore]);
+#endif
 		score.text = [[NSString alloc] initWithFormat:@"%.2f", [programElement baseScore]];
-		goe.text = [[NSString alloc] initWithFormat:@"%@", [programElement estimatedGOE]];
+		goe.text = [[NSString alloc] initWithFormat:@"%.2f", [programElement goeScore]];
 		if ([goe.text isEqualToString:GOE_0]) {
 			goe.text = @"-";
 		}
@@ -453,6 +445,8 @@
 	"<!--secondhalf-->"
 	"<tr><th colspan=\"4\">Summary</th></tr>"
 	"<!--scoresummary-->"
+//	"<tr><th colspan=\"4\">Summary</th></tr>"
+	"<!--salespitch-->"
 	"</table>"
 	"</body></html>";
 	NSString *target = @"<!--title--></th>";
@@ -485,7 +479,16 @@
 							  ];
 	target = @"<!--scoresummary-->";
 	body = [body stringByReplacingOccurrencesOfString:target withString:scoreSummary];
-	
+
+	NSString *salesPitch = [[NSString alloc] initWithFormat:@"<tr><td colspan=\"4\">"
+						   "Results presented by %@.<br />"
+						   "<a href=\"http://cooltoolapps.appspot.com/\">Learn more.</a><br />"
+						   "</td></tr>",
+						   APPLICATION_NAME
+						   ];						  
+	target = @"<!--salespitch-->";
+	body = [body stringByReplacingOccurrencesOfString:target withString:salesPitch];
+
 	[controller setSubject:subject];
 	
 	[controller setMessageBody:body isHTML:YES]; 

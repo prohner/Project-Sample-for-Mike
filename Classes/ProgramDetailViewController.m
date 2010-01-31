@@ -40,35 +40,6 @@
 }
 
 
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-	[super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-	[super viewDidDisappear:animated];
-}
-*/
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
@@ -82,8 +53,28 @@
 }
 
 - (void)doneWithProgram {
-	Program *newProgram = [[Program alloc] init];
-	newProgram.description = description.text;
+	if ([description.text length] > 0) {
+		Program *newProgram = [[Program alloc] init];
+		newProgram.description = description.text;
+		
+		int rowsInProgramGroupsSection = [self tableView:self.tableView numberOfRowsInSection: 1];
+		ProgramGroup *programGroup = nil;
+		for (int i = 0; i < rowsInProgramGroupsSection; i++) {
+			UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:1]];
+			if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+				programGroup = (ProgramGroup *)[programGroups objectAtIndex:i];
+			}
+		}
+		
+		newProgram.programGroup = programGroup;
+		[newProgram save];
+	} else {
+		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle: @"Missing Description" message: @"Since there was no description the program was not added." delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
+		
+		[alertView show];
+		[alertView release];
+	}
+
 
 	[self.navigationController dismissModalViewControllerAnimated:YES];
 }
@@ -232,6 +223,7 @@
 
 - (void)dealloc {
     [super dealloc];
+	[programGroups dealloc];
 }
 
 
