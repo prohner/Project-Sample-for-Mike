@@ -45,9 +45,9 @@
 	[workspaceView addSubview:jumpsView];
 	gradeOfExecutionChooser.selectedSegmentIndex = 3;
 	
-	jumps = [[Elements groupOfUniqueElementsIn:@"jumps"] retain];
-	spins = [[Elements groupOfUniqueElementsIn:@"spins"] retain];	
-	steps = [[Elements groupOfUniqueElementsIn:@"spiral/step"] retain];
+	jumps = [[Elements groupOfUniqueElementsIn:ELEMENT_GROUP_JUMPS] retain];
+	spins = [[Elements groupOfUniqueElementsIn:ELEMENT_GROUP_SPINS] retain];	
+	steps = [[Elements groupOfUniqueElementsIn:ELEMENT_GROUP_STEP_SPIRAL] retain];
 	
 	jumpComboElement1 = @"";
 	jumpComboElement2 = @"";

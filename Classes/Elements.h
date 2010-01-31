@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "Element.h"
 
+#define ELEMENT_GROUP_JUMPS			@"jumps"
+#define ELEMENT_GROUP_SPINS			@"spins"
+#define ELEMENT_GROUP_STEP_SPIRAL	@"spiral/step"
+
 @interface Elements : NSObject {
 //	static (NSDictionary *)elements;
 }

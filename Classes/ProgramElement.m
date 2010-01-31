@@ -37,12 +37,13 @@
 
 -(float)baseScore {
 	float score = 0;
+	Element *element1 = [Elements getElementFor:ijsId];
+	
 	if ([self isSingleElement]) {
 		// This is a single element
-		score = [Elements getElementFor:ijsId].baseScore;
+		score = element1.baseScore;
 		
 	} else {
-		Element *element1 = [Elements getElementFor:ijsId];
 		Element *element2 = [Elements getElementFor:ijsIdSecond];
 		Element *element3 = [Elements getElementFor:ijsIdThird];
 		
@@ -93,7 +94,7 @@
 
 	}
 
-	if (isSecondHalf) {
+	if (isSecondHalf && [element1.elementGroup isEqualToString:ELEMENT_GROUP_JUMPS]) {
 		score *= 1.1;
 	}
 
