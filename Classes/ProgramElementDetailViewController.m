@@ -28,6 +28,7 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	viewHasFinishedLoading = NO;
     [super viewDidLoad];
 	
 	self.title = @"Element";
@@ -54,6 +55,10 @@
 	jumpComboElement3 = @"";
 	
 	[self presetValuesForProgramElement];
+	
+	viewHasFinishedLoading = YES;
+//	[self refreshDisplayInfo];
+	[self performSelector:(@selector(refreshDisplayInfo)) withObject:(nil) afterDelay:0.5];
 }
 
 - (void)presetValuesForProgramElement {
@@ -99,20 +104,58 @@
 		gradeOfExecutionChooser.selectedSegmentIndex = 6;
 	}
 
-/*
-
- case 0:
- if (thePickerView == jumpPickerView || thePickerView == jumpComboPickerView) {
- return [jumps objectAtIndex:row];
- } else if (thePickerView == spinPickerView) {
- return [spins objectAtIndex:row];
- } else if (thePickerView == stepSpiralPickerView) {
- return [steps objectAtIndex:row];
- }
-
- */
 	
 }
+
+- (void)goeChanged:(id)sender {
+	[self refreshDisplayInfo];
+}
+
+- (void)refreshDisplayInfo {
+	if ( ! viewHasFinishedLoading) {
+		return;
+	}
+
+	ProgramElement *pe = [[ProgramElement alloc] init];
+	
+	if ([elementGroupChooser selectedSegmentIndex] == 3) {
+		pe.ijsId = jumpComboElement1;
+		pe.ijsIdSecond = jumpComboElement2;
+		pe.ijsIdThird = jumpComboElement3;
+		if ([pe.ijsId isEqualToString:@""]) {
+			pe.ijsId = [self ijsIdFromPicker:jumpComboPickerView];;
+		}
+		if (jumpComboSeqChooser.selectedSegmentIndex == 0) {
+			pe.jumpComboType = JUMP_COMBO_TYPE_COMBO;
+		} else {
+			pe.jumpComboType = JUMP_COMBO_TYPE_SEQ;
+		}
+	} else {
+		switch ([elementGroupChooser selectedSegmentIndex]) {
+			case 0:
+				pe.ijsId = [self ijsIdFromPicker:jumpPickerView];
+				break;
+			case 1:
+				pe.ijsId = [self ijsIdFromPicker:spinPickerView];
+				break;
+			case 2:
+				pe.ijsId = [self ijsIdFromPicker:stepSpiralPickerView];
+				break;
+			default:
+				break;
+		}
+	}
+	if (pe) {
+		NSString *desc = [[NSString alloc] initWithFormat:@"%@, Base %.2f, GOE %.2f", 
+						  pe.description, 
+						  pe.baseScore,
+						  [pe scoreForGOE:[self goeScoreAsString] ]
+						  ];
+		jumpList.text = desc;
+	}
+	
+}
+
 
 - (void)pickerView:(UIPickerView *)pickerView setRowForElement:(ProgramElement *)programElement withArray:(NSArray *)elements {
 	Element *element = [Elements getElementFor:existingProgramElement.ijsId];
@@ -169,36 +212,42 @@
 			break;
 	}
 
-	switch (gradeOfExecutionChooser.selectedSegmentIndex) {
-		case 0:
-			programElement.estimatedGOE		= GOE_plus_3;
-			break;
-		case 1:
-			programElement.estimatedGOE		= GOE_plus_2;
-			break;
-		case 2:
-			programElement.estimatedGOE		= GOE_plus_1;
-			break;
-		case 3:
-			programElement.estimatedGOE		= GOE_0;
-			break;
-		case 4:
-			programElement.estimatedGOE		= GOE_minus_1;
-			break;
-		case 5:
-			programElement.estimatedGOE		= GOE_minus_2;
-			break;
-		case 6:
-			programElement.estimatedGOE		= GOE_minus_3;
-			break;
-		default:
-			break;
-	}
+	programElement.estimatedGOE		= [self goeScoreAsString];
 	
 	[programElement save];
 
 //	[self.navigationController popViewControllerAnimated:YES];
 	[self.navigationController dismissModalViewControllerAnimated:YES];
+}
+
+- (NSString *)goeScoreAsString {
+	NSString *goeString = @"";
+	switch (gradeOfExecutionChooser.selectedSegmentIndex) {
+		case 0:
+			goeString		= GOE_plus_3;
+			break;
+		case 1:
+			goeString		= GOE_plus_2;
+			break;
+		case 2:
+			goeString		= GOE_plus_1;
+			break;
+		case 3:
+			goeString		= GOE_0;
+			break;
+		case 4:
+			goeString		= GOE_minus_1;
+			break;
+		case 5:
+			goeString		= GOE_minus_2;
+			break;
+		case 6:
+			goeString		= GOE_minus_3;
+			break;
+		default:
+			break;
+	}
+	return goeString;
 }
 
 - (void)cancelElement {
@@ -241,26 +290,23 @@
 	
 	switch ([sender selectedSegmentIndex]) {
 		case 0:
-			jumpList.text = @"Choose jump and revolutions";
 			currentView = jumpsView;
 			break;
 		case 1:
-			jumpList.text = @"Choose spin and level of difficulty";
 			currentView = spinsView;
 			break;
 		case 2:
-			jumpList.text = @"Choose sequence and level of difficulty";
 			currentView = stepSpiralView;
 			break;
 		case 3:
-			jumpList.text = @"Choose jumps and tap +";
 			currentView = jumpComboView;
 			break;
 		default:
 			currentView = nil;
 			break;
 	}
-	
+
+	[self refreshDisplayInfo];
 //	[self.view addSubview:currentView];
 	
 	if (currentView) {
@@ -352,7 +398,7 @@
     return 320;
 }
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {	
-	//textView.text = [elementDescriptions objectAtIndex:row];
+	[self refreshDisplayInfo];
 }
 
 - (NSString *)ijsIdFromPicker:(UIPickerView *)picker {
@@ -389,6 +435,7 @@
 	}
 	
 	[self updateJumpComboLabel];
+	[self refreshDisplayInfo];
 }
 
 - (IBAction)jumpComboReset:(id)sender {
@@ -396,6 +443,7 @@
 	jumpComboElement1 = @"";
 	jumpComboElement2 = @"";
 	jumpComboElement3 = @"";
+	[self refreshDisplayInfo];
 	
 }
 
@@ -409,6 +457,7 @@
 
 - (IBAction)jumpComboValueChanged:(id)sender {
 	[self updateJumpComboLabel];
+	[self refreshDisplayInfo];
 }
 
 @end

@@ -13,6 +13,7 @@
 #define DEFAULT_JUMP_COMBO_LABEL	@"Choose jump & press +"
 
 @interface ProgramElementDetailViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> {
+	BOOL viewHasFinishedLoading;
 	IBOutlet UISegmentedControl *elementGroupChooser;
 	IBOutlet UISegmentedControl *gradeOfExecutionChooser;
 
@@ -55,6 +56,9 @@
 - (void)updateJumpComboLabel;
 - (void)presetValuesForProgramElement;
 - (void)pickerView:(UIPickerView *)pickerView setRowForElement:(ProgramElement *)programElement withArray:(NSArray *)elements;
+- (void)refreshDisplayInfo;
+- (void)goeChanged:(id)sender;
+- (NSString *)goeScoreAsString;
 
 - (NSString *)ijsIdFromPicker:(UIPickerView *)picker;
 

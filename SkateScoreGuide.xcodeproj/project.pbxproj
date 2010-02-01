@@ -56,6 +56,7 @@
 		E745489C111205C600FD9036 /* score_sheet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E745489B111205C600FD9036 /* score_sheet.jpg */; };
 		E745491A11123C6400FD9036 /* ProgramElementDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E745491811123C6400FD9036 /* ProgramElementDetailViewController.m */; };
 		E745491B11123C6400FD9036 /* ProgramElementDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E745491911123C6400FD9036 /* ProgramElementDetailViewController.xib */; };
+		E7AC09551116A47E00802AFF /* tableBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E7AC09541116A47E00802AFF /* tableBackground.jpg */; };
 		E7B1E0FA1113712E0053C0B5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B1E0F91113712E0053C0B5 /* MessageUI.framework */; };
 		E7B1E1FC1114071B0053C0B5 /* ProgramDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B1E1FA1114071B0053C0B5 /* ProgramDetailViewController.m */; };
 		E7B1E1FD1114071B0053C0B5 /* ProgramDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B1E1FB1114071B0053C0B5 /* ProgramDetailViewController.xib */; };
@@ -143,6 +144,7 @@
 		E745491711123C6400FD9036 /* ProgramElementDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramElementDetailViewController.h; sourceTree = "<group>"; };
 		E745491811123C6400FD9036 /* ProgramElementDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramElementDetailViewController.m; sourceTree = "<group>"; };
 		E745491911123C6400FD9036 /* ProgramElementDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProgramElementDetailViewController.xib; path = Classes/ProgramElementDetailViewController.xib; sourceTree = "<group>"; };
+		E7AC09541116A47E00802AFF /* tableBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tableBackground.jpg; path = Images/tableBackground.jpg; sourceTree = "<group>"; };
 		E7B1E0F91113712E0053C0B5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E7B1E1F91114071B0053C0B5 /* ProgramDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramDetailViewController.h; sourceTree = "<group>"; };
 		E7B1E1FA1114071B0053C0B5 /* ProgramDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramDetailViewController.m; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 		E74541111110094700FD9036 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E7AC09541116A47E00802AFF /* tableBackground.jpg */,
 				E745489B111205C600FD9036 /* score_sheet.jpg */,
 				E74543F41110EAD600FD9036 /* bottomRow.png */,
 				E74543F51110EAD600FD9036 /* bottomRowSelected.png */,
@@ -385,6 +388,7 @@
 				E745491B11123C6400FD9036 /* ProgramElementDetailViewController.xib in Resources */,
 				E7B1E1FD1114071B0053C0B5 /* ProgramDetailViewController.xib in Resources */,
 				E7B1E609111661A50053C0B5 /* ProgramElementViewCell.xib in Resources */,
+				E7AC09551116A47E00802AFF /* tableBackground.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

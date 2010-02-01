@@ -127,7 +127,7 @@ insert into #elements (discipline,  element_group, description, ijs_id, plus_3, 
 
 select '[Elements addElement:@"' + ijs_id + '" discipline:@"' + discipline + '" elementGroup:@"' + element_group + '" description:@"' + description 
      + '" baseScore:' + convert(varchar, base_score) 
-     +  ' plus_1:' + convert(varchar, plus_1) + ' plus_2:' + convert(varchar, plus_1) + ' plus_3:' + convert(varchar, plus_3) 
+     +  ' plus_1:' + convert(varchar, plus_1) + ' plus_2:' + convert(varchar, plus_2) + ' plus_3:' + convert(varchar, plus_3) 
      + ' minus_1:' + convert(varchar, minus_1) + ' minus_2:' + convert(varchar, minus_2) + ' minus_3:' + convert(varchar, minus_3) 
      + '];'
   from #elements

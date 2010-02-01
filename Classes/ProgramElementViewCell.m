@@ -16,24 +16,14 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         // Initialization code
-//		UIImage *indicatorImage = [UIImage imageNamed:@"indicator.png"];
-//		self.accessoryView = [[[UIImageView alloc] initWithImage:indicatorImage] autorelease];
-
-		self.description.adjustsFontSizeToFitWidth = YES;
-		self.description.lineBreakMode = UILineBreakModeWordWrap;
-		self.description.numberOfLines = 0;
-		self.description.textColor = TABLE_MAIN_LABEL_TEXT_COLOR;
-		self.description.highlightedTextColor = TABLE_MAIN_LABEL_HIGHLIGHT_TEXT_COLOR;
-		self.description.backgroundColor = [UIColor redColor];
-//		self.backgroundView			= [[[UIImageView alloc] init] autorelease];
-//		self.backgroundView			= [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topAndBottomRow.png"]] autorelease];
-//		self.selectedBackgroundView = [[[UIImageView alloc] init] autorelease];
     
 	}
     return self;
 }
 
 - (void)realInitialization {
+//	UIImage *indicatorImage = [UIImage imageNamed:@"indicator.png"];
+//	self.accessoryView = [[[UIImageView alloc] initWithImage:indicatorImage] autorelease];
 	self.description.adjustsFontSizeToFitWidth = YES;
 	self.description.lineBreakMode = UILineBreakModeWordWrap;
 	self.description.numberOfLines = 0;
@@ -42,11 +32,28 @@
 	self.backgroundView			= [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topAndBottomRow.png"]] autorelease];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-	self.backgroundView			= [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topAndBottomRow.png"]] autorelease];
-}
-
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//	self.backgroundView			= [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topAndBottomRow.png"]] autorelease];
+//}
+//
+//-(void)layoutSubviews {
+////    [UIView beginAnimations:nil context:nil];
+////    [UIView setAnimationBeginsFromCurrentState:YES];
+////
+//	[super layoutSubviews];
+//	
+//	CGRect r;
+//	r = self.baseScore.bounds;
+//	r.origin.x -= 40;
+//	[self.baseScore setBounds:r];
+//
+//	r = self.goeScore.bounds;
+//	r.origin.x -= 40;
+//	[self.goeScore setBounds:r];
+////
+////    [UIView commitAnimations];
+//}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
 
