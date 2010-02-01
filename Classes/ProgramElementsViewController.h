@@ -37,6 +37,7 @@
 - (int)arrayIndexFromIndexPath:(NSIndexPath *)indexPath;
 - (IBAction)sendEmail:(id)sender;
 - (void)refreshDisplay:(UITableView *)tableView;
+- (void) elementDetailViewControllerFor:(ProgramElement *)programElement;
 
 
 #ifdef DEBUG

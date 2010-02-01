@@ -59,6 +59,7 @@
 		E7B1E0FA1113712E0053C0B5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B1E0F91113712E0053C0B5 /* MessageUI.framework */; };
 		E7B1E1FC1114071B0053C0B5 /* ProgramDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B1E1FA1114071B0053C0B5 /* ProgramDetailViewController.m */; };
 		E7B1E1FD1114071B0053C0B5 /* ProgramDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B1E1FB1114071B0053C0B5 /* ProgramDetailViewController.xib */; };
+		E7B1E53C111646CE0053C0B5 /* ProgramElementViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B1E53B111646CE0053C0B5 /* ProgramElementViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,6 +146,8 @@
 		E7B1E1F91114071B0053C0B5 /* ProgramDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramDetailViewController.h; sourceTree = "<group>"; };
 		E7B1E1FA1114071B0053C0B5 /* ProgramDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramDetailViewController.m; sourceTree = "<group>"; };
 		E7B1E1FB1114071B0053C0B5 /* ProgramDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProgramDetailViewController.xib; path = Classes/ProgramDetailViewController.xib; sourceTree = "<group>"; };
+		E7B1E53A111646CE0053C0B5 /* ProgramElementViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramElementViewCell.h; sourceTree = "<group>"; };
+		E7B1E53B111646CE0053C0B5 /* ProgramElementViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramElementViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +176,8 @@
 				E7B1E1FA1114071B0053C0B5 /* ProgramDetailViewController.m */,
 				E745491711123C6400FD9036 /* ProgramElementDetailViewController.h */,
 				E745491811123C6400FD9036 /* ProgramElementDetailViewController.m */,
+				E7B1E53A111646CE0053C0B5 /* ProgramElementViewCell.h */,
+				E7B1E53B111646CE0053C0B5 /* ProgramElementViewCell.m */,
 				E74545F711114D2000FD9036 /* ProgramElementsViewController.h */,
 				E74545F811114D2000FD9036 /* ProgramElementsViewController.m */,
 				E7454199111087CC00FD9036 /* ProgramGroupViewController.h */,
@@ -415,6 +420,7 @@
 				E74545FA11114D2000FD9036 /* ProgramElementsViewController.m in Sources */,
 				E745491A11123C6400FD9036 /* ProgramElementDetailViewController.m in Sources */,
 				E7B1E1FC1114071B0053C0B5 /* ProgramDetailViewController.m in Sources */,
+				E7B1E53C111646CE0053C0B5 /* ProgramElementViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

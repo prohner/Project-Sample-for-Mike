@@ -9,6 +9,7 @@
 #import "ProgramElementsViewController.h"
 #import "ApplicationUtilities.h"
 #import "ProgramElementDetailViewController.h"
+#import "ProgramElementViewCell.h"
 
 #define INDEXPATH_DUMMY_SECTION		2
 
@@ -101,17 +102,23 @@
 }
 #endif
 
-- (id) addElement {
+- (void) elementDetailViewControllerFor:(ProgramElement *)programElement {
 	ProgramElementDetailViewController *addController = [[ProgramElementDetailViewController alloc] initWithNibName:@"ProgramElementDetailViewController" bundle:nil];
 	addController.program = program;
+	addController.existingProgramElement = programElement;
 	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addController];
 		navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
 	[self.navigationController presentModalViewController:navigationController animated:YES];
 	[navigationController release];
 	[addController release];
 
+}
+- (id) addElement {
+	[self elementDetailViewControllerFor:nil];
+	
 	return self;
 }
+
 
 - (void) editButtonPushed:(id)sender {
 	self.editing = NO;
@@ -179,7 +186,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	BOOL isFirstHalf = (section == 0);
 	int iRowCount = [program elementsInHalf:isFirstHalf];
-	
+	iRowCount = 1;
 	if (section == INDEXPATH_DUMMY_SECTION) {
 		iRowCount = 1;
 	}
@@ -225,87 +232,49 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    const int LABEL_DESCRIPTION_TAG = 1;
-    const int LABEL_SCORE_TAG		= 2;
-    const int LABEL_GOE_TAG			= 3;
+//    const int LABEL_DESCRIPTION_TAG = 1;
+//    const int LABEL_SCORE_TAG		= 2;
+//    const int LABEL_GOE_TAG			= 3;
 	
-    NSString *CellIdentifier = @"Cell Generic";
-	BOOL isDummyCell = (indexPath.section == INDEXPATH_DUMMY_SECTION);
-	
-	ProgramElement *programElement = [self programElementForRowAtIndexPath:indexPath];
-    if (isDummyCell) {
-		CellIdentifier = @"Cell Dummy";
-	}
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-		
-		if ( ! isDummyCell ) {
-			UILabel *description = [[UILabel alloc] initWithFrame:CGRectMake(12, 2, 190, 38)];
-			description.tag = LABEL_DESCRIPTION_TAG;
-			description.backgroundColor = [UIColor clearColor];
-			description.textColor = TABLE_MAIN_LABEL_TEXT_COLOR;
-			description.highlightedTextColor = TABLE_MAIN_LABEL_HIGHLIGHT_TEXT_COLOR;
-			description.adjustsFontSizeToFitWidth = YES;
-			description.lineBreakMode = UILineBreakModeWordWrap;
-			description.numberOfLines = 0;
-			[cell.contentView addSubview:description];
-			[description release];
+    NSString *CellIdentifier = @"ProgramElementViewCell";
 
-			UILabel *score = [[UILabel alloc] initWithFrame:CGRectMake(190, 2, 40, 18)];
-			score.tag = LABEL_SCORE_TAG;
-			score.backgroundColor = [UIColor clearColor];
-			score.backgroundColor = [UIColor greenColor];
-			score.textColor = TABLE_SUB_LABEL_TEXT_COLOR;
-			score.highlightedTextColor = TABLE_SUB_LABEL_HIGHLIGHT_TEXT_COLOR;
-			score.font = [UIFont systemFontOfSize:14];
-			score.textAlignment = UITextAlignmentRight;
-			[cell.contentView addSubview:score];
-			[score release];
-
-			UILabel *goe = [[UILabel alloc] initWithFrame:CGRectMake(190, 20, 40, 18)];
-			goe.tag = LABEL_GOE_TAG;
-			goe.backgroundColor = [UIColor clearColor];
-			goe.backgroundColor = [UIColor redColor];
-			goe.textColor = TABLE_SUB_LABEL_TEXT_COLOR;
-			goe.highlightedTextColor = TABLE_SUB_LABEL_HIGHLIGHT_TEXT_COLOR;
-			goe.font = [UIFont systemFontOfSize:14];
-			goe.textAlignment = UITextAlignmentRight;
-			[cell.contentView addSubview:goe];
-			[goe release];
-		} else {
-			CGRect r = cell.bounds;
-			r.size.width -= cell.indentationWidth * 2;
+	if (indexPath.section != INDEXPATH_DUMMY_SECTION) {
+		ProgramElement *programElement = [self programElementForRowAtIndexPath:indexPath];
+		ProgramElementViewCell *cell = (ProgramElementViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		if (cell == nil) {
+			NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"ProgramElementsViewController" owner:self options:nil];
+			cell = [[topLevelObjects objectAtIndex:3] retain];
 			
-			[btnSendEmail setFrame:r];
-			[cell.contentView addSubview:btnSendEmail];
-
 		}
-	}
-
-	UILabel *description = (UILabel *)[cell viewWithTag:LABEL_DESCRIPTION_TAG];
-	UILabel *score = (UILabel *)[cell viewWithTag:LABEL_SCORE_TAG];
-	UILabel *goe = (UILabel *)[cell viewWithTag:LABEL_GOE_TAG];
-
-    if ( ! isDummyCell) {
-		description.text = programElement.description;
+		
+		cell.description.text = programElement.description;
 #ifdef DEBUG
 		NSLog(@"Scoring %@", programElement.description);
 		NSLog(@"\tGOE Score %.2f", [programElement goeScore]);
 #endif
-		score.text = [[NSString alloc] initWithFormat:@"%.2f", [programElement baseScore]];
-		goe.text = [[NSString alloc] initWithFormat:@"%.2f", [programElement goeScore]];
-		if ([goe.text isEqualToString:GOE_0]) {
-			goe.text = @"-";
+		cell.baseScore.text = [[NSString alloc] initWithFormat:@"%.2f", [programElement baseScore]];
+		cell.goeScore.text = [[NSString alloc] initWithFormat:@"%.2f", [programElement goeScore]];
+		
+		if ([cell.goe.text isEqualToString:GOE_0]) {
+			cell.goe.text = @"-";
 		}
-//	} else {
-//		description.text = @"Move elements as needed";
-//		indexPathOfDummyElement = indexPath;
-	}
 
-	
-    return cell;
+		return cell;
+
+	} else {
+		CellIdentifier = @"ProgramElementViewCell Dummy";
+		UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		if (cell == nil) {
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		}
+		CGRect r = cell.bounds;
+		r.size.width -= cell.indentationWidth * 2;
+		[btnSendEmail setFrame:r];
+		[cell.contentView addSubview:btnSendEmail];
+
+		return cell;
+	}
+			
 }
 
 
@@ -314,6 +283,10 @@
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
 	// [self.navigationController pushViewController:anotherViewController];
 	// [anotherViewController release];
+	int index = [self arrayIndexFromIndexPath:indexPath];
+	ProgramElement *programElementToEdit = (ProgramElement *)[[programElements objectAtIndex:index] retain];
+	[self elementDetailViewControllerFor:programElementToEdit];
+	[programElementToEdit release];
 }
 
 

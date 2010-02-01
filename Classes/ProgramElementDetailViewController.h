@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Program.h"
+#import "ProgramElement.h"
 
 #define DEFAULT_JUMP_COMBO_LABEL	@"Choose jump & press +"
 
@@ -39,9 +40,11 @@
 	NSString *jumpComboElement3;
 	
 	Program *program;
+	ProgramElement *existingProgramElement;
 }
 
 @property (nonatomic, retain) Program *program;
+@property (nonatomic, retain) ProgramElement *existingProgramElement;
 
 - (IBAction)segmentedControlValueChanged:(id)sender;
 - (IBAction)jumpComboValueChanged:(id)sender;
@@ -50,6 +53,8 @@
 - (IBAction)jumpComboAdd:(id)sender;
 - (IBAction)jumpComboReset:(id)sender;
 - (void)updateJumpComboLabel;
+- (void)presetValuesForProgramElement;
+- (void)pickerView:(UIPickerView *)pickerView setRowForElement:(ProgramElement *)programElement withArray:(NSArray *)elements;
 
 - (NSString *)ijsIdFromPicker:(UIPickerView *)picker;
 

@@ -13,7 +13,7 @@
 
 @implementation ProgramElementDetailViewController
 
-@synthesize program;
+@synthesize program, existingProgramElement;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -52,13 +52,97 @@
 	jumpComboElement1 = @"";
 	jumpComboElement2 = @"";
 	jumpComboElement3 = @"";
+	
+	[self presetValuesForProgramElement];
+}
+
+- (void)presetValuesForProgramElement {
+	if (existingProgramElement == nil) {
+		return;
+	}
+
+	Element *element = [Elements getElementFor:existingProgramElement.ijsId];
+	
+	if ( ! existingProgramElement.isSingleElement) {
+		elementGroupChooser.selectedSegmentIndex = 3;
+		[self pickerView:jumpPickerView setRowForElement:existingProgramElement withArray:jumps];
+
+	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_JUMPS]) {
+		elementGroupChooser.selectedSegmentIndex = 0;
+		[self pickerView:jumpPickerView setRowForElement:existingProgramElement withArray:jumps];
+
+	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_SPINS]) {
+		elementGroupChooser.selectedSegmentIndex = 1;
+		[self pickerView:spinPickerView setRowForElement:existingProgramElement withArray:spins];
+
+	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_STEP_SPIRAL]) {
+		elementGroupChooser.selectedSegmentIndex = 2;
+		[self pickerView:stepSpiralPickerView setRowForElement:existingProgramElement withArray:steps];
+
+	} else {
+		NSAssert(@"Could not identify the group for the element.", @"other");
+	}
+	
+	if ([existingProgramElement.estimatedGOE isEqualToString:GOE_plus_3]) {
+		gradeOfExecutionChooser.selectedSegmentIndex = 0;
+	} else if ([existingProgramElement.estimatedGOE isEqualToString:GOE_plus_2]) {
+		gradeOfExecutionChooser.selectedSegmentIndex = 1;
+	} else if ([existingProgramElement.estimatedGOE isEqualToString:GOE_plus_1]) {
+		gradeOfExecutionChooser.selectedSegmentIndex = 2;
+	} else if ([existingProgramElement.estimatedGOE isEqualToString:GOE_0]) {
+		gradeOfExecutionChooser.selectedSegmentIndex = 3;
+	} else if ([existingProgramElement.estimatedGOE isEqualToString:GOE_minus_1]) {
+		gradeOfExecutionChooser.selectedSegmentIndex = 4;
+	} else if ([existingProgramElement.estimatedGOE isEqualToString:GOE_minus_2]) {
+		gradeOfExecutionChooser.selectedSegmentIndex = 5;
+	} else if ([existingProgramElement.estimatedGOE isEqualToString:GOE_minus_3]) {
+		gradeOfExecutionChooser.selectedSegmentIndex = 6;
+	}
+
+/*
+
+ case 0:
+ if (thePickerView == jumpPickerView || thePickerView == jumpComboPickerView) {
+ return [jumps objectAtIndex:row];
+ } else if (thePickerView == spinPickerView) {
+ return [spins objectAtIndex:row];
+ } else if (thePickerView == stepSpiralPickerView) {
+ return [steps objectAtIndex:row];
+ }
+
+ */
+	
+}
+
+- (void)pickerView:(UIPickerView *)pickerView setRowForElement:(ProgramElement *)programElement withArray:(NSArray *)elements {
+	Element *element = [Elements getElementFor:existingProgramElement.ijsId];
+
+	NSString *letters = [[NSString alloc] initWithFormat:@"-%@", [element ijsIdLetters]];
+	NSString *digits = [element ijsIdDigits];
+	for (int i = 0; i < [elements count]; i++) {
+		NSString *theElement = (NSString *)[elements objectAtIndex:i];
+		NSRange range = [theElement rangeOfString:letters];
+		NSLog(@"Searched for %@ in %@", letters, theElement);
+		if (range.length > 0) {
+			[pickerView selectRow:i inComponent:0 animated:YES];
+			break;
+		}
+	}
+
+	[pickerView selectRow:([digits intValue] - 1) inComponent:1 animated:YES];
 }
 
 - (void)doneWithElement {
-	ProgramElement *programElement = [[ProgramElement alloc] init];
-	programElement.ordinalPosition	= [program elementsInHalf:YES] - 1;
-	programElement.program			= program;
-	programElement.isSecondHalf		= NO;
+	ProgramElement *programElement;
+	if (existingProgramElement == nil) {
+		programElement = [[ProgramElement alloc] init];
+		programElement.ordinalPosition	= [program elementsInHalf:YES] - 1;
+		programElement.program			= program;
+		programElement.isSecondHalf		= NO;
+	} else {
+		programElement = existingProgramElement;
+	}
+
 
 	switch (elementGroupChooser.selectedSegmentIndex) {
 		case 0:
@@ -157,15 +241,19 @@
 	
 	switch ([sender selectedSegmentIndex]) {
 		case 0:
+			jumpList.text = @"Choose jump and revolutions";
 			currentView = jumpsView;
 			break;
 		case 1:
+			jumpList.text = @"Choose spin and level of difficulty";
 			currentView = spinsView;
 			break;
 		case 2:
+			jumpList.text = @"Choose sequence and level of difficulty";
 			currentView = stepSpiralView;
 			break;
 		case 3:
+			jumpList.text = @"Choose jumps and tap +";
 			currentView = jumpComboView;
 			break;
 		default:

@@ -71,6 +71,7 @@ static NSMutableDictionary *elements = nil;
 	}
 }
 
+
 + (NSArray *)groupOfUniqueElementsIn:(NSString *)elementGroup {
 	[self checkElementsArray];
 	NSMutableSet *theElements = [[NSMutableSet alloc] init];
@@ -79,7 +80,7 @@ static NSMutableDictionary *elements = nil;
 		if ([element.elementGroup isEqualToString:elementGroup]) {
 			NSString *ijs;
 			NSString *desc;
-			if ([element.elementGroup isEqualToString:@"jumps"]) {
+			if ([element.elementGroup isEqualToString:ELEMENT_GROUP_JUMPS]) {
 				ijs = [element.ijsId substringFromIndex:1];
 				desc = [element.description stringByReplacingOccurrencesOfString:@"Double " withString:@""];
 				desc = [desc stringByReplacingOccurrencesOfString:@"Triple " withString:@""];

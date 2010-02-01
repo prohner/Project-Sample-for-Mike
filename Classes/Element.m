@@ -34,4 +34,24 @@
 	return goe_adjustment;
 }
 
+- (NSString *)ijsIdLetters {
+	NSString *theLetters;
+	if ([elementGroup isEqualToString:ELEMENT_GROUP_JUMPS]) {
+		theLetters = [ijsId substringFromIndex:1];
+	} else {
+		theLetters = [ijsId substringToIndex:[ijsId length]-1];
+	}
+	return theLetters;
+}
+
+- (NSString *)ijsIdDigits {
+	NSString *theDigits;
+	if ([elementGroup isEqualToString:ELEMENT_GROUP_JUMPS]) {
+		theDigits = [ijsId substringToIndex:1];
+	} else {
+		theDigits = [ijsId substringFromIndex:[ijsId length]-1];
+	}
+	return theDigits;
+}
+
 @end
