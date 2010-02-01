@@ -86,6 +86,11 @@
 #ifdef DEBUG
 	[self dumpProgramElements:@"In viewWillAppear"];
 #endif
+
+	NSIndexPath *selection = [self.tableView indexPathForSelectedRow];
+	if (selection) {
+		[self.tableView deselectRowAtIndexPath:selection animated:YES];
+	}
 	
 	[self.tableView reloadData];
 	[self setScoreLabel];
@@ -107,7 +112,7 @@
 	addController.program = program;
 	addController.existingProgramElement = programElement;
 	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addController];
-		navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+	navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
 	[self.navigationController presentModalViewController:navigationController animated:YES];
 	[navigationController release];
 	[addController release];
@@ -186,7 +191,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	BOOL isFirstHalf = (section == 0);
 	int iRowCount = [program elementsInHalf:isFirstHalf];
-	iRowCount = 1;
+
 	if (section == INDEXPATH_DUMMY_SECTION) {
 		iRowCount = 1;
 	}
@@ -227,7 +232,7 @@
 //	if (indexPath.section == 1) {
 //		return 0;
 //	}
-//	return 40;
+//	return 100;
 //}
 
 // Customize the appearance of table view cells.
@@ -239,42 +244,82 @@
     NSString *CellIdentifier = @"ProgramElementViewCell";
 
 	if (indexPath.section != INDEXPATH_DUMMY_SECTION) {
+		NSLog(@"Processing section=%i, row=%i", indexPath.section, indexPath.row);
 		ProgramElement *programElement = [self programElementForRowAtIndexPath:indexPath];
-		ProgramElementViewCell *cell = (ProgramElementViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-		if (cell == nil) {
-			NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"ProgramElementsViewController" owner:self options:nil];
-			cell = [[topLevelObjects objectAtIndex:3] retain];
-			
-		}
 		
-		cell.description.text = programElement.description;
-#ifdef DEBUG
-		NSLog(@"Scoring %@", programElement.description);
-		NSLog(@"\tGOE Score %.2f", [programElement goeScore]);
-#endif
-		cell.baseScore.text = [[NSString alloc] initWithFormat:@"%.2f", [programElement baseScore]];
-		cell.goeScore.text = [[NSString alloc] initWithFormat:@"%.2f", [programElement goeScore]];
-		
-		if ([cell.goe.text isEqualToString:GOE_0]) {
-			cell.goe.text = @"-";
-		}
+		@try {
+			ProgramElementViewCell *cell = (ProgramElementViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
-		return cell;
+			if (cell == nil) {
+				NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"ProgramElementViewCell" owner:self options:nil];
+				cell = [[topLevelObjects objectAtIndex:0] retain];
+				[cell realInitialization];
+				
+			}
+
+			cell.description.text = programElement.description;
+			
+#ifdef DEBUG
+			NSLog(@"Scoring %@", programElement.description);
+			NSLog(@"\tGOE Score %.2f", [programElement goeScore]);
+#endif
+			cell.baseScore.text = [[NSString alloc] initWithFormat:@"%.2f", [programElement baseScore]];
+			cell.goeScore.text = [[NSString alloc] initWithFormat:@"%.2f", [programElement baseScore] + [programElement goeScore]];
+			
+			if ([[programElement estimatedGOE] isEqualToString:GOE_0]) {
+				cell.goe.text = @"-";
+			} else {
+				cell.goe.text = [programElement estimatedGOE];
+			}
+			
+			
+			UIImage *rowBackground;
+			UIImage *selectionBackground;
+			NSInteger sectionRows = [tableView numberOfRowsInSection:[indexPath section]];
+			NSInteger row = [indexPath row];
+			if (row == 0 && row == sectionRows - 1) {
+				rowBackground = [UIImage imageNamed:@"topAndBottomRow.png"];
+				selectionBackground = [UIImage imageNamed:@"topAndBottomRowSelected.png"];
+			} else if (row == 0) {
+				rowBackground = [UIImage imageNamed:@"topRow.png"];
+				selectionBackground = [UIImage imageNamed:@"topRowSelected.png"];
+			} else if (row == sectionRows - 1) {
+				rowBackground = [UIImage imageNamed:@"bottomRow.png"];
+				selectionBackground = [UIImage imageNamed:@"bottomRowSelected.png"];
+			} else {
+				rowBackground = [UIImage imageNamed:@"middleRow.png"];
+				selectionBackground = [UIImage imageNamed:@"middleRowSelected.png"];
+			}
+			
+			[cell setBackgroundImage:rowBackground andSelectionBackgroundImage:selectionBackground];
+
+			return cell;
+		}
+		@catch (NSException * e) {
+			NSString *msg = [e reason];
+			NSLog(@"Exception thrown: %@", msg);
+		}
 
 	} else {
-		CellIdentifier = @"ProgramElementViewCell Dummy";
-		UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-		if (cell == nil) {
-			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-		}
-		CGRect r = cell.bounds;
-		r.size.width -= cell.indentationWidth * 2;
-		[btnSendEmail setFrame:r];
-		[cell.contentView addSubview:btnSendEmail];
-
-		return cell;
-	}
+		@try {
+			CellIdentifier = @"ProgramElementViewCell Dummy";
+			UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+			if (cell == nil) {
+				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+			}
+			CGRect r = cell.bounds;
+			r.size.width -= cell.indentationWidth * 2;
+			[btnSendEmail setFrame:r];
+			[cell.contentView addSubview:btnSendEmail];
 			
+			return cell;
+		}
+		@catch (NSException * e) {
+			NSString *msg = [e reason];
+			NSLog(@"Exception thrown: %@", msg);
+		}
+	}
+	return nil;		
 }
 
 

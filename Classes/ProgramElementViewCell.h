@@ -21,4 +21,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *goeScore;
 @property (nonatomic, retain) IBOutlet UILabel *goe;
 
+- (void)setBackgroundImage:(UIImage *)rowBackground andSelectionBackgroundImage:(UIImage *)selectionBackground;
+- (void)realInitialization;
+
 @end

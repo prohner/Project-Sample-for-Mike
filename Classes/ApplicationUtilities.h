@@ -14,7 +14,7 @@
 #import "Elements.h"
 #import "Element.h"
 
-#define APPLICATION_NAME		@"Score Guide"
+#define APPLICATION_NAME		@"Skate Score"
 
 #define GOE_plus_1				@"+1"
 #define GOE_plus_2				@"+2"
