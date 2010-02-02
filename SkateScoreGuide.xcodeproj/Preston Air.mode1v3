@@ -266,15 +266,13 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>E745417F1110818300FD9036</string>
-								<string>29B97317FDCFA39411CA2CEA</string>
-								<string>E74541111110094700FD9036</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>26</integer>
+									<integer>16</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -387,7 +385,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>RootViewController.m</string>
+								<string>ProgramDetailViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -395,40 +393,32 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>RootViewController.m</string>
+										<string>ProgramDetailViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E722A3621117F5FF00843FFC</string>
+										<string>E722A3C51118023800843FFC</string>
 										<key>history</key>
 										<array>
 											<string>E74546D111115A2B00FD9036</string>
-											<string>E74547B911116C6200FD9036</string>
 											<string>E74548A01112071F00FD9036</string>
 											<string>E7B1E2701114F5450053C0B5</string>
 											<string>E7B1E2BA111533F70053C0B5</string>
 											<string>E7B1E2EA1115475B0053C0B5</string>
-											<string>E7B1E358111550110053C0B5</string>
 											<string>E7B1E36E111559100053C0B5</string>
 											<string>E7B1E6C111166F810053C0B5</string>
 											<string>E7B1E6C211166F810053C0B5</string>
 											<string>E7B1E6C311166F810053C0B5</string>
 											<string>E7B1E6C411166F810053C0B5</string>
-											<string>E7B1E6E21116723C0053C0B5</string>
-											<string>E7B1E6F511167AEA0053C0B5</string>
 											<string>E7B1E6FB11167AEA0053C0B5</string>
 											<string>E7B1E6FD11167AEA0053C0B5</string>
 											<string>E7B1E785111686BB0053C0B5</string>
 											<string>E7B1E787111686BB0053C0B5</string>
-											<string>E7AC087611168BDE00802AFF</string>
 											<string>E7AC090A111699E200802AFF</string>
 											<string>E7AC090B111699E200802AFF</string>
 											<string>E7AC09DF111735C700802AFF</string>
 											<string>E7AC09FD11174DCC00802AFF</string>
-											<string>E7AC0A1F1117D27B00802AFF</string>
-											<string>E7AC0A571117D5D500802AFF</string>
 											<string>E7AC0A9C1117DA1800802AFF</string>
-											<string>E7AC0AE61117E1B800802AFF</string>
 											<string>E722A3281117ECE700843FFC</string>
 											<string>E722A3381117EF5300843FFC</string>
 											<string>E722A3391117EF5300843FFC</string>
@@ -436,7 +426,15 @@
 											<string>E722A3431117F43800843FFC</string>
 											<string>E722A3481117F51B00843FFC</string>
 											<string>E722A3491117F51B00843FFC</string>
-											<string>E722A3511117F54300843FFC</string>
+											<string>E722A36A1117F8FC00843FFC</string>
+											<string>E722A37F1117FC4000843FFC</string>
+											<string>E722A3801117FC4000843FFC</string>
+											<string>E722A3811117FC4000843FFC</string>
+											<string>E722A3821117FC4000843FFC</string>
+											<string>E722A3901117FD6800843FFC</string>
+											<string>E722A3BE1118020E00843FFC</string>
+											<string>E722A3C31118023800843FFC</string>
+											<string>E722A3C41118023800843FFC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -636,7 +634,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>E722A3611117F5EA00843FFC</string>
 		<string>E722A3141117EB8C00843FFC</string>
 		<string>E722A3151117EB8C00843FFC</string>
 		<string>1CD10A99069EF8BA00B06720</string>

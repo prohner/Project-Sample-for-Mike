@@ -16,8 +16,7 @@
 
 @implementation RootViewController
 
-@synthesize imageView, tableView;
-
+@synthesize imageView, tableView, btnShareAppWithFriend, btnFeedback, btnOrganizeProgramGroups;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -282,26 +281,44 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [programGroups count];
+    return [programGroups count] + 3;
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section {
-	NSArray *programs = [[programGroupPrograms objectAtIndex:section] retain];
-	int count = [programs count];
-	[programs release];
+	int count = 1;
+	if (section < [programGroups count]) {
+		NSArray *programs = [[programGroupPrograms objectAtIndex:section] retain];
+		count = [programs count];
+		[programs release];
+	}
     return count;
 }
 
 - (UIView *)tableView:(UITableView *)aTableView viewForHeaderInSection:(NSInteger)section {
-	ProgramGroup *pg = (ProgramGroup *)[[programGroups objectAtIndex:section] retain];
-	UIView *v = [ApplicationUtilities getStandardTableSectionHeaderFor:aTableView with:pg.description];
+	UIView *v = nil;
+	if (section < [programGroups count]) {
+		ProgramGroup *pg = (ProgramGroup *)[[programGroups objectAtIndex:section] retain];
+		v = [ApplicationUtilities getStandardTableSectionHeaderFor:aTableView with:pg.description];
+	}
 	
 	return v;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	CGFloat f = 40;
+	if (indexPath.section < [programGroups count]) {
+		f = 85;
+	}
+	
+	return f;
+}
+
 - (Program *)programForRowAtIndexPath:(NSIndexPath *)indexPath {
+//	if (indexPath.section < [programGroupPrograms count]) {
+//		return nil;
+//	}
 	NSArray *programs = [[programGroupPrograms objectAtIndex:indexPath.section] retain];
 	Program *program = [[programs objectAtIndex:indexPath.row] retain];
 	return program;
@@ -314,57 +331,79 @@
 	const CGFloat LABEL_HEIGHT = 23;
 	UILabel *topLabel;
 	UILabel *bottomLabel;
+	
+	BOOL isButtonCell = NO;
     
-    static NSString *CellIdentifier = @"Cell";
+    NSString *CellIdentifier = @"Cell Regular";
+	if (indexPath.section >= [programGroups count]) {
+		isButtonCell = YES;
+		CellIdentifier = @"Cell Button";
+	}
     
     UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
-		
-		UIImage *indicatorImage = [UIImage imageNamed:@"indicator.png"];
-		cell.accessoryView = [[[UIImageView alloc] initWithImage:indicatorImage] autorelease];
-		
-		UIImage *image = [UIImage imageNamed:@"imageA.png"];
-		
-		topLabel = [[[UILabel alloc] initWithFrame:CGRectMake(image.size.width + 2.0 * cell.indentationWidth,
-															0.25 * (aTableView.rowHeight - 2 * LABEL_HEIGHT),
-															aTableView.bounds.size.width - image.size.width - 4.0 * cell.indentationWidth - indicatorImage.size.width,
-															LABEL_HEIGHT)] 
-					autorelease];
-		[cell.contentView addSubview:topLabel];
-		
-		topLabel.tag = TOP_LABEL_TAG;
-		topLabel.backgroundColor = [UIColor clearColor];
-		topLabel.textColor = TABLE_MAIN_LABEL_TEXT_COLOR;
-		topLabel.highlightedTextColor = TABLE_MAIN_LABEL_HIGHLIGHT_TEXT_COLOR;
-		topLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize] + 2];
+		if (isButtonCell) {
+			cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+			
+			CGRect r = cell.bounds;
+			r.size.width -= cell.indentationWidth * 2;
+			UIButton *b;
+			if (indexPath.section == [programGroups count]) {
+				b = btnOrganizeProgramGroups;
+			} else if (indexPath.section == [programGroups count] + 1) {
+				b = btnShareAppWithFriend;
+			} else if (indexPath.section == [programGroups count] + 2) {
+				b = btnFeedback;
+			}
+			
+			[b setFrame:r];
+			[cell.contentView addSubview:b];
+			
+			return cell;
+		} else {
+			cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+			
+			UIImage *indicatorImage = [UIImage imageNamed:@"indicator.png"];
+			cell.accessoryView = [[[UIImageView alloc] initWithImage:indicatorImage] autorelease];
+			
+			UIImage *image = [UIImage imageNamed:@"imageA.png"];
+			
+			topLabel = [[[UILabel alloc] initWithFrame:CGRectMake(image.size.width + 2.0 * cell.indentationWidth,
+																0.25 * (aTableView.rowHeight - 2 * LABEL_HEIGHT),
+																aTableView.bounds.size.width - image.size.width - 4.0 * cell.indentationWidth - indicatorImage.size.width,
+																LABEL_HEIGHT)] 
+						autorelease];
+			[cell.contentView addSubview:topLabel];
+			
+			topLabel.tag = TOP_LABEL_TAG;
+			topLabel.backgroundColor = [UIColor clearColor];
+			topLabel.textColor = TABLE_MAIN_LABEL_TEXT_COLOR;
+			topLabel.highlightedTextColor = TABLE_MAIN_LABEL_HIGHLIGHT_TEXT_COLOR;
+			topLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize] + 2];
 
-		bottomLabel = [[[UILabel alloc] initWithFrame:CGRectMake(image.size.width + 2.0 * cell.indentationWidth, 
-																 -4 + 0.5 * (aTableView.rowHeight - 2 * LABEL_HEIGHT) + LABEL_HEIGHT, 
-																 aTableView.bounds.size.width - image.size.width - 4.0 * cell.indentationWidth - indicatorImage.size.width, 
-																 LABEL_HEIGHT)] 
-					   autorelease];
-		bottomLabel.numberOfLines = 2;
-		[cell.contentView addSubview:bottomLabel];
-		
-		bottomLabel.tag = BOTTOM_LABEL_TAG;
-		bottomLabel.backgroundColor = [UIColor clearColor];
-		bottomLabel.textColor = TABLE_SUB_LABEL_TEXT_COLOR;
-		bottomLabel.highlightedTextColor = TABLE_SUB_LABEL_HIGHLIGHT_TEXT_COLOR;
-		bottomLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize] - 2];
-		
-		cell.backgroundView = [[[UIImageView alloc] init] autorelease];
-		cell.selectedBackgroundView = [[[UIImageView alloc] init] autorelease];
+			bottomLabel = [[[UILabel alloc] initWithFrame:CGRectMake(image.size.width + 2.0 * cell.indentationWidth, 
+																	 -4 + 0.5 * (aTableView.rowHeight - 2 * LABEL_HEIGHT) + LABEL_HEIGHT, 
+																	 aTableView.bounds.size.width - image.size.width - 4.0 * cell.indentationWidth - indicatorImage.size.width, 
+																	 LABEL_HEIGHT)] 
+						   autorelease];
+			bottomLabel.numberOfLines = 2;
+			[cell.contentView addSubview:bottomLabel];
+			
+			bottomLabel.tag = BOTTOM_LABEL_TAG;
+			bottomLabel.backgroundColor = [UIColor clearColor];
+			bottomLabel.textColor = TABLE_SUB_LABEL_TEXT_COLOR;
+			bottomLabel.highlightedTextColor = TABLE_SUB_LABEL_HIGHLIGHT_TEXT_COLOR;
+			bottomLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize] - 2];
+			
+			cell.backgroundView = [[[UIImageView alloc] init] autorelease];
+			cell.selectedBackgroundView = [[[UIImageView alloc] init] autorelease];
+		}
+
 		
 		
     }
     
-	topLabel = (UILabel *)[cell viewWithTag:TOP_LABEL_TAG];
-	bottomLabel = (UILabel *)[cell viewWithTag:BOTTOM_LABEL_TAG];
-
-	// Configure the cell.
-	Program *program = [self programForRowAtIndexPath:indexPath];
-	if (program != nil) {
+	if ( ! isButtonCell) {
 		UIImage *rowBackground;
 		UIImage *selectionBackground;
 		NSInteger sectionRows = [aTableView numberOfRowsInSection:[indexPath section]];
@@ -385,22 +424,29 @@
 		((UIImageView *)cell.backgroundView).image = rowBackground;
 		((UIImageView *)cell.selectedBackgroundView).image = selectionBackground;
 		
-		topLabel.text = program.description;
-		bottomLabel.text = program.programSubDescription;
-		
-		CGRect r = CGRectMake(85, 
-							  35, 
-							  bottomLabel.bounds.size.width, 
-							  LABEL_HEIGHT);
-		if ([bottomLabel.text rangeOfString:@"\n"].length != 0) {
-			r.size.height *= 2;
+		topLabel = (UILabel *)[cell viewWithTag:TOP_LABEL_TAG];
+		bottomLabel = (UILabel *)[cell viewWithTag:BOTTOM_LABEL_TAG];
+
+		// Configure the cell.
+		Program *program = [self programForRowAtIndexPath:indexPath];
+		if (program != nil) {
+			topLabel.text = program.description;
+			bottomLabel.text = program.programSubDescription;
+			
+			CGRect r = CGRectMake(85, 
+								  35, 
+								  bottomLabel.bounds.size.width, 
+								  LABEL_HEIGHT);
+			if ([bottomLabel.text rangeOfString:@"\n"].length != 0) {
+				r.size.height *= 2;
+			}
+			[bottomLabel setFrame:r];
+			
+			cell.imageView.image = [UIImage imageNamed:@"imageA.png"];
+		} else {
+			topLabel.text = @"";
+			bottomLabel.text = @"";
 		}
-		[bottomLabel setFrame:r];
-		
-		cell.imageView.image = [UIImage imageNamed:@"imageA.png"];
-	} else {
-		topLabel.text = @"";
-		bottomLabel.text = @"";
 	}
     return cell;
 }
@@ -467,6 +513,61 @@
 
 - (void)dealloc {
     [super dealloc];
+}
+
+#pragma mark Button action methods
+- (IBAction)buttonTapped:(id)sender {
+	if (sender == btnShareAppWithFriend) {
+		[self shareAppWithFriend];
+	} else if (sender == btnFeedback) {
+		[self sendFeedback];
+	} else if (sender == btnOrganizeProgramGroups) {
+		[self organizeProgramGroups];
+	}
+}
+
+- (void)shareAppWithFriend {
+	MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+	controller.mailComposeDelegate = self;
+	controller.navigationBar.barStyle = UIBarStyleBlackOpaque;
+	
+	NSString *subject = [[NSString alloc] initWithFormat:@"%@ on iPhone/iTouch", APPLICATION_NAME];
+	NSString *message = @"Check out this app I've been using to calculate my figure skating IJS scores.";
+
+	[controller setSubject:subject];
+	
+	[controller setMessageBody:message isHTML:YES]; 
+	[self presentModalViewController:controller animated:YES];
+	[controller release];
+}
+
+- (void)sendFeedback {
+	MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+	controller.mailComposeDelegate = self;
+	controller.navigationBar.barStyle = UIBarStyleBlackOpaque;
+	
+	NSString *subject = [[NSString alloc] initWithFormat:@"%@ Feedback", APPLICATION_NAME];
+	NSString *message = @"Describe your feedback.";
+	
+	[controller setToRecipients:[NSArray arrayWithObject:@"prestonrohner@me.com"]];
+	[controller setSubject:subject];
+	
+	[controller setMessageBody:message isHTML:YES]; 
+	[self presentModalViewController:controller animated:YES];
+	[controller release];
+}
+
+- (void)organizeProgramGroups {
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller  
+          didFinishWithResult:(MFMailComposeResult)result 
+                        error:(NSError*)error;
+{
+	if (result == MFMailComposeResultSent) {
+		NSLog(@"It's away!");
+	}
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 
