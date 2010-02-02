@@ -19,7 +19,7 @@
 }
 
 +(void)setGeneralViewLookFor:(UIView *)aView  {
-	aView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tableBackground.png"]];
+	aView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tableBackground.jpg"]];
 }
 
 +(UIView *)getStandardTableSectionHeaderFor:(UITableView *)tableView with:(NSString *)description {

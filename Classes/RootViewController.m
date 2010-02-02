@@ -11,7 +11,8 @@
 #import "ProgramElementsViewController.h"
 #import "ProgramDetailViewController.h"
 
-#define LOAD_TEST_DATA	0
+#define LOAD_TEST_DATA						0
+#define LOAD_TEST_DATA_FOR_SOV_VALIDATION	(0 && LOAD_TEST_DATA)
 
 @implementation RootViewController
 
@@ -50,11 +51,11 @@
 	p1.ordinalPosition = 0;
 	[p1 save];
 	
-	Program *p2 = [[Program alloc] init];
-	p2.description = @"Sectionals";
-	p2.programGroup = pg1;
-	p2.ordinalPosition = 1;
-	[p2 save];
+//	Program *p2 = [[Program alloc] init];
+//	p2.description = @"Sectionals";
+//	p2.programGroup = pg1;
+//	p2.ordinalPosition = 1;
+//	[p2 save];
 
 	Program *p3 = [[Program alloc] init];
 	p3.description = @"Regionals Short";
@@ -62,11 +63,11 @@
 	p3.ordinalPosition = 2;
 	[p3 save];
 
-	Program *p4 = [[Program alloc] init];
-	p4.description = @"Regionals Long";
-	p4.programGroup = pg2;
-	p4.ordinalPosition = 3;
-	[p4 save];
+//	Program *p4 = [[Program alloc] init];
+//	p4.description = @"Regionals Long";
+//	p4.programGroup = pg2;
+//	p4.ordinalPosition = 3;
+//	[p4 save];
 
 	ProgramElement *pe1 = [[ProgramElement alloc] init];
 	pe1.ijsId				= @"2T";
@@ -124,10 +125,83 @@
 	pe7.isSecondHalf		= YES;
 	[pe7 save];
 	
+#if LOAD_TEST_DATA_FOR_SOV_VALIDATION
+
+	ProgramGroup *pg3 = [[ProgramGroup alloc] init];
+	pg3.description = @"Scale of Value Tests";
+	pg3.ordinalPosition = 2;
+	[pg3 save];
+	
+	for (int i = 0; i < 6; i++) {
+		NSString *goe;
+		switch (i) {
+			case 0:
+				goe = GOE_0;
+				break;
+			case 1:
+				goe = GOE_plus_1;
+				break;
+			case 2:
+				goe = GOE_plus_2;
+				break;
+			case 3:
+				goe = GOE_plus_3;
+				break;
+			case 4:
+				goe = GOE_minus_1;
+				break;
+			case 5:
+				goe = GOE_minus_2;
+				break;
+			case 6:
+				goe = GOE_minus_3;
+				break;
+			default:
+				NSAssert(@"Invalid setting up test data", @"whatever");
+				break;
+		}
+
+		Program *allEll = [[Program alloc] init];
+		allEll.description = [[NSString alloc] initWithFormat:@"SOV %@", goe];
+		allEll.programGroup = pg3;
+		allEll.ordinalPosition = i;
+		[allEll save];
+		
+		for (int k = 0; k < 3; k++) {
+			NSArray *array;
+			switch (k) {
+				case 0:
+					array = [Elements groupOfElements:ELEMENT_GROUP_JUMPS];
+					break;
+				case 1:
+					array = [Elements groupOfElements:ELEMENT_GROUP_SPINS];
+					break;
+				case 2:
+					array = [Elements groupOfElements:ELEMENT_GROUP_STEP_SPIRAL];
+					break;
+				default:
+					break;
+			}
+			
+			for (int j = 0; j < [array count]; j++) {
+				Element *e = (Element *)[[array objectAtIndex:j] retain];
+				ProgramElement *pe = [[ProgramElement alloc] init];
+				pe.ijsId			= e.ijsId;
+				pe.ordinalPosition	= j;
+				pe.estimatedGOE		= goe;
+				pe.program			= allEll;
+				pe.isSecondHalf		= NO;
+				[pe save];
+			}
+		}
+
+	}
+#endif
+	
 	[p1 release];
-	[p2 release];
+//	[p2 release];
 	[p3 release];
-	[p4 release];
+//	[p4 release];
 	[pg1 release];
 	[pg2 release];
 #endif
@@ -237,7 +311,7 @@
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	const NSInteger TOP_LABEL_TAG = 1001;
 	const NSInteger BOTTOM_LABEL_TAG = 1002;
-	const CGFloat LABEL_HEIGHT = 20;
+	const CGFloat LABEL_HEIGHT = 23;
 	UILabel *topLabel;
 	UILabel *bottomLabel;
     
@@ -263,10 +337,10 @@
 		topLabel.backgroundColor = [UIColor clearColor];
 		topLabel.textColor = TABLE_MAIN_LABEL_TEXT_COLOR;
 		topLabel.highlightedTextColor = TABLE_MAIN_LABEL_HIGHLIGHT_TEXT_COLOR;
-		topLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize] + 3];
+		topLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize] + 2];
 
 		bottomLabel = [[[UILabel alloc] initWithFrame:CGRectMake(image.size.width + 2.0 * cell.indentationWidth, 
-																 -13 + 0.5 * (aTableView.rowHeight - 2 * LABEL_HEIGHT) + LABEL_HEIGHT, 
+																 -4 + 0.5 * (aTableView.rowHeight - 2 * LABEL_HEIGHT) + LABEL_HEIGHT, 
 																 aTableView.bounds.size.width - image.size.width - 4.0 * cell.indentationWidth - indicatorImage.size.width, 
 																 LABEL_HEIGHT)] 
 					   autorelease];
@@ -323,14 +397,6 @@
 		}
 		[bottomLabel setFrame:r];
 		
-//		if ([bottomLabel.text rangeOfString:@"\n"].length == 0) {
-//			bottomLabel.autoresizingMask = UIViewAutoresizingNone;
-//			bottomLabel.bounds.size.height = LABEL_HEIGHT;
-//		} else {
-//			bottomLabel.bounds.size.height = LABEL_HEIGHT*2;
-//			bottomLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
-//			bottomLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;
-//		}
 		cell.imageView.image = [UIImage imageNamed:@"imageA.png"];
 	} else {
 		topLabel.text = @"";

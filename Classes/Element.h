@@ -36,5 +36,7 @@
 @property  float minus_3;
 
 - (float)scoreForGOE:(NSString *)GOE;
+- (NSString *)ijsIdLetters;
+- (NSString *)ijsIdDigits;
 
 @end

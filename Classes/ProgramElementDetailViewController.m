@@ -13,7 +13,7 @@
 
 @implementation ProgramElementDetailViewController
 
-@synthesize program;
+@synthesize program, existingProgramElement;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -28,6 +28,7 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	viewHasFinishedLoading = NO;
     [super viewDidLoad];
 	
 	self.title = @"Element";
@@ -35,6 +36,7 @@
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneWithElement)] autorelease];
 
 	[ApplicationUtilities setGeneralViewLookFor:self.view];
+	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tableBackground.png"]];
 	[ApplicationUtilities setGeneralViewLookFor:workspaceView];
 	[ApplicationUtilities setGeneralViewLookFor:jumpsView];
 	[ApplicationUtilities setGeneralViewLookFor:spinsView];
@@ -52,13 +54,152 @@
 	jumpComboElement1 = @"";
 	jumpComboElement2 = @"";
 	jumpComboElement3 = @"";
+	
+	[self presetValuesForProgramElement];
+	
+	viewHasFinishedLoading = YES;
+//	[self refreshDisplayInfo];
+	[self performSelector:(@selector(refreshDisplayInfo)) withObject:(nil) afterDelay:0.5];
+}
+
+- (void)presetValuesForProgramElement {
+	if (existingProgramElement == nil) {
+		return;
+	}
+
+	Element *element = [Elements getElementFor:existingProgramElement.ijsId];
+	
+	if ( ! existingProgramElement.isSingleElement) {
+		elementGroupChooser.selectedSegmentIndex = 3;
+		[self pickerView:jumpPickerView setRowForElement:existingProgramElement withArray:jumps];
+
+	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_JUMPS]) {
+		elementGroupChooser.selectedSegmentIndex = 0;
+		[self pickerView:jumpPickerView setRowForElement:existingProgramElement withArray:jumps];
+
+	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_SPINS]) {
+		elementGroupChooser.selectedSegmentIndex = 1;
+		[self pickerView:spinPickerView setRowForElement:existingProgramElement withArray:spins];
+
+	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_STEP_SPIRAL]) {
+		elementGroupChooser.selectedSegmentIndex = 2;
+		[self pickerView:stepSpiralPickerView setRowForElement:existingProgramElement withArray:steps];
+
+	} else {
+		NSAssert(@"Could not identify the group for the element.", @"other");
+	}
+	
+	if ([existingProgramElement.estimatedGOE isEqualToString:GOE_plus_3]) {
+		gradeOfExecutionChooser.selectedSegmentIndex = 0;
+	} else if ([existingProgramElement.estimatedGOE isEqualToString:GOE_plus_2]) {
+		gradeOfExecutionChooser.selectedSegmentIndex = 1;
+	} else if ([existingProgramElement.estimatedGOE isEqualToString:GOE_plus_1]) {
+		gradeOfExecutionChooser.selectedSegmentIndex = 2;
+	} else if ([existingProgramElement.estimatedGOE isEqualToString:GOE_0]) {
+		gradeOfExecutionChooser.selectedSegmentIndex = 3;
+	} else if ([existingProgramElement.estimatedGOE isEqualToString:GOE_minus_1]) {
+		gradeOfExecutionChooser.selectedSegmentIndex = 4;
+	} else if ([existingProgramElement.estimatedGOE isEqualToString:GOE_minus_2]) {
+		gradeOfExecutionChooser.selectedSegmentIndex = 5;
+	} else if ([existingProgramElement.estimatedGOE isEqualToString:GOE_minus_3]) {
+		gradeOfExecutionChooser.selectedSegmentIndex = 6;
+	}
+
+	
+}
+
+- (void)goeChanged:(id)sender {
+	[self refreshDisplayInfo];
+}
+
+- (void)refreshDisplayInfo {
+	if ( ! viewHasFinishedLoading) {
+		return;
+	}
+
+	ProgramElement *pe = [[ProgramElement alloc] init];
+	
+	if ([elementGroupChooser selectedSegmentIndex] == 3) {
+		pe.ijsId = jumpComboElement1;
+		pe.ijsIdSecond = jumpComboElement2;
+		pe.ijsIdThird = jumpComboElement3;
+		if ([pe.ijsId isEqualToString:@""]) {
+			pe.ijsId = [self ijsIdFromPicker:jumpComboPickerView];;
+		}
+		if (jumpComboSeqChooser.selectedSegmentIndex == 0) {
+			pe.jumpComboType = JUMP_COMBO_TYPE_COMBO;
+		} else {
+			pe.jumpComboType = JUMP_COMBO_TYPE_SEQ;
+		}
+	} else {
+		switch ([elementGroupChooser selectedSegmentIndex]) {
+			case 0:
+				pe.ijsId = [self ijsIdFromPicker:jumpPickerView];
+				break;
+			case 1:
+				pe.ijsId = [self ijsIdFromPicker:spinPickerView];
+				break;
+			case 2:
+				pe.ijsId = [self ijsIdFromPicker:stepSpiralPickerView];
+				break;
+			default:
+				break;
+		}
+	}
+	if (pe) {
+		NSString *desc = [[NSString alloc] initWithFormat:@"%@\nBase %.2f, GOE %.2f", 
+						  pe.shortenedDescription, 
+						  pe.baseScore,
+						  [pe scoreForGOE:[self goeScoreAsString] ]
+						  ];
+		jumpList.text = desc;
+		jumpList.alpha = 0.25;
+		[self performSelector:(@selector(resetJumpListBackgroundColor)) withObject:(nil) afterDelay:0.5];
+	}
+	
+}
+
+- (void)resetJumpListBackgroundColor {
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:.5];
+	[UIView setAnimationDelegate:self];     
+	jumpList.alpha = 1;
+	jumpList.opaque = NO;
+	jumpList.backgroundColor = [UIColor clearColor];
+	
+	[UIView commitAnimations];	
+	
+}
+
+- (void)pickerView:(UIPickerView *)pickerView setRowForElement:(ProgramElement *)programElement withArray:(NSArray *)elements {
+	Element *element = [Elements getElementFor:existingProgramElement.ijsId];
+
+	NSString *letters = [[NSString alloc] initWithFormat:@"-%@", [element ijsIdLetters]];
+	NSString *digits = [element ijsIdDigits];
+	for (int i = 0; i < [elements count]; i++) {
+		NSString *theElement = (NSString *)[elements objectAtIndex:i];
+		NSRange range = [theElement rangeOfString:letters];
+		NSLog(@"Searched for %@ in %@", letters, theElement);
+		if (range.length > 0) {
+			[pickerView selectRow:i inComponent:0 animated:YES];
+			break;
+		}
+	}
+
+	[pickerView selectRow:([digits intValue] - 1) inComponent:1 animated:YES];
 }
 
 - (void)doneWithElement {
-	ProgramElement *programElement = [[ProgramElement alloc] init];
-	programElement.ordinalPosition	= [program elementsInHalf:YES] - 1;
-	programElement.program			= program;
-	programElement.isSecondHalf		= NO;
+	ProgramElement *programElement;
+	if (existingProgramElement == nil) {
+		programElement = [[ProgramElement alloc] init];
+		programElement.ordinalPosition	= [program elementsInHalf:YES] - 1;
+		programElement.program			= program;
+		programElement.isSecondHalf		= NO;
+	} else {
+		programElement = existingProgramElement;
+	}
+
 
 	switch (elementGroupChooser.selectedSegmentIndex) {
 		case 0:
@@ -85,36 +226,42 @@
 			break;
 	}
 
-	switch (gradeOfExecutionChooser.selectedSegmentIndex) {
-		case 0:
-			programElement.estimatedGOE		= GOE_plus_3;
-			break;
-		case 1:
-			programElement.estimatedGOE		= GOE_plus_2;
-			break;
-		case 2:
-			programElement.estimatedGOE		= GOE_plus_1;
-			break;
-		case 3:
-			programElement.estimatedGOE		= GOE_0;
-			break;
-		case 4:
-			programElement.estimatedGOE		= GOE_minus_1;
-			break;
-		case 5:
-			programElement.estimatedGOE		= GOE_minus_2;
-			break;
-		case 6:
-			programElement.estimatedGOE		= GOE_minus_3;
-			break;
-		default:
-			break;
-	}
+	programElement.estimatedGOE		= [self goeScoreAsString];
 	
 	[programElement save];
 
 //	[self.navigationController popViewControllerAnimated:YES];
 	[self.navigationController dismissModalViewControllerAnimated:YES];
+}
+
+- (NSString *)goeScoreAsString {
+	NSString *goeString = @"";
+	switch (gradeOfExecutionChooser.selectedSegmentIndex) {
+		case 0:
+			goeString		= GOE_plus_3;
+			break;
+		case 1:
+			goeString		= GOE_plus_2;
+			break;
+		case 2:
+			goeString		= GOE_plus_1;
+			break;
+		case 3:
+			goeString		= GOE_0;
+			break;
+		case 4:
+			goeString		= GOE_minus_1;
+			break;
+		case 5:
+			goeString		= GOE_minus_2;
+			break;
+		case 6:
+			goeString		= GOE_minus_3;
+			break;
+		default:
+			break;
+	}
+	return goeString;
 }
 
 - (void)cancelElement {
@@ -172,7 +319,8 @@
 			currentView = nil;
 			break;
 	}
-	
+
+	[self refreshDisplayInfo];
 //	[self.view addSubview:currentView];
 	
 	if (currentView) {
@@ -215,13 +363,20 @@
 - (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {	
 	switch (component) {
 		case 0:
+		{
+			NSString *txt;
 			if (thePickerView == jumpPickerView || thePickerView == jumpComboPickerView) {
-				return [jumps objectAtIndex:row];
+				txt = [jumps objectAtIndex:row];
 			} else if (thePickerView == spinPickerView) {
-				return [spins objectAtIndex:row];
+				txt = [spins objectAtIndex:row];
 			} else if (thePickerView == stepSpiralPickerView) {
-				return [steps objectAtIndex:row];
+				txt = [steps objectAtIndex:row];
 			}
+			NSRange r = [txt rangeOfString:@"-"];
+			txt = [txt substringToIndex:r.location];
+//			txt = [txt stringByReplacingOccurrencesOfString:@"Level" withString:@"Lvl"];
+			return txt;
+		}
 			break;
 		case 1:
 			switch (row) {
@@ -264,7 +419,7 @@
     return 320;
 }
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {	
-	//textView.text = [elementDescriptions objectAtIndex:row];
+	[self refreshDisplayInfo];
 }
 
 - (NSString *)ijsIdFromPicker:(UIPickerView *)picker {
@@ -301,6 +456,7 @@
 	}
 	
 	[self updateJumpComboLabel];
+	[self refreshDisplayInfo];
 }
 
 - (IBAction)jumpComboReset:(id)sender {
@@ -308,6 +464,7 @@
 	jumpComboElement1 = @"";
 	jumpComboElement2 = @"";
 	jumpComboElement3 = @"";
+	[self refreshDisplayInfo];
 	
 }
 
@@ -321,6 +478,7 @@
 
 - (IBAction)jumpComboValueChanged:(id)sender {
 	[self updateJumpComboLabel];
+	[self refreshDisplayInfo];
 }
 
 @end

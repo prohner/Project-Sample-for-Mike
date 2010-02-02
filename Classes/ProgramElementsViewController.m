@@ -9,6 +9,7 @@
 #import "ProgramElementsViewController.h"
 #import "ApplicationUtilities.h"
 #import "ProgramElementDetailViewController.h"
+#import "ProgramElementViewCell.h"
 
 #define INDEXPATH_DUMMY_SECTION		2
 
@@ -30,11 +31,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addElement)] autorelease];
-//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-//	self.editButtonItem.action = @selector(editButtonPushed:);
-	self.editing = YES;
+	toolbarForAddEdit = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 97, 44.01)];
+	toolbarForAddEdit.barStyle = UIBarStyleBlackOpaque;
+	
+	// create the array to hold the buttons, which then gets added to the toolbar
+	NSMutableArray* buttons = [[NSMutableArray alloc] initWithCapacity:3];
+	
+	// create a standard "add" button
+	UIBarButtonItem* bi = [[UIBarButtonItem alloc]
+						   initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addElement)];
+	bi.style = UIBarButtonItemStyleBordered;
+	[buttons addObject:bi];
+	[bi release];
+	
+	// create a spacer
+	bi = [[UIBarButtonItem alloc]
+		  initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+	[buttons addObject:bi];
+	[bi release];
+	
+	// create a standard "edit" button
+	[buttons addObject:self.editButtonItem];
+	
+	// stick the buttons in the toolbar
+	[toolbarForAddEdit setItems:buttons animated:NO];
+	
+	[buttons release];
+	
+	// and put the toolbar in the nav bar
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:toolbarForAddEdit];
+	
 	self.title = program.description;
 	
 	programElements = [program programElements];
@@ -45,7 +71,7 @@
 	
 	[ApplicationUtilities setupStandardTableLookFor:self.tableView inView:self.parentViewController.view];
 	
-	[headerView setFrame:CGRectMake(5, 5, 310, 80)];
+	[headerView setFrame:CGRectMake(5, 5, 310, 68)];
 	self.tableView.tableHeaderView = headerView;
 	[self setScoreLabel];
 	indexPathOfDummyElement = nil;
@@ -60,6 +86,11 @@
 #ifdef DEBUG
 	[self dumpProgramElements:@"In viewWillAppear"];
 #endif
+
+	NSIndexPath *selection = [self.tableView indexPathForSelectedRow];
+	if (selection) {
+		[self.tableView deselectRowAtIndexPath:selection animated:YES];
+	}
 	
 	[self.tableView reloadData];
 	[self setScoreLabel];
@@ -76,18 +107,23 @@
 }
 #endif
 
-- (id) addElement {
-
+- (void) elementDetailViewControllerFor:(ProgramElement *)programElement {
 	ProgramElementDetailViewController *addController = [[ProgramElementDetailViewController alloc] initWithNibName:@"ProgramElementDetailViewController" bundle:nil];
 	addController.program = program;
+	addController.existingProgramElement = programElement;
 	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addController];
-		navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+	navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
 	[self.navigationController presentModalViewController:navigationController animated:YES];
 	[navigationController release];
 	[addController release];
 
+}
+- (id) addElement {
+	[self elementDetailViewControllerFor:nil];
+	
 	return self;
 }
+
 
 - (void) editButtonPushed:(id)sender {
 	self.editing = NO;
@@ -155,7 +191,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	BOOL isFirstHalf = (section == 0);
 	int iRowCount = [program elementsInHalf:isFirstHalf];
-	
+
 	if (section == INDEXPATH_DUMMY_SECTION) {
 		iRowCount = 1;
 	}
@@ -196,88 +232,94 @@
 //	if (indexPath.section == 1) {
 //		return 0;
 //	}
-//	return 40;
+//	return 100;
 //}
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    const int LABEL_DESCRIPTION_TAG = 1;
-    const int LABEL_SCORE_TAG		= 2;
-    const int LABEL_GOE_TAG			= 3;
+//    const int LABEL_DESCRIPTION_TAG = 1;
+//    const int LABEL_SCORE_TAG		= 2;
+//    const int LABEL_GOE_TAG			= 3;
 	
-    NSString *CellIdentifier = @"Cell Generic";
-	BOOL isDummyCell = (indexPath.section == INDEXPATH_DUMMY_SECTION);
-	
-	ProgramElement *programElement = [self programElementForRowAtIndexPath:indexPath];
-    if (isDummyCell) {
-		CellIdentifier = @"Cell Dummy";
-	}
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    NSString *CellIdentifier = @"ProgramElementViewCell";
+
+	if (indexPath.section != INDEXPATH_DUMMY_SECTION) {
+		NSLog(@"Processing section=%i, row=%i", indexPath.section, indexPath.row);
+		ProgramElement *programElement = [self programElementForRowAtIndexPath:indexPath];
 		
-		if ( ! isDummyCell ) {
-			UILabel *description = [[UILabel alloc] initWithFrame:CGRectMake(12, 2, 190, 38)];
-			description.tag = LABEL_DESCRIPTION_TAG;
-			description.backgroundColor = [UIColor clearColor];
-			description.textColor = TABLE_MAIN_LABEL_TEXT_COLOR;
-			description.highlightedTextColor = TABLE_MAIN_LABEL_HIGHLIGHT_TEXT_COLOR;
-			description.adjustsFontSizeToFitWidth = YES;
-			description.lineBreakMode = UILineBreakModeWordWrap;
-			description.numberOfLines = 0;
-			[cell.contentView addSubview:description];
-			[description release];
+		@try {
+			ProgramElementViewCell *cell = (ProgramElementViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
-			UILabel *score = [[UILabel alloc] initWithFrame:CGRectMake(200, 2, 70, 18)];
-			score.tag = LABEL_SCORE_TAG;
-			score.backgroundColor = [UIColor clearColor];
-			score.textColor = TABLE_SUB_LABEL_TEXT_COLOR;
-			score.highlightedTextColor = TABLE_SUB_LABEL_HIGHLIGHT_TEXT_COLOR;
-			score.font = [UIFont systemFontOfSize:14];
-			[cell.contentView addSubview:score];
-			[score release];
+			if (cell == nil) {
+				NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"ProgramElementViewCell" owner:self options:nil];
+				cell = [[topLevelObjects objectAtIndex:0] retain];
+				[cell realInitialization];
+				
+			}
 
-			UILabel *goe = [[UILabel alloc] initWithFrame:CGRectMake(200, 20, 70, 18)];
-			goe.tag = LABEL_GOE_TAG;
-			goe.backgroundColor = [UIColor clearColor];
-			goe.textColor = TABLE_SUB_LABEL_TEXT_COLOR;
-			goe.highlightedTextColor = TABLE_SUB_LABEL_HIGHLIGHT_TEXT_COLOR;
-			goe.font = [UIFont systemFontOfSize:14];
-			[cell.contentView addSubview:goe];
-			[goe release];
-		} else {
+			cell.description.text = programElement.description;
+			
+#ifdef DEBUG
+			NSLog(@"Scoring %@", programElement.description);
+			NSLog(@"\tGOE Score %.2f", [programElement goeScore]);
+#endif
+			cell.baseScore.text = [[NSString alloc] initWithFormat:@"%.2f", [programElement baseScore]];
+			cell.goeScore.text = [[NSString alloc] initWithFormat:@"%.2f", [programElement baseScore] + [programElement goeScore]];
+			
+			if ([[programElement estimatedGOE] isEqualToString:GOE_0]) {
+				cell.goe.text = @"-";
+			} else {
+				cell.goe.text = [programElement estimatedGOE];
+			}
+			
+			
+			UIImage *rowBackground;
+			UIImage *selectionBackground;
+			NSInteger sectionRows = [tableView numberOfRowsInSection:[indexPath section]];
+			NSInteger row = [indexPath row];
+			if (row == 0 && row == sectionRows - 1) {
+				rowBackground = [UIImage imageNamed:@"topAndBottomRow.png"];
+				selectionBackground = [UIImage imageNamed:@"topAndBottomRowSelected.png"];
+			} else if (row == 0) {
+				rowBackground = [UIImage imageNamed:@"topRow.png"];
+				selectionBackground = [UIImage imageNamed:@"topRowSelected.png"];
+			} else if (row == sectionRows - 1) {
+				rowBackground = [UIImage imageNamed:@"bottomRow.png"];
+				selectionBackground = [UIImage imageNamed:@"bottomRowSelected.png"];
+			} else {
+				rowBackground = [UIImage imageNamed:@"middleRow.png"];
+				selectionBackground = [UIImage imageNamed:@"middleRowSelected.png"];
+			}
+			
+			[cell setBackgroundImage:rowBackground andSelectionBackgroundImage:selectionBackground];
+
+			return cell;
+		}
+		@catch (NSException * e) {
+			NSString *msg = [e reason];
+			NSLog(@"Exception thrown: %@", msg);
+		}
+
+	} else {
+		@try {
+			CellIdentifier = @"ProgramElementViewCell Dummy";
+			UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+			if (cell == nil) {
+				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+			}
 			CGRect r = cell.bounds;
 			r.size.width -= cell.indentationWidth * 2;
-			
 			[btnSendEmail setFrame:r];
 			[cell.contentView addSubview:btnSendEmail];
-
+			
+			return cell;
+		}
+		@catch (NSException * e) {
+			NSString *msg = [e reason];
+			NSLog(@"Exception thrown: %@", msg);
 		}
 	}
-
-	UILabel *description = (UILabel *)[cell viewWithTag:LABEL_DESCRIPTION_TAG];
-	UILabel *score = (UILabel *)[cell viewWithTag:LABEL_SCORE_TAG];
-	UILabel *goe = (UILabel *)[cell viewWithTag:LABEL_GOE_TAG];
-
-    if ( ! isDummyCell) {
-		description.text = programElement.description;
-#ifdef DEBUG
-		NSLog(@"Scoring %@", programElement.description);
-		NSLog(@"\tGOE Score %.2f", [programElement goeScore]);
-#endif
-		score.text = [[NSString alloc] initWithFormat:@"%.2f", [programElement baseScore]];
-		goe.text = [[NSString alloc] initWithFormat:@"%.2f", [programElement goeScore]];
-		if ([goe.text isEqualToString:GOE_0]) {
-			goe.text = @"-";
-		}
-//	} else {
-//		description.text = @"Move elements as needed";
-//		indexPathOfDummyElement = indexPath;
-	}
-
-	
-    return cell;
+	return nil;		
 }
 
 
@@ -286,6 +328,10 @@
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
 	// [self.navigationController pushViewController:anotherViewController];
 	// [anotherViewController release];
+	int index = [self arrayIndexFromIndexPath:indexPath];
+	ProgramElement *programElementToEdit = (ProgramElement *)[[programElements objectAtIndex:index] retain];
+	[self elementDetailViewControllerFor:programElementToEdit];
+	[programElementToEdit release];
 }
 
 
@@ -435,6 +481,7 @@
 - (void)dealloc {
     [super dealloc];
 	[programElements dealloc];
+	[toolbarForAddEdit dealloc];
 }
 
 
