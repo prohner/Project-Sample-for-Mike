@@ -1,18 +1,17 @@
 //
-//  ProgramGroupViewController.m
+//  ProgramGroupAddController.m
 //  SkateScoreGuide
 //
-//  Created by Preston Rohner on 1/27/10.
+//  Created by Preston Rohner on 2/2/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "ProgramGroupViewController.h"
-#import "ApplicationUtilities.h"
 #import "ProgramGroupAddController.h"
+#import "ApplicationUtilities.h"
 
-@implementation ProgramGroupViewController
+@implementation ProgramGroupAddController
 
-@synthesize programGroupDescription, cannotDeleteWarningView;
+@synthesize description;
 
 /*
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -28,47 +27,43 @@
     [super viewDidLoad];
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	UIBarButtonItem* bi = [[UIBarButtonItem alloc]
+						   initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelAdd)];
+	self.navigationItem.leftBarButtonItem = bi;
 
+	bi = [[UIBarButtonItem alloc]
+		  initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(finishAdd)];
+	self.navigationItem.rightBarButtonItem = bi;
+	
 	[ApplicationUtilities setupStandardTableLookFor:self.tableView inView:self.parentViewController.view];
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-																			   target:self 
-																			   action:@selector(addProgramGroup)];
-	self.navigationItem.leftBarButtonItem = addButton;
-
-	UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-																			   target:self 
-																			   action:@selector(doneWithProgramGroups)];
-	self.navigationItem.rightBarButtonItem = doneButton;
-	
-	self.title = @"Program Groups";
-	self.editing = YES;
-	
-	self.tableView.tableFooterView = cannotDeleteWarningView;
-
 }
 
-- (void)addProgramGroup {
-	ProgramGroupAddController *addController = [[ProgramGroupAddController alloc] initWithNibName:@"ProgramGroupAddController" bundle:nil];
-	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addController];
-	navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-	[self.navigationController presentModalViewController:navigationController animated:YES];
-	[navigationController release];
-	[addController release];
-	
+- (void)cancelAdd {
+	[self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
-- (void)doneWithProgramGroups {
-	[self.navigationController popViewControllerAnimated:YES];
+- (void)finishAdd {
+	if ([description.text length] > 0) {
+		ProgramGroup *pg2 = [[ProgramGroup alloc] init];
+		pg2.description = description.text;
+		pg2.ordinalPosition = 1;
+		[pg2 save];
+	} else {
+		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle: @"Missing Description" message: @"Since there was no description the program group was not added." delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
+		
+		[alertView show];
+		[alertView release];
+	}
+		
+	[self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
+/*
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-	programGroups = [[[ProgramGroup findByCriteria: @"WHERE 1 = 1"] retain] mutableCopy];
-	cannotDeleteWarningView.hidden = [programGroups count] > 1;
 }
-
+*/
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -115,7 +110,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [programGroups count];
+    return 1;
 }
 
 
@@ -127,11 +122,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		cell.alpha = 0;
+		[description setFrame:CGRectMake(10, 0, 300, 44)];
+		[cell addSubview:description];
     }
     
-    // Set up the cell...
-	ProgramGroup *pg = (ProgramGroup *)[programGroups objectAtIndex:indexPath.row];
-	cell.textLabel.text = pg.description;
 	
     return cell;
 }
@@ -145,65 +140,44 @@
 }
 
 
-
+/*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
-	if ([programGroups count] > 1) {
-		return YES;
-	} else {
-		return NO;
-	}
+    return YES;
 }
+*/
 
 
-
-
+/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-		int iDefaultIndex = -1;
-		for (iDefaultIndex = 0; iDefaultIndex < [programGroups count]; iDefaultIndex++) {
-			if (iDefaultIndex != indexPath.row) {
-				break;
-			}
-		}
-		NSAssert(iDefaultIndex >= 0, @"Error finding default index.");
-		
-		ProgramGroup *defaultProgramGroup = [[programGroups objectAtIndex:iDefaultIndex] retain];
-		ProgramGroup *deletedProgramGroup = [[programGroups objectAtIndex:indexPath.row] retain];
-		NSArray *programs = [deletedProgramGroup findRelated:[Program class]];
-		for (Program *program in programs) {
-			program.programGroup = defaultProgramGroup;
-			[program save];
-		}
-		
-		[deletedProgramGroup deleteObject];
-		[programGroups removeObjectAtIndex:indexPath.row];
-
-		cannotDeleteWarningView.hidden = [programGroups count] > 1;
-
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
-    } else if (editingStyle == UITableViewCellEditingStyleNone) {
-		[self dismissModalViewControllerAnimated:YES];
-	}
-
+    }   
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
 }
+*/
 
 
-
+/*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
 }
+*/
 
 
+/*
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
+*/
 
 
 - (void)dealloc {

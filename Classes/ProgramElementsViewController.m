@@ -70,6 +70,7 @@
 #endif
 	
 	[ApplicationUtilities setupStandardTableLookFor:self.tableView inView:self.parentViewController.view];
+	[ApplicationUtilities setGeneralButtonLookFor:btnSendEmail];
 	
 	[headerView setFrame:CGRectMake(5, 5, 310, 68)];
 	self.tableView.tableHeaderView = headerView;
@@ -496,11 +497,11 @@
 	NSString *body = @"<html><body><br /><br /><br />"
 	"<table cellspacing=\"0\" border=\"1\">"
 	"<tr><th colspan=\"4\"><!--title--></th></tr>"
-	"<tr><th colspan=\"4\">First Half</th></tr>"
 	"<th>Element</th>"
 	"<th>Expected GOE</th>"
 	"<th>Base Score</th>"
 	"<th>GOE Score</th>"
+	"<tr><th colspan=\"4\">First Half</th></tr>"
 	"<!--firsthalf-->"
 	"<tr><th colspan=\"4\">Second Half</th></tr>"
 	"<!--secondhalf-->"

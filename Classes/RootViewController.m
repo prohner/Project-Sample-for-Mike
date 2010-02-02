@@ -10,13 +10,11 @@
 #import "ApplicationUtilities.h"
 #import "ProgramElementsViewController.h"
 #import "ProgramDetailViewController.h"
-
-#define LOAD_TEST_DATA						0
-#define LOAD_TEST_DATA_FOR_SOV_VALIDATION	(0 && LOAD_TEST_DATA)
+#import "ProgramGroupViewController.h"
 
 @implementation RootViewController
 
-@synthesize imageView, tableView, btnShareAppWithFriend, btnFeedback, btnOrganizeProgramGroups;
+@synthesize imageView, tableView, btnShareAppWithFriend, btnFeedback, btnOrganizeProgramGroups, myTableFooterView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -207,9 +205,12 @@
 	
 	[ApplicationUtilities setupStandardTableLookFor:tableView inView:self.parentViewController.view];
 	tableView.rowHeight = 85;
-	programGroups = [[ProgramGroup findByCriteria: @"WHERE 1 = 1"] retain];
+	tableView.tableFooterView = myTableFooterView;
 	
-	[self loadData];
+	[ApplicationUtilities setGeneralButtonLookFor:btnShareAppWithFriend];
+	[ApplicationUtilities setGeneralButtonLookFor:btnFeedback];
+	[ApplicationUtilities setGeneralButtonLookFor:btnOrganizeProgramGroups];
+
 }
 
 - (void)loadData {
@@ -237,6 +238,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+	programGroups = [[ProgramGroup findByCriteria: @"WHERE 1 = 1"] retain];
 	[self loadData];
 	[self.tableView reloadData];
 }
@@ -281,7 +283,7 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [programGroups count] + 3;
+    return [programGroups count];
 }
 
 
@@ -345,19 +347,27 @@
 		if (isButtonCell) {
 			cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
 			
-			CGRect r = cell.bounds;
-			r.size.width -= cell.indentationWidth * 2;
-			UIButton *b;
-			if (indexPath.section == [programGroups count]) {
-				b = btnOrganizeProgramGroups;
-			} else if (indexPath.section == [programGroups count] + 1) {
-				b = btnShareAppWithFriend;
-			} else if (indexPath.section == [programGroups count] + 2) {
-				b = btnFeedback;
-			}
+			CGRect r1 = cell.bounds;
+			r1.origin.x = 10;
+			r1.origin.y = 0;
+			r1.size.width = 93;
+			[btnOrganizeProgramGroups setFrame:r1];
 			
-			[b setFrame:r];
-			[cell.contentView addSubview:b];
+			CGRect r2 = cell.bounds;
+			r2.origin.x = 103;
+			r2.origin.y = 0;
+			r2.size.width = 93;
+			[btnShareAppWithFriend setFrame:r2];
+			
+			CGRect r3 = cell.bounds;
+			r3.origin.x = 206;
+			r3.origin.y = 0;
+			r3.size.width = 93;
+			[btnShareAppWithFriend setFrame:r2];
+			
+			[cell.contentView addSubview:btnOrganizeProgramGroups];
+			[cell.contentView addSubview:btnShareAppWithFriend];
+			[cell.contentView addSubview:btnFeedback];
 			
 			return cell;
 		} else {
@@ -558,6 +568,9 @@
 }
 
 - (void)organizeProgramGroups {
+	ProgramGroupViewController *programGroupsViewController = [[ProgramGroupViewController alloc] initWithNibName:@"ProgramGroupViewController" bundle:nil];
+	[self.navigationController pushViewController:programGroupsViewController animated:YES];
+	[programGroupsViewController release];
 }
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller  

@@ -13,6 +13,7 @@
 @interface RootViewController : UITableViewController <MFMailComposeViewControllerDelegate> {
 	UITableView *tableView;
 	UIImageView *imageView;
+	UIView *myTableFooterView;
 	
 	NSArray *programGroups;
 	NSMutableArray *programGroupPrograms;
@@ -24,6 +25,7 @@
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
+@property (nonatomic, retain) IBOutlet UIView *myTableFooterView;
 
 @property (nonatomic, retain) IBOutlet UIButton *btnShareAppWithFriend;
 @property (nonatomic, retain) IBOutlet UIButton *btnFeedback;

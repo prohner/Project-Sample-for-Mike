@@ -15,6 +15,10 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		E722A42A11189C1F00843FFC /* whiteButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E722A42911189C1F00843FFC /* whiteButtonBackground.png */; };
+		E722A4CA1118AD6800843FFC /* ProgramGroupAddController.m in Sources */ = {isa = PBXBuildFile; fileRef = E722A4C81118AD6800843FFC /* ProgramGroupAddController.m */; };
+		E722A4CB1118AD6800843FFC /* ProgramGroupAddController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E722A4C91118AD6800843FFC /* ProgramGroupAddController.xib */; };
+		E722A5301118C17400843FFC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E722A52F1118C17400843FFC /* Default.png */; };
 		E74540E0111006D900FD9036 /* NSData-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540C1111006D900FD9036 /* NSData-SQLitePersistence.m */; };
 		E74540E1111006D900FD9036 /* NSDate-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540C3111006D900FD9036 /* NSDate-SQLitePersistence.m */; };
 		E74540E2111006D900FD9036 /* NSMutableArray-MultipleSort.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540C5111006D900FD9036 /* NSMutableArray-MultipleSort.m */; };
@@ -78,6 +82,11 @@
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* SkateScoreGuide-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SkateScoreGuide-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		E722A42911189C1F00843FFC /* whiteButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whiteButtonBackground.png; path = Images/whiteButtonBackground.png; sourceTree = "<group>"; };
+		E722A4C71118AD6800843FFC /* ProgramGroupAddController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramGroupAddController.h; sourceTree = "<group>"; };
+		E722A4C81118AD6800843FFC /* ProgramGroupAddController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramGroupAddController.m; sourceTree = "<group>"; };
+		E722A4C91118AD6800843FFC /* ProgramGroupAddController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProgramGroupAddController.xib; path = Classes/ProgramGroupAddController.xib; sourceTree = "<group>"; };
+		E722A52F1118C17400843FFC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		E74540C0111006D900FD9036 /* NSData-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/NSData-SQLitePersistence.h"; sourceTree = "<group>"; };
 		E74540C1111006D900FD9036 /* NSData-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData-SQLitePersistence.m"; path = "sqlitepersistentobjects/src/NSData-SQLitePersistence.m"; sourceTree = "<group>"; };
 		E74540C2111006D900FD9036 /* NSDate-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/NSDate-SQLitePersistence.h"; sourceTree = "<group>"; };
@@ -184,6 +193,8 @@
 				E7B1E53B111646CE0053C0B5 /* ProgramElementViewCell.m */,
 				E74545F711114D2000FD9036 /* ProgramElementsViewController.h */,
 				E74545F811114D2000FD9036 /* ProgramElementsViewController.m */,
+				E722A4C71118AD6800843FFC /* ProgramGroupAddController.h */,
+				E722A4C81118AD6800843FFC /* ProgramGroupAddController.m */,
 				E7454199111087CC00FD9036 /* ProgramGroupViewController.h */,
 				E745419A111087CC00FD9036 /* ProgramGroupViewController.m */,
 				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
@@ -264,6 +275,7 @@
 				E745491911123C6400FD9036 /* ProgramElementDetailViewController.xib */,
 				E7B1E608111661A50053C0B5 /* ProgramElementViewCell.xib */,
 				E74545F911114D2000FD9036 /* ProgramElementsViewController.xib */,
+				E722A4C91118AD6800843FFC /* ProgramGroupAddController.xib */,
 				E745419B111087CC00FD9036 /* ProgramGroupViewController.xib */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				8D1107310486CEB800E47090 /* SkateScoreGuide-Info.plist */,
@@ -286,6 +298,8 @@
 		E74541111110094700FD9036 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E722A52F1118C17400843FFC /* Default.png */,
+				E722A42911189C1F00843FFC /* whiteButtonBackground.png */,
 				E7AC09541116A47E00802AFF /* tableBackground.jpg */,
 				E745489B111205C600FD9036 /* score_sheet.jpg */,
 				E74543F41110EAD600FD9036 /* bottomRow.png */,
@@ -389,6 +403,9 @@
 				E7B1E1FD1114071B0053C0B5 /* ProgramDetailViewController.xib in Resources */,
 				E7B1E609111661A50053C0B5 /* ProgramElementViewCell.xib in Resources */,
 				E7AC09551116A47E00802AFF /* tableBackground.jpg in Resources */,
+				E722A42A11189C1F00843FFC /* whiteButtonBackground.png in Resources */,
+				E722A4CB1118AD6800843FFC /* ProgramGroupAddController.xib in Resources */,
+				E722A5301118C17400843FFC /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +446,7 @@
 				E745491A11123C6400FD9036 /* ProgramElementDetailViewController.m in Sources */,
 				E7B1E1FC1114071B0053C0B5 /* ProgramDetailViewController.m in Sources */,
 				E7B1E53C111646CE0053C0B5 /* ProgramElementViewCell.m in Sources */,
+				E722A4CA1118AD6800843FFC /* ProgramGroupAddController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

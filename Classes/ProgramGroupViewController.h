@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface ProgramGroupViewController : UITableViewController {
 	UITextField *programGroupDescription;
+	NSMutableArray *programGroups;
+	UIView *cannotDeleteWarningView;
 }
 	
 @property (nonatomic, retain) IBOutlet UITextField *programGroupDescription;
+@property (nonatomic, retain) IBOutlet UIView *cannotDeleteWarningView;
+
+- (void)addProgramGroup;
+- (void)doneWithProgramGroups;
+
 @end

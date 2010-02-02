@@ -14,7 +14,11 @@
 #import "Elements.h"
 #import "Element.h"
 
-#define APPLICATION_NAME		@"Skate Score"
+#define APPLICATION_NAME		@"Sk8Score!"
+
+#define LOAD_TEST_DATA						1
+#define LOAD_TEST_DATA_FOR_SOV_VALIDATION	(0 && LOAD_TEST_DATA)
+
 
 #define GOE_plus_1				@"+1"
 #define GOE_plus_2				@"+2"
@@ -39,6 +43,8 @@
 
 +(void)setupStandardTableLookFor:(UITableView *)tableView inView:(UIView *)aView;
 +(void)setGeneralViewLookFor:(UIView *)aView ;
++(void)setGeneralButtonLookFor:(UIButton *)aButton;
+
 +(UIView *)getStandardTableSectionHeaderFor:(UITableView *)tableView with:(NSString *)description;
 
 @end

@@ -22,6 +22,12 @@
 	aView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tableBackground.jpg"]];
 }
 
++(void)setGeneralButtonLookFor:(UIButton *)aButton {
+	UIImage *buttonBackground = [UIImage imageNamed:@"whiteButtonBackground.png"];
+	UIImage *newImage = [buttonBackground stretchableImageWithLeftCapWidth:12.0 topCapHeight:0.0];
+	[aButton setBackgroundImage:newImage forState:UIControlStateNormal];
+}
+
 +(UIView *)getStandardTableSectionHeaderFor:(UITableView *)tableView with:(NSString *)description {
 
     tableView.sectionHeaderHeight = 35;
