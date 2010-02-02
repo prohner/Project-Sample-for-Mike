@@ -29,9 +29,9 @@
 	};
 	28C286E00D94DF7D0034E888 /* RootViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {947, 7865}}";
-			sepNavSelRange = "{4978, 0}";
-			sepNavVisRange = "{5239, 620}";
+			sepNavIntBoundsRect = "{{0, 0}, {1216, 6851}}";
+			sepNavSelRange = "{12866, 0}";
+			sepNavVisRange = "{8246, 2990}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -351,6 +351,9 @@
 			E722A54A1118C64000843FFC /* PBXTextBookmark */ = E722A54A1118C64000843FFC /* PBXTextBookmark */;
 			E722A54B1118C64000843FFC /* PBXTextBookmark */ = E722A54B1118C64000843FFC /* PBXTextBookmark */;
 			E722A54C1118C64000843FFC /* PBXTextBookmark */ = E722A54C1118C64000843FFC /* PBXTextBookmark */;
+			E722A5521118C72400843FFC /* PBXTextBookmark */ = E722A5521118C72400843FFC /* PBXTextBookmark */;
+			E722A5531118C72400843FFC /* PBXTextBookmark */ = E722A5531118C72400843FFC /* PBXTextBookmark */;
+			E722A5541118C72400843FFC /* PBXTextBookmark */ = E722A5541118C72400843FFC /* PBXTextBookmark */;
 			E745412411100AB100FD9036 = E745412411100AB100FD9036 /* PBXBookmark */;
 			E745422C1110A44200FD9036 = E745422C1110A44200FD9036 /* PBXTextBookmark */;
 			E74543C31110D18800FD9036 = E74543C31110D18800FD9036 /* PBXTextBookmark */;
@@ -1913,7 +1916,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 440";
 		rLen = 0;
-		rLoc = 15389;
+		rLoc = 14487;
 		rType = 0;
 		vrLen = 1111;
 		vrLoc = 13018;
@@ -1923,7 +1926,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 441";
 		rLen = 0;
-		rLoc = 15389;
+		rLoc = 14487;
 		rType = 0;
 		vrLen = 1244;
 		vrLoc = 13055;
@@ -1943,7 +1946,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 438";
 		rLen = 0;
-		rLoc = 15282;
+		rLoc = 14380;
 		rType = 0;
 		vrLen = 1262;
 		vrLoc = 13055;
@@ -1953,7 +1956,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 438";
 		rLen = 0;
-		rLoc = 15282;
+		rLoc = 14380;
 		rType = 0;
 		vrLen = 1246;
 		vrLoc = 13055;
@@ -1973,7 +1976,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 440";
 		rLen = 0;
-		rLoc = 15261;
+		rLoc = 14359;
 		rType = 0;
 		vrLen = 1324;
 		vrLoc = 12810;
@@ -1993,7 +1996,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 441";
 		rLen = 0;
-		rLoc = 15259;
+		rLoc = 14357;
 		rType = 0;
 		vrLen = 2374;
 		vrLoc = 12104;
@@ -2003,7 +2006,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 441";
 		rLen = 0;
-		rLoc = 15259;
+		rLoc = 14357;
 		rType = 0;
 		vrLen = 2323;
 		vrLoc = 12156;
@@ -2053,7 +2056,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 337";
 		rLen = 0;
-		rLoc = 10124;
+		rLoc = 9345;
 		rType = 0;
 		vrLen = 2717;
 		vrLoc = 7163;
@@ -2063,7 +2066,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 333";
 		rLen = 0;
-		rLoc = 9999;
+		rLoc = 9345;
 		rType = 0;
 		vrLen = 2920;
 		vrLoc = 8173;
@@ -2083,7 +2086,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 333";
 		rLen = 0;
-		rLoc = 9999;
+		rLoc = 9345;
 		rType = 0;
 		vrLen = 2920;
 		vrLoc = 8173;
@@ -2093,7 +2096,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 490";
 		rLen = 0;
-		rLoc = 16372;
+		rLoc = 15470;
 		rType = 0;
 		vrLen = 2387;
 		vrLoc = 12703;
@@ -2143,7 +2146,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 512";
 		rLen = 0;
-		rLoc = 16962;
+		rLoc = 16060;
 		rType = 0;
 		vrLen = 2295;
 		vrLoc = 13637;
@@ -2153,7 +2156,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 342";
 		rLen = 0;
-		rLoc = 9999;
+		rLoc = 9345;
 		rType = 0;
 		vrLen = 2928;
 		vrLoc = 8173;
@@ -2163,7 +2166,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 342";
 		rLen = 0;
-		rLoc = 9999;
+		rLoc = 9345;
 		rType = 0;
 		vrLen = 1577;
 		vrLoc = 2585;
@@ -2253,7 +2256,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 406";
 		rLen = 0;
-		rLoc = 12088;
+		rLoc = 11247;
 		rType = 0;
 		vrLen = 2659;
 		vrLoc = 11205;
@@ -2263,7 +2266,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 406";
 		rLen = 0;
-		rLoc = 12088;
+		rLoc = 11247;
 		rType = 0;
 		vrLen = 3155;
 		vrLoc = 10108;
@@ -2273,7 +2276,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 406";
 		rLen = 0;
-		rLoc = 12088;
+		rLoc = 11247;
 		rType = 0;
 		vrLen = 2868;
 		vrLoc = 8842;
@@ -2282,8 +2285,8 @@
 		isa = PBXTextBookmark;
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 407";
-		rLen = 965;
-		rLoc = 12104;
+		rLen = 1;
+		rLoc = 11247;
 		rType = 0;
 		vrLen = 2661;
 		vrLoc = 11404;
@@ -2323,7 +2326,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 546";
 		rLen = 0;
-		rLoc = 17157;
+		rLoc = 16255;
 		rType = 0;
 		vrLen = 2049;
 		vrLoc = 15436;
@@ -2333,7 +2336,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 533";
 		rLen = 0;
-		rLoc = 16590;
+		rLoc = 15688;
 		rType = 0;
 		vrLen = 2120;
 		vrLoc = 15436;
@@ -2343,7 +2346,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 533";
 		rLen = 0;
-		rLoc = 16590;
+		rLoc = 15688;
 		rType = 0;
 		vrLen = 2120;
 		vrLoc = 15436;
@@ -2553,7 +2556,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 362";
 		rLen = 0;
-		rLoc = 9854;
+		rLoc = 9345;
 		rType = 0;
 		vrLen = 2939;
 		vrLoc = 8962;
@@ -2563,7 +2566,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 348";
 		rLen = 0;
-		rLoc = 9529;
+		rLoc = 9345;
 		rType = 0;
 		vrLen = 1990;
 		vrLoc = 4488;
@@ -3664,6 +3667,36 @@
 		vrLen = 1450;
 		vrLoc = 0;
 	};
+	E722A5521118C72400843FFC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E74540FE111007D900FD9036 /* ApplicationUtilities.h */;
+		name = "ApplicationUtilities.h: 19";
+		rLen = 0;
+		rLoc = 376;
+		rType = 0;
+		vrLen = 1450;
+		vrLoc = 0;
+	};
+	E722A5531118C72400843FFC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 15";
+		rLen = 0;
+		rLoc = 342;
+		rType = 0;
+		vrLen = 2113;
+		vrLoc = 0;
+	};
+	E722A5541118C72400843FFC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 426";
+		rLen = 0;
+		rLoc = 12866;
+		rType = 0;
+		vrLen = 2990;
+		vrLoc = 8246;
+	};
 	E74540B41110069500FD9036 /* SkateScoreGuide */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
@@ -3733,7 +3766,7 @@
 	};
 	E74540FE111007D900FD9036 /* ApplicationUtilities.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1076, 920}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1076, 943}}";
 			sepNavSelRange = "{376, 0}";
 			sepNavVisRange = "{0, 1450}";
 		};
@@ -4301,7 +4334,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 260";
 		rLen = 0;
-		rLoc = 12063;
+		rLoc = 11233;
 		rType = 0;
 		vrLen = 2948;
 		vrLoc = 5394;
@@ -5310,7 +5343,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 260";
 		rLen = 0;
-		rLoc = 12063;
+		rLoc = 11233;
 		rType = 0;
 		vrLen = 2929;
 		vrLoc = 5491;
@@ -6158,7 +6191,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 343";
 		rLen = 0;
-		rLoc = 12063;
+		rLoc = 11233;
 		rType = 0;
 		vrLen = 3132;
 		vrLoc = 8106;
@@ -6178,7 +6211,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 343";
 		rLen = 0;
-		rLoc = 12063;
+		rLoc = 11233;
 		rType = 0;
 		vrLen = 3228;
 		vrLoc = 8107;
@@ -6198,7 +6231,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 343";
 		rLen = 0;
-		rLoc = 12063;
+		rLoc = 11233;
 		rType = 0;
 		vrLen = 3155;
 		vrLoc = 8262;
@@ -6218,7 +6251,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 340";
 		rLen = 0;
-		rLoc = 12063;
+		rLoc = 11233;
 		rType = 0;
 		vrLen = 3227;
 		vrLoc = 8107;
@@ -6256,7 +6289,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 335";
 		rLen = 0;
-		rLoc = 12063;
+		rLoc = 11233;
 		rType = 0;
 		vrLen = 3227;
 		vrLoc = 8107;
@@ -7123,7 +7156,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 400";
 		rLen = 0;
-		rLoc = 13768;
+		rLoc = 12866;
 		rType = 0;
 		vrLen = 2557;
 		vrLoc = 10482;
@@ -12094,7 +12127,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 289";
 		rLen = 0;
-		rLoc = 12068;
+		rLoc = 11235;
 		rType = 0;
 		vrLen = 3301;
 		vrLoc = 6973;
@@ -12104,7 +12137,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 294";
 		rLen = 0;
-		rLoc = 13768;
+		rLoc = 12866;
 		rType = 0;
 		vrLen = 3015;
 		vrLoc = 7621;
@@ -12114,7 +12147,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 307";
 		rLen = 0;
-		rLoc = 13768;
+		rLoc = 12866;
 		rType = 0;
 		vrLen = 3015;
 		vrLoc = 7621;
@@ -12284,7 +12317,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 307";
 		rLen = 0;
-		rLoc = 13768;
+		rLoc = 12866;
 		rType = 0;
 		vrLen = 3195;
 		vrLoc = 7590;
@@ -14546,7 +14579,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 294";
 		rLen = 0;
-		rLoc = 13768;
+		rLoc = 12866;
 		rType = 0;
 		vrLen = 3106;
 		vrLoc = 8569;
@@ -14686,7 +14719,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 301";
 		rLen = 0;
-		rLoc = 13768;
+		rLoc = 12866;
 		rType = 0;
 		vrLen = 3106;
 		vrLoc = 8569;
@@ -14756,7 +14789,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 282";
 		rLen = 0;
-		rLoc = 12063;
+		rLoc = 11233;
 		rType = 0;
 		vrLen = 3391;
 		vrLoc = 6807;
@@ -14974,7 +15007,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 250";
 		rLen = 0;
-		rLoc = 12063;
+		rLoc = 11233;
 		rType = 0;
 		vrLen = 3307;
 		vrLoc = 6859;
@@ -15004,7 +15037,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 299";
 		rLen = 0;
-		rLoc = 13768;
+		rLoc = 12866;
 		rType = 0;
 		vrLen = 3315;
 		vrLoc = 6854;
@@ -15104,7 +15137,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 262";
 		rLen = 0;
-		rLoc = 12063;
+		rLoc = 11233;
 		rType = 0;
 		vrLen = 3195;
 		vrLoc = 7590;
@@ -15620,7 +15653,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 260";
 		rLen = 0;
-		rLoc = 12063;
+		rLoc = 11233;
 		rType = 0;
 		vrLen = 3011;
 		vrLoc = 5331;

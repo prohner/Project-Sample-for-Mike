@@ -334,129 +334,94 @@
 	UILabel *topLabel;
 	UILabel *bottomLabel;
 	
-	BOOL isButtonCell = NO;
-    
     NSString *CellIdentifier = @"Cell Regular";
 	if (indexPath.section >= [programGroups count]) {
-		isButtonCell = YES;
 		CellIdentifier = @"Cell Button";
 	}
     
     UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-		if (isButtonCell) {
-			cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
-			
-			CGRect r1 = cell.bounds;
-			r1.origin.x = 10;
-			r1.origin.y = 0;
-			r1.size.width = 93;
-			[btnOrganizeProgramGroups setFrame:r1];
-			
-			CGRect r2 = cell.bounds;
-			r2.origin.x = 103;
-			r2.origin.y = 0;
-			r2.size.width = 93;
-			[btnShareAppWithFriend setFrame:r2];
-			
-			CGRect r3 = cell.bounds;
-			r3.origin.x = 206;
-			r3.origin.y = 0;
-			r3.size.width = 93;
-			[btnShareAppWithFriend setFrame:r2];
-			
-			[cell.contentView addSubview:btnOrganizeProgramGroups];
-			[cell.contentView addSubview:btnShareAppWithFriend];
-			[cell.contentView addSubview:btnFeedback];
-			
-			return cell;
-		} else {
-			cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
-			
-			UIImage *indicatorImage = [UIImage imageNamed:@"indicator.png"];
-			cell.accessoryView = [[[UIImageView alloc] initWithImage:indicatorImage] autorelease];
-			
-			UIImage *image = [UIImage imageNamed:@"imageA.png"];
-			
-			topLabel = [[[UILabel alloc] initWithFrame:CGRectMake(image.size.width + 2.0 * cell.indentationWidth,
-																0.25 * (aTableView.rowHeight - 2 * LABEL_HEIGHT),
-																aTableView.bounds.size.width - image.size.width - 4.0 * cell.indentationWidth - indicatorImage.size.width,
-																LABEL_HEIGHT)] 
-						autorelease];
-			[cell.contentView addSubview:topLabel];
-			
-			topLabel.tag = TOP_LABEL_TAG;
-			topLabel.backgroundColor = [UIColor clearColor];
-			topLabel.textColor = TABLE_MAIN_LABEL_TEXT_COLOR;
-			topLabel.highlightedTextColor = TABLE_MAIN_LABEL_HIGHLIGHT_TEXT_COLOR;
-			topLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize] + 2];
-
-			bottomLabel = [[[UILabel alloc] initWithFrame:CGRectMake(image.size.width + 2.0 * cell.indentationWidth, 
-																	 -4 + 0.5 * (aTableView.rowHeight - 2 * LABEL_HEIGHT) + LABEL_HEIGHT, 
-																	 aTableView.bounds.size.width - image.size.width - 4.0 * cell.indentationWidth - indicatorImage.size.width, 
-																	 LABEL_HEIGHT)] 
-						   autorelease];
-			bottomLabel.numberOfLines = 2;
-			[cell.contentView addSubview:bottomLabel];
-			
-			bottomLabel.tag = BOTTOM_LABEL_TAG;
-			bottomLabel.backgroundColor = [UIColor clearColor];
-			bottomLabel.textColor = TABLE_SUB_LABEL_TEXT_COLOR;
-			bottomLabel.highlightedTextColor = TABLE_SUB_LABEL_HIGHLIGHT_TEXT_COLOR;
-			bottomLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize] - 2];
-			
-			cell.backgroundView = [[[UIImageView alloc] init] autorelease];
-			cell.selectedBackgroundView = [[[UIImageView alloc] init] autorelease];
-		}
-
+		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
 		
+		UIImage *indicatorImage = [UIImage imageNamed:@"indicator.png"];
+		cell.accessoryView = [[[UIImageView alloc] initWithImage:indicatorImage] autorelease];
+		
+		UIImage *image = [UIImage imageNamed:@"imageA.png"];
+		
+		topLabel = [[[UILabel alloc] initWithFrame:CGRectMake(image.size.width + 2.0 * cell.indentationWidth,
+															0.25 * (aTableView.rowHeight - 2 * LABEL_HEIGHT),
+															aTableView.bounds.size.width - image.size.width - 4.0 * cell.indentationWidth - indicatorImage.size.width,
+															LABEL_HEIGHT)] 
+					autorelease];
+		[cell.contentView addSubview:topLabel];
+		
+		topLabel.tag = TOP_LABEL_TAG;
+		topLabel.backgroundColor = [UIColor clearColor];
+		topLabel.textColor = TABLE_MAIN_LABEL_TEXT_COLOR;
+		topLabel.highlightedTextColor = TABLE_MAIN_LABEL_HIGHLIGHT_TEXT_COLOR;
+		topLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize] + 2];
+
+		bottomLabel = [[[UILabel alloc] initWithFrame:CGRectMake(image.size.width + 2.0 * cell.indentationWidth, 
+																 -4 + 0.5 * (aTableView.rowHeight - 2 * LABEL_HEIGHT) + LABEL_HEIGHT, 
+																 aTableView.bounds.size.width - image.size.width - 4.0 * cell.indentationWidth - indicatorImage.size.width, 
+																 LABEL_HEIGHT)] 
+					   autorelease];
+		bottomLabel.numberOfLines = 2;
+		[cell.contentView addSubview:bottomLabel];
+		
+		bottomLabel.tag = BOTTOM_LABEL_TAG;
+		bottomLabel.backgroundColor = [UIColor clearColor];
+		bottomLabel.textColor = TABLE_SUB_LABEL_TEXT_COLOR;
+		bottomLabel.highlightedTextColor = TABLE_SUB_LABEL_HIGHLIGHT_TEXT_COLOR;
+		bottomLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize] - 2];
+		
+		cell.backgroundView = [[[UIImageView alloc] init] autorelease];
+		cell.selectedBackgroundView = [[[UIImageView alloc] init] autorelease];
 		
     }
     
-	if ( ! isButtonCell) {
-		UIImage *rowBackground;
-		UIImage *selectionBackground;
-		NSInteger sectionRows = [aTableView numberOfRowsInSection:[indexPath section]];
-		NSInteger row = [indexPath row];
-		if (row == 0 && row == sectionRows - 1) {
-			rowBackground = [UIImage imageNamed:@"topAndBottomRow.png"];
-			selectionBackground = [UIImage imageNamed:@"topAndBottomRowSelected.png"];
-		} else if (row == 0) {
-			rowBackground = [UIImage imageNamed:@"topRow.png"];
-			selectionBackground = [UIImage imageNamed:@"topRowSelected.png"];
-		} else if (row == sectionRows - 1) {
-			rowBackground = [UIImage imageNamed:@"bottomRow.png"];
-			selectionBackground = [UIImage imageNamed:@"bottomRowSelected.png"];
-		} else {
-			rowBackground = [UIImage imageNamed:@"middleRow.png"];
-			selectionBackground = [UIImage imageNamed:@"middleRowSelected.png"];
-		}
-		((UIImageView *)cell.backgroundView).image = rowBackground;
-		((UIImageView *)cell.selectedBackgroundView).image = selectionBackground;
-		
-		topLabel = (UILabel *)[cell viewWithTag:TOP_LABEL_TAG];
-		bottomLabel = (UILabel *)[cell viewWithTag:BOTTOM_LABEL_TAG];
+	UIImage *rowBackground;
+	UIImage *selectionBackground;
+	NSInteger sectionRows = [aTableView numberOfRowsInSection:[indexPath section]];
+	NSInteger row = [indexPath row];
+	if (row == 0 && row == sectionRows - 1) {
+		rowBackground = [UIImage imageNamed:@"topAndBottomRow.png"];
+		selectionBackground = [UIImage imageNamed:@"topAndBottomRowSelected.png"];
+	} else if (row == 0) {
+		rowBackground = [UIImage imageNamed:@"topRow.png"];
+		selectionBackground = [UIImage imageNamed:@"topRowSelected.png"];
+	} else if (row == sectionRows - 1) {
+		rowBackground = [UIImage imageNamed:@"bottomRow.png"];
+		selectionBackground = [UIImage imageNamed:@"bottomRowSelected.png"];
+	} else {
+		rowBackground = [UIImage imageNamed:@"middleRow.png"];
+		selectionBackground = [UIImage imageNamed:@"middleRowSelected.png"];
+	}
+	((UIImageView *)cell.backgroundView).image = rowBackground;
+	((UIImageView *)cell.selectedBackgroundView).image = selectionBackground;
+	
+	topLabel = (UILabel *)[cell viewWithTag:TOP_LABEL_TAG];
+	bottomLabel = (UILabel *)[cell viewWithTag:BOTTOM_LABEL_TAG];
 
-		// Configure the cell.
-		Program *program = [self programForRowAtIndexPath:indexPath];
-		if (program != nil) {
-			topLabel.text = program.description;
-			bottomLabel.text = program.programSubDescription;
-			
-			CGRect r = CGRectMake(85, 
-								  35, 
-								  bottomLabel.bounds.size.width, 
-								  LABEL_HEIGHT);
-			if ([bottomLabel.text rangeOfString:@"\n"].length != 0) {
-				r.size.height *= 2;
-			}
-			[bottomLabel setFrame:r];
-			
-			cell.imageView.image = [UIImage imageNamed:@"imageA.png"];
-		} else {
-			topLabel.text = @"";
-			bottomLabel.text = @"";
+	// Configure the cell.
+	Program *program = [self programForRowAtIndexPath:indexPath];
+	if (program != nil) {
+		topLabel.text = program.description;
+		bottomLabel.text = program.programSubDescription;
+		
+		CGRect r = CGRectMake(85, 
+							  35, 
+							  bottomLabel.bounds.size.width, 
+							  LABEL_HEIGHT);
+		if ([bottomLabel.text rangeOfString:@"\n"].length != 0) {
+			r.size.height *= 2;
 		}
+		[bottomLabel setFrame:r];
+		
+		cell.imageView.image = [UIImage imageNamed:@"imageA.png"];
+	} else {
+		topLabel.text = @"";
+		bottomLabel.text = @"";
 	}
     return cell;
 }
