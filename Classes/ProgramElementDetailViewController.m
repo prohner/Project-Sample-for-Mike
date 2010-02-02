@@ -36,6 +36,7 @@
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneWithElement)] autorelease];
 
 	[ApplicationUtilities setGeneralViewLookFor:self.view];
+	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tableBackground.png"]];
 	[ApplicationUtilities setGeneralViewLookFor:workspaceView];
 	[ApplicationUtilities setGeneralViewLookFor:jumpsView];
 	[ApplicationUtilities setGeneralViewLookFor:spinsView];
@@ -146,16 +147,29 @@
 		}
 	}
 	if (pe) {
-		NSString *desc = [[NSString alloc] initWithFormat:@"%@, Base %.2f, GOE %.2f", 
-						  pe.description, 
+		NSString *desc = [[NSString alloc] initWithFormat:@"%@\nBase %.2f, GOE %.2f", 
+						  pe.shortenedDescription, 
 						  pe.baseScore,
 						  [pe scoreForGOE:[self goeScoreAsString] ]
 						  ];
 		jumpList.text = desc;
+		jumpList.alpha = 0.25;
+		[self performSelector:(@selector(resetJumpListBackgroundColor)) withObject:(nil) afterDelay:0.5];
 	}
 	
 }
 
+- (void)resetJumpListBackgroundColor {
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:.5];
+	[UIView setAnimationDelegate:self];     
+	jumpList.alpha = 1;
+	jumpList.opaque = NO;
+	jumpList.backgroundColor = [UIColor clearColor];
+	
+	[UIView commitAnimations];	
+	
+}
 
 - (void)pickerView:(UIPickerView *)pickerView setRowForElement:(ProgramElement *)programElement withArray:(NSArray *)elements {
 	Element *element = [Elements getElementFor:existingProgramElement.ijsId];
@@ -349,13 +363,20 @@
 - (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {	
 	switch (component) {
 		case 0:
+		{
+			NSString *txt;
 			if (thePickerView == jumpPickerView || thePickerView == jumpComboPickerView) {
-				return [jumps objectAtIndex:row];
+				txt = [jumps objectAtIndex:row];
 			} else if (thePickerView == spinPickerView) {
-				return [spins objectAtIndex:row];
+				txt = [spins objectAtIndex:row];
 			} else if (thePickerView == stepSpiralPickerView) {
-				return [steps objectAtIndex:row];
+				txt = [steps objectAtIndex:row];
 			}
+			NSRange r = [txt rangeOfString:@"-"];
+			txt = [txt substringToIndex:r.location];
+//			txt = [txt stringByReplacingOccurrencesOfString:@"Level" withString:@"Lvl"];
+			return txt;
+		}
 			break;
 		case 1:
 			switch (row) {

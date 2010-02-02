@@ -11,7 +11,8 @@
 #import "ProgramElementsViewController.h"
 #import "ProgramDetailViewController.h"
 
-#define LOAD_TEST_DATA	0
+#define LOAD_TEST_DATA						0
+#define LOAD_TEST_DATA_FOR_SOV_VALIDATION	(0 && LOAD_TEST_DATA)
 
 @implementation RootViewController
 
@@ -43,11 +44,6 @@
 	pg2.description = @"Old Programs";
 	pg2.ordinalPosition = 1;
 	[pg2 save];
-	
-	ProgramGroup *pg3 = [[ProgramGroup alloc] init];
-	pg3.description = @"Scale of Value Tests";
-	pg3.ordinalPosition = 2;
-	[pg3 save];
 	
 	Program *p1 = [[Program alloc] init];
 	p1.description = @"Nationals Long";
@@ -129,6 +125,13 @@
 	pe7.isSecondHalf		= YES;
 	[pe7 save];
 	
+#if LOAD_TEST_DATA_FOR_SOV_VALIDATION
+
+	ProgramGroup *pg3 = [[ProgramGroup alloc] init];
+	pg3.description = @"Scale of Value Tests";
+	pg3.ordinalPosition = 2;
+	[pg3 save];
+	
 	for (int i = 0; i < 6; i++) {
 		NSString *goe;
 		switch (i) {
@@ -193,6 +196,7 @@
 		}
 
 	}
+#endif
 	
 	[p1 release];
 //	[p2 release];
@@ -307,7 +311,7 @@
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	const NSInteger TOP_LABEL_TAG = 1001;
 	const NSInteger BOTTOM_LABEL_TAG = 1002;
-	const CGFloat LABEL_HEIGHT = 20;
+	const CGFloat LABEL_HEIGHT = 23;
 	UILabel *topLabel;
 	UILabel *bottomLabel;
     
@@ -333,10 +337,10 @@
 		topLabel.backgroundColor = [UIColor clearColor];
 		topLabel.textColor = TABLE_MAIN_LABEL_TEXT_COLOR;
 		topLabel.highlightedTextColor = TABLE_MAIN_LABEL_HIGHLIGHT_TEXT_COLOR;
-		topLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize] + 3];
+		topLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize] + 2];
 
 		bottomLabel = [[[UILabel alloc] initWithFrame:CGRectMake(image.size.width + 2.0 * cell.indentationWidth, 
-																 -13 + 0.5 * (aTableView.rowHeight - 2 * LABEL_HEIGHT) + LABEL_HEIGHT, 
+																 -4 + 0.5 * (aTableView.rowHeight - 2 * LABEL_HEIGHT) + LABEL_HEIGHT, 
 																 aTableView.bounds.size.width - image.size.width - 4.0 * cell.indentationWidth - indicatorImage.size.width, 
 																 LABEL_HEIGHT)] 
 					   autorelease];
@@ -393,14 +397,6 @@
 		}
 		[bottomLabel setFrame:r];
 		
-//		if ([bottomLabel.text rangeOfString:@"\n"].length == 0) {
-//			bottomLabel.autoresizingMask = UIViewAutoresizingNone;
-//			bottomLabel.bounds.size.height = LABEL_HEIGHT;
-//		} else {
-//			bottomLabel.bounds.size.height = LABEL_HEIGHT*2;
-//			bottomLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
-//			bottomLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;
-//		}
 		cell.imageView.image = [UIImage imageNamed:@"imageA.png"];
 	} else {
 		topLabel.text = @"";

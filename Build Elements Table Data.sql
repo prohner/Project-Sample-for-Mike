@@ -125,7 +125,7 @@ insert into #elements (discipline,  element_group, description, ijs_id, plus_3, 
 
 --select * from #elements
 
-select '[Elements addElement:@"' + ijs_id + '" discipline:@"' + discipline + '" elementGroup:@"' + element_group + '" description:@"' + description 
+select '[Elements addElement:@"' + ijs_id + '" discipline:@"' + discipline + '" elementGroup:' + case when element_group = 'jumps' then 'ELEMENT_GROUP_JUMPS' when element_group = 'spins' then 'ELEMENT_GROUP_SPINS' when element_group = 'spiral/step' then 'ELEMENT_GROUP_STEP_SPIRAL' end + ' description:@"' + description 
      + '" baseScore:' + convert(varchar, base_score) 
      +  ' plus_1:' + convert(varchar, plus_1) + ' plus_2:' + convert(varchar, plus_2) + ' plus_3:' + convert(varchar, plus_3) 
      + ' minus_1:' + convert(varchar, minus_1) + ' minus_2:' + convert(varchar, minus_2) + ' minus_3:' + convert(varchar, minus_3) 

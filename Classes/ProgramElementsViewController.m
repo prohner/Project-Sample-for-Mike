@@ -71,7 +71,7 @@
 	
 	[ApplicationUtilities setupStandardTableLookFor:self.tableView inView:self.parentViewController.view];
 	
-	[headerView setFrame:CGRectMake(5, 5, 310, 80)];
+	[headerView setFrame:CGRectMake(5, 5, 310, 68)];
 	self.tableView.tableHeaderView = headerView;
 	[self setScoreLabel];
 	indexPathOfDummyElement = nil;

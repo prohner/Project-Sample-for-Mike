@@ -31,6 +31,21 @@
 	return desc;
 }
 
+- (NSString *)shortenedDescription {
+	NSString *txt = [self description];
+//	NSRange r = [txt rangeOfString:@"-"];
+//	txt = [txt substringToIndex:r.length];
+	txt = [txt stringByReplacingOccurrencesOfString:@"Level " withString:@"L"];
+	txt = [txt stringByReplacingOccurrencesOfString:@"Sequence" withString:@"Seq."];
+	txt = [txt stringByReplacingOccurrencesOfString:@"Serpentine" withString:@"Serp."];
+	
+	if ([txt length]) {
+		txt = [txt stringByReplacingOccurrencesOfString:@"Spin" withString:@"Sp."];
+	}
+	return txt;
+}
+
+
 -(BOOL)isSingleElement {
 	return ijsIdSecond == nil || [ijsIdSecond isEqualToString:@""];
 }

@@ -31,6 +31,7 @@
 @property (nonatomic, retain) NSString *jumpComboType;
 
 - (NSString *)description;
+- (NSString *)shortenedDescription;
 - (float) baseScore;
 - (float) goeScore;
 
