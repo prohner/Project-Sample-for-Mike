@@ -66,6 +66,10 @@
 	if (existingProgramElement == nil) {
 		return;
 	}
+	
+	jumpComboElement1 = existingProgramElement.ijsId;
+	jumpComboElement2 = existingProgramElement.ijsIdSecond;
+	jumpComboElement3 = existingProgramElement.ijsIdThird;
 
 	Element *element = [Elements getElementFor:existingProgramElement.ijsId];
 	
@@ -122,9 +126,16 @@
 	if ([elementGroupChooser selectedSegmentIndex] == 3) {
 		pe.ijsId = jumpComboElement1;
 		pe.ijsIdSecond = jumpComboElement2;
+		
+//		if (pe.ijsIdSecond == nil || [pe.ijsIdSecond isEqualToString:@""]) {
+//			pe.ijsIdSecond = @"x";
+//		}
+		
 		pe.ijsIdThird = jumpComboElement3;
 		if ([pe.ijsId isEqualToString:@""]) {
-			pe.ijsId = [self ijsIdFromPicker:jumpComboPickerView];;
+			[self jumpListText:@"Select your jumps and press +"];
+			return;
+//			pe.ijsId = [self ijsIdFromPicker:jumpComboPickerView];;
 		}
 		if (jumpComboSeqChooser.selectedSegmentIndex == 0) {
 			pe.jumpComboType = JUMP_COMBO_TYPE_COMBO;
@@ -148,15 +159,19 @@
 	}
 	if (pe) {
 		NSString *desc = [[NSString alloc] initWithFormat:@"%@\nBase %.2f, GOE %.2f", 
-						  pe.shortenedDescription, 
+						  pe.description, 
 						  pe.baseScore,
 						  [pe scoreForGOE:[self goeScoreAsString] ]
 						  ];
-		jumpList.text = desc;
-		jumpList.alpha = 0.25;
-		[self performSelector:(@selector(resetJumpListBackgroundColor)) withObject:(nil) afterDelay:0.5];
+		[self jumpListText: desc];
 	}
 	
+}
+
+- (void)jumpListText:(NSString *)txt {
+	jumpList.text = txt;
+	jumpList.alpha = 0.25;
+	[self performSelector:(@selector(resetJumpListBackgroundColor)) withObject:(nil) afterDelay:0.5];
 }
 
 - (void)resetJumpListBackgroundColor {

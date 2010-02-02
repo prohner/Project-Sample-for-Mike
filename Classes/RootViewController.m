@@ -218,7 +218,7 @@
 	// Create an array of arrays of programs for each section (program group)
 	for (int i = 0; i < [programGroups count]; i++) {
 		ProgramGroup *programGroup = (ProgramGroup *)[[programGroups objectAtIndex:i] retain];
-		NSArray *programs = [programGroup findRelated:[Program class]];
+		NSMutableArray *programs = [[programGroup findRelated:[Program class]] mutableCopy];
 		[programGroupPrograms addObject:programs];
 	}
 	
@@ -429,19 +429,24 @@
 */
 
 
-/*
+
 // Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source.
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+		NSMutableArray *programs = [[programGroupPrograms objectAtIndex:indexPath.section] retain];
+		Program *programToDelete = (Program *)[[programs objectAtIndex:indexPath.row] retain];
+		[programs removeObjectAtIndex:indexPath.row];
+		[programToDelete deleteObjectCascade:YES];
+
+        [aTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }   
 }
-*/
+
 
 
 /*

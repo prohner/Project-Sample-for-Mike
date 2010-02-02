@@ -60,6 +60,7 @@
 - (void)goeChanged:(id)sender;
 - (NSString *)goeScoreAsString;
 - (void)resetJumpListBackgroundColor;
+- (void)jumpListText:(NSString *)txt;
 
 - (NSString *)ijsIdFromPicker:(UIPickerView *)picker;
 

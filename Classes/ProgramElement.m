@@ -47,7 +47,7 @@
 
 
 -(BOOL)isSingleElement {
-	return ijsIdSecond == nil || [ijsIdSecond isEqualToString:@""];
+	return (ijsIdSecond == nil || [ijsIdSecond isEqualToString:@""]) && (jumpComboType == nil || [jumpComboType isEqualToString:@""]);
 }
 
 -(float)baseScore {
