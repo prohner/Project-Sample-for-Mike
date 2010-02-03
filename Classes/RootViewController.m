@@ -447,8 +447,6 @@
 		[programGroupPrograms addObject:programs];
 		[programs release];
 	}
-	NSLog(@"In loadData thereArePrograms=%i", thereArePrograms);
-	
 }
 
 - (id)addProgram {
@@ -533,7 +531,6 @@
 		count = 1;
 	}
 	
-	NSLog(@"In numberOfRowsInSection count=%i,  thereArePrograms=%i", count, thereArePrograms);
     return count;
 }
 

@@ -66,10 +66,6 @@
 	
 	programElements = [program programElements];
 
-#ifdef DEBUG
-	[self dumpProgramElements:@"ProgramElementsViewController init"];
-#endif
-	
 	[ApplicationUtilities setupStandardTableLookFor:self.tableView inView:self.parentViewController.view];
 	[ApplicationUtilities setGeneralButtonLookFor:btnSendEmail];
 	
@@ -246,7 +242,6 @@
     NSString *CellIdentifier = @"ProgramElementViewCell";
 
 	if (indexPath.section != INDEXPATH_DUMMY_SECTION) {
-		NSLog(@"Processing section=%i, row=%i", indexPath.section, indexPath.row);
 		ProgramElement *programElement = [self programElementForRowAtIndexPath:indexPath];
 		
 		@try {
@@ -259,7 +254,7 @@
 				
 			}
 
-			cell.description.text = programElement.description;
+			cell.description.text = programElement.shortenedDescription;
 			
 #ifdef DEBUG
 			NSLog(@"Scoring %@", programElement.description);

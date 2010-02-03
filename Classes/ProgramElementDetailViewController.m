@@ -165,7 +165,7 @@
 	}
 	if (pe) {
 		NSString *desc = [[NSString alloc] initWithFormat:@"%@\nBase %.2f, GOE %.2f", 
-						  pe.description, 
+						  pe.shortenedDescription, 
 						  pe.baseScore,
 						  [pe scoreForGOE:[self goeScoreAsString] ]
 						  ];
