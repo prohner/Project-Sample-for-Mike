@@ -21,6 +21,8 @@
 	UIButton *btnShareAppWithFriend;
 	UIButton *btnFeedback;
 	UIButton *btnOrganizeProgramGroups;
+	
+	BOOL thereArePrograms;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
@@ -38,4 +40,17 @@
 - (void)shareAppWithFriend;
 - (void)sendFeedback;
 - (void)organizeProgramGroups;	
+
+#if LOAD_TEST_DATA
+- (void)addTo:(Program *)prog 
+		ijsId:(NSString *)ijsId 
+  ijsIdSecond:(NSString *)ijsIdSecond 
+   ijsIdThird:(NSString *)ijsIdThird 
+	comboType:(NSString *)comboType 
+	   estGOE:(NSString *)estimatedGOE 
+ inSecondHalf:(BOOL)isSecondHalf 
+		inPos:(int)ordinalPosition;
+#endif
+	
+
 @end

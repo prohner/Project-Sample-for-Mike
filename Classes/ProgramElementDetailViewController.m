@@ -76,6 +76,12 @@
 	if ( ! existingProgramElement.isSingleElement) {
 		elementGroupChooser.selectedSegmentIndex = 3;
 		[self pickerView:jumpPickerView setRowForElement:existingProgramElement withArray:jumps];
+		if ([existingProgramElement.jumpComboType isEqualToString:JUMP_COMBO_TYPE_COMBO]) {
+			jumpComboSeqChooser.selectedSegmentIndex = 0;
+		} else {
+			jumpComboSeqChooser.selectedSegmentIndex = 1;
+		}
+
 
 	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_JUMPS]) {
 		elementGroupChooser.selectedSegmentIndex = 0;
