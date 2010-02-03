@@ -17,6 +17,7 @@
 
 @synthesize program, headerView, headerLabelBaseScore, headerLabelGOEScore, headerLabelRange, btnSendEmail;
 
+// TODO Figure out how to make the cell's objects not slider underneath the "move" accessory
 
 /*
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -528,11 +529,12 @@
 	}
 	
 	ScoreSet scores = [program programScore];
-	NSString *scoreSummary = [[NSString alloc] initWithFormat:@"<tr><td colspan=\"4\">"
-							  "There are %i elements giving a base score of %.2f.<br />"
-							  "The anticipated GOE score is %.2f.<br />"
-							  "The score range is %.2f - %.2f.<br />"
-							  "</td></tr>",
+	NSString *scoreSummary = [[NSString alloc] initWithFormat:@"<tr>"
+							  "<td colspan=\"2\" align=\"right\">%i Elements, Totals:</td>"
+							  "<td align=\"right\">%.2f</td>"
+							  "<td align=\"right\">%.2f</td>"
+							  "</tr>"
+							  "<tr><td colspan=\"4\">The total possible score range is %.2f - %.2f.</td></tr>",
 							  scores.elementsInProgram,
 							  scores.baseScore,
 							  scores.scoreWithGOE,
@@ -543,7 +545,7 @@
 	body = [body stringByReplacingOccurrencesOfString:target withString:scoreSummary];
 
 	NSString *salesPitch = [[NSString alloc] initWithFormat:@"<tr><td colspan=\"4\">"
-						   "Results presented by %@.<br />"
+						   "Results presented by %@<br />"
 						   "<a href=\"http://cooltoolapps.appspot.com/\">Learn more.</a><br />"
 						   "</td></tr>",
 						   APPLICATION_NAME

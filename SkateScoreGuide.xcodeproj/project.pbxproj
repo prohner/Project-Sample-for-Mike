@@ -20,7 +20,7 @@
 		E722A4CB1118AD6800843FFC /* ProgramGroupAddController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E722A4C91118AD6800843FFC /* ProgramGroupAddController.xib */; };
 		E722A5301118C17400843FFC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E722A52F1118C17400843FFC /* Default.png */; };
 		E722A63D1119272500843FFC /* skate.png in Resources */ = {isa = PBXBuildFile; fileRef = E722A63C1119272500843FFC /* skate.png */; };
-		E722A68211192E4D00843FFC /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E722A68111192E4D00843FFC /* AppIcon.png */; };
+		E722A6EB11193EB100843FFC /* AppIcon_57.png in Resources */ = {isa = PBXBuildFile; fileRef = E722A6EA11193EB100843FFC /* AppIcon_57.png */; };
 		E74540E0111006D900FD9036 /* NSData-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540C1111006D900FD9036 /* NSData-SQLitePersistence.m */; };
 		E74540E1111006D900FD9036 /* NSDate-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540C3111006D900FD9036 /* NSDate-SQLitePersistence.m */; };
 		E74540E2111006D900FD9036 /* NSMutableArray-MultipleSort.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540C5111006D900FD9036 /* NSMutableArray-MultipleSort.m */; };
@@ -89,7 +89,7 @@
 		E722A4C91118AD6800843FFC /* ProgramGroupAddController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProgramGroupAddController.xib; path = Classes/ProgramGroupAddController.xib; sourceTree = "<group>"; };
 		E722A52F1118C17400843FFC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		E722A63C1119272500843FFC /* skate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = skate.png; path = Images/skate.png; sourceTree = "<group>"; };
-		E722A68111192E4D00843FFC /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
+		E722A6EA11193EB100843FFC /* AppIcon_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon_57.png; sourceTree = "<group>"; };
 		E74540C0111006D900FD9036 /* NSData-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/NSData-SQLitePersistence.h"; sourceTree = "<group>"; };
 		E74540C1111006D900FD9036 /* NSData-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData-SQLitePersistence.m"; path = "sqlitepersistentobjects/src/NSData-SQLitePersistence.m"; sourceTree = "<group>"; };
 		E74540C2111006D900FD9036 /* NSDate-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/NSDate-SQLitePersistence.h"; sourceTree = "<group>"; };
@@ -300,7 +300,7 @@
 		E74541111110094700FD9036 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				E722A68111192E4D00843FFC /* AppIcon.png */,
+				E722A6EA11193EB100843FFC /* AppIcon_57.png */,
 				E722A63C1119272500843FFC /* skate.png */,
 				E722A52F1118C17400843FFC /* Default.png */,
 				E722A42911189C1F00843FFC /* whiteButtonBackground.png */,
@@ -409,7 +409,7 @@
 				E722A4CB1118AD6800843FFC /* ProgramGroupAddController.xib in Resources */,
 				E722A5301118C17400843FFC /* Default.png in Resources */,
 				E722A63D1119272500843FFC /* skate.png in Resources */,
-				E722A68211192E4D00843FFC /* AppIcon.png in Resources */,
+				E722A6EB11193EB100843FFC /* AppIcon_57.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

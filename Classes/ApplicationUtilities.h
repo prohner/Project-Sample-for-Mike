@@ -14,10 +14,13 @@
 #import "Elements.h"
 #import "Element.h"
 
-#define APPLICATION_NAME		@"Sk8Score!"
+#define APPLICATION_NAME		@"Sk8 Score!"
 
 #define LOAD_TEST_DATA						0
 #define LOAD_TEST_DATA_FOR_SOV_VALIDATION	(0 && LOAD_TEST_DATA)
+
+// TODO Check base scores for preset programs
+#define ASSERT_BASE_SCORES					(1 && LOAD_TEST_DATA)
 
 
 #define GOE_plus_1				@"+1"
@@ -36,6 +39,7 @@
 #define TABLE_SUB_LABEL_TEXT_COLOR				[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0]
 #define TABLE_SUB_LABEL_HIGHLIGHT_TEXT_COLOR	[UIColor colorWithRed:1.0 green:1.0 blue:0.9 alpha:1.0]
 
+#define fequal(a,b) (fabs((a) - (b)) < .0001 /*FLT_EPSILON*/)
 
 @interface ApplicationUtilities : NSObject {
 

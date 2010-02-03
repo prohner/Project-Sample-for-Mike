@@ -22,10 +22,12 @@
 	} else {
 //		desc = [[NSString alloc] initWithFormat:@"%@ %@", [Elements getElementFor:ijsId].description, ijsId];;
 		desc = [[NSString alloc] initWithFormat:@"%@%@%@%@%@%@", 
-						 ijsId, 
-						 (ijsIdSecond == nil || [ijsIdSecond isEqualToString:@""] ? @"" : @" + "), ijsIdSecond,
-						 (ijsIdThird == nil || [ijsIdThird isEqualToString:@""] ? @"" : @" + "), ijsIdThird, 
-						 [jumpComboType isEqualToString:JUMP_COMBO_TYPE_COMBO] ? @" Combination" : @" Sequence"];
+				ijsId, 
+				(ijsIdSecond == nil || [ijsIdSecond isEqualToString:@""] ? @"" : @" + "), 
+				ijsIdSecond == nil ? @"" : ijsIdSecond,
+				(ijsIdThird == nil || [ijsIdThird isEqualToString:@""] ? @"" : @" + "), 
+				ijsIdThird == nil ? @"" : ijsIdThird, 
+				[jumpComboType isEqualToString:JUMP_COMBO_TYPE_COMBO] ? @" Combination" : @" Sequence"];
 	}
 
 	return desc;

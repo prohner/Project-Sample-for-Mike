@@ -466,6 +466,8 @@
 }
 
 - (IBAction)jumpComboAdd:(id)sender {
+	// TODO When you come in to edit an existing element and then change to jump combo, the + button doesn't work
+	
 	NSString *ijsId = [self ijsIdFromPicker:jumpComboPickerView];
 		
 	if ([jumpComboElement1 isEqualToString:@""]) {

@@ -294,6 +294,17 @@
 	[self addTo:programAT	ijsId:@"2A"		ijsIdSecond:@""		ijsIdThird:@""		comboType:JUMP_COMBO_TYPE_SEQ	estGOE:GOE_minus_3	inSecondHalf:YES	inPos:elementOrdinal++];
 	[self addTo:programAT	ijsId:@"FSSp3"	ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:YES	inPos:elementOrdinal++];
 
+#if ASSERT_BASE_SCORES
+	[self verifyScoreFor:programLK is:48.10];
+	[self verifyScoreFor:programAC is:41.54];
+	[self verifyScoreFor:programKK is:37.51];
+	[self verifyScoreFor:programCH is:40.76];
+	[self verifyScoreFor:programRK is:34.35];
+	[self verifyScoreFor:programCT is:38.85];
+	[self verifyScoreFor:programAK is:28.28];
+	[self verifyScoreFor:programNR is:33.84];
+	[self verifyScoreFor:programAT is:29.91];
+#endif
 
 #if LOAD_TEST_DATA_FOR_SOV_VALIDATION
 
@@ -407,6 +418,20 @@
 	[pe7 save];
 	[pe7 release];
 }
+
+#if ASSERT_BASE_SCORES
+- (void)verifyScoreFor:(Program *)program is:(float)correctScore {
+	float actualScore = [program programScore].baseScore;
+	NSAssert4(fequal(correctScore, actualScore), @"Score came out incorrect for %@, expected %.2f and got %.2f, diff=%.6f", 
+			  program.description, 
+			  correctScore, 
+			  actualScore, 
+			  (correctScore - actualScore));
+	NSLog(@"Verified score of %.2f for %@", correctScore, program.description);
+}
+
+#endif
+
 #endif
 
 - (void)loadData {
@@ -564,7 +589,7 @@
 //			UIImage *image = [UIImage imageNamed:@"imageA.png"];
 			UIImage *image = [UIImage imageNamed:PROGRAMS_DECORATIVE_IMAGE];
 			
-			topLabel = [[[UILabel alloc] initWithFrame:CGRectMake(image.size.width + 2.0 * cell.indentationWidth,
+			topLabel = [[[UILabel alloc] initWithFrame:CGRectMake(90, //image.size.width + 2.0 * cell.indentationWidth,
 																  0.25 * (aTableView.rowHeight - 2 * LABEL_HEIGHT),
 																  aTableView.bounds.size.width - image.size.width - 4.0 * cell.indentationWidth - indicatorImage.size.width,
 																  LABEL_HEIGHT)] 
@@ -577,7 +602,7 @@
 			topLabel.highlightedTextColor = TABLE_MAIN_LABEL_HIGHLIGHT_TEXT_COLOR;
 			topLabel.font = [UIFont systemFontOfSize:[UIFont labelFontSize] + 2];
 			
-			bottomLabel = [[[UILabel alloc] initWithFrame:CGRectMake(image.size.width + 2.0 * cell.indentationWidth, 
+			bottomLabel = [[[UILabel alloc] initWithFrame:CGRectMake(90, //image.size.width + 2.0 * cell.indentationWidth, 
 																	 -4 + 0.5 * (aTableView.rowHeight - 2 * LABEL_HEIGHT) + LABEL_HEIGHT, 
 																	 aTableView.bounds.size.width - image.size.width - 4.0 * cell.indentationWidth - indicatorImage.size.width, 
 																	 LABEL_HEIGHT)] 
@@ -688,6 +713,9 @@
 		[programToDelete deleteObjectCascade:YES];
 
         [aTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+		[aTableView reloadData];
+		
+		// TODO When deleting the last program, make sure the cell saying "tap + to add program" shows up.
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.

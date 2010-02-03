@@ -50,7 +50,13 @@
 	   estGOE:(NSString *)estimatedGOE 
  inSecondHalf:(BOOL)isSecondHalf 
 		inPos:(int)ordinalPosition;
+
+#if ASSERT_BASE_SCORES
+- (void)verifyScoreFor:(Program *)program is:(float)correctScore;
 #endif
-	
+
+#endif
+
+
 
 @end

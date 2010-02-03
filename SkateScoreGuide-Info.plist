@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>AppIcon.png</string>
+	<string>AppIcon_57.png</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.prestonrohner.skaterscoreguide</string>
 	<key>CFBundleInfoDictionaryVersion</key>

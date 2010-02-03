@@ -19,6 +19,7 @@
 	return [[self findRelated:[ProgramElement class] filter:@"1 = 1 order by ordinal_position"] mutableCopy];
 }
 
+// TODO Cache the program score and GOE score in the program table so that main screen doesn't have to use the elements table
 -(ScoreSet)programScore {
 	ScoreSet scores;
 	scores.baseScore = 0;
