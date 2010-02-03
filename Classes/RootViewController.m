@@ -12,6 +12,8 @@
 #import "ProgramDetailViewController.h"
 #import "ProgramGroupViewController.h"
 
+#define PROGRAMS_DECORATIVE_IMAGE	@"skate.png"
+
 @implementation RootViewController
 
 @synthesize imageView, tableView, btnShareAppWithFriend, btnFeedback, btnOrganizeProgramGroups, myTableFooterView;
@@ -483,7 +485,12 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [programGroups count];
+	if (thereArePrograms) {
+		return [programGroups count];
+	} else {
+		return 1;
+	}
+
 }
 
 
@@ -554,7 +561,8 @@
 			UIImage *indicatorImage = [UIImage imageNamed:@"indicator.png"];
 			cell.accessoryView = [[[UIImageView alloc] initWithImage:indicatorImage] autorelease];
 			
-			UIImage *image = [UIImage imageNamed:@"imageA.png"];
+//			UIImage *image = [UIImage imageNamed:@"imageA.png"];
+			UIImage *image = [UIImage imageNamed:PROGRAMS_DECORATIVE_IMAGE];
 			
 			topLabel = [[[UILabel alloc] initWithFrame:CGRectMake(image.size.width + 2.0 * cell.indentationWidth,
 																  0.25 * (aTableView.rowHeight - 2 * LABEL_HEIGHT),
@@ -628,12 +636,14 @@
 			}
 			[bottomLabel setFrame:r];
 			
-			cell.imageView.image = [UIImage imageNamed:@"imageA.png"];
+			cell.imageView.image = [UIImage imageNamed:PROGRAMS_DECORATIVE_IMAGE];
 		} else {
 			topLabel.text = @"";
 			bottomLabel.text = @"";
 		}
 	} else {
+		cell.backgroundColor = [UIColor lightGrayColor];
+		cell.textLabel.textAlignment = UITextAlignmentCenter;
 		cell.textLabel.text = @"Tap + to add a program";
 		
 	}
@@ -645,24 +655,25 @@
 
 
 // Override to support row selection in the table view.
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    // Navigation logic may go here -- for example, create and push another view controller.
-	ProgramElementsViewController *programElementsViewController = [[ProgramElementsViewController alloc] initWithNibName:@"ProgramElementsViewController" bundle:nil];
-	programElementsViewController.program = [self programForRowAtIndexPath:indexPath];
-	[self.navigationController pushViewController:programElementsViewController animated:YES];
-	[programElementsViewController release];
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (thereArePrograms) {
+		// Navigation logic may go here -- for example, create and push another view controller.
+		ProgramElementsViewController *programElementsViewController = [[ProgramElementsViewController alloc] initWithNibName:@"ProgramElementsViewController" bundle:nil];
+		programElementsViewController.program = [self programForRowAtIndexPath:indexPath];
+		[self.navigationController pushViewController:programElementsViewController animated:YES];
+		[programElementsViewController release];
+	}
+	[aTableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
 
-/*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return thereArePrograms;
 }
-*/
+
 
 
 

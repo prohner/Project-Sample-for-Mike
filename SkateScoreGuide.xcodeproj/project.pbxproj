@@ -19,6 +19,8 @@
 		E722A4CA1118AD6800843FFC /* ProgramGroupAddController.m in Sources */ = {isa = PBXBuildFile; fileRef = E722A4C81118AD6800843FFC /* ProgramGroupAddController.m */; };
 		E722A4CB1118AD6800843FFC /* ProgramGroupAddController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E722A4C91118AD6800843FFC /* ProgramGroupAddController.xib */; };
 		E722A5301118C17400843FFC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E722A52F1118C17400843FFC /* Default.png */; };
+		E722A63D1119272500843FFC /* skate.png in Resources */ = {isa = PBXBuildFile; fileRef = E722A63C1119272500843FFC /* skate.png */; };
+		E722A68211192E4D00843FFC /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E722A68111192E4D00843FFC /* AppIcon.png */; };
 		E74540E0111006D900FD9036 /* NSData-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540C1111006D900FD9036 /* NSData-SQLitePersistence.m */; };
 		E74540E1111006D900FD9036 /* NSDate-SQLitePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540C3111006D900FD9036 /* NSDate-SQLitePersistence.m */; };
 		E74540E2111006D900FD9036 /* NSMutableArray-MultipleSort.m in Sources */ = {isa = PBXBuildFile; fileRef = E74540C5111006D900FD9036 /* NSMutableArray-MultipleSort.m */; };
@@ -46,7 +48,6 @@
 		E745427C1110A97900FD9036 /* Element.m in Sources */ = {isa = PBXBuildFile; fileRef = E745427B1110A97900FD9036 /* Element.m */; };
 		E74543A81110C5F800FD9036 /* ProgramElement.m in Sources */ = {isa = PBXBuildFile; fileRef = E74543A71110C5F800FD9036 /* ProgramElement.m */; };
 		E74543DF1110E7ED00FD9036 /* indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = E74543DE1110E7ED00FD9036 /* indicator.png */; };
-		E74543E71110E8D100FD9036 /* imageA.png in Resources */ = {isa = PBXBuildFile; fileRef = E74543E61110E8D100FD9036 /* imageA.png */; };
 		E74543FC1110EAD600FD9036 /* bottomRow.png in Resources */ = {isa = PBXBuildFile; fileRef = E74543F41110EAD600FD9036 /* bottomRow.png */; };
 		E74543FD1110EAD600FD9036 /* bottomRowSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = E74543F51110EAD600FD9036 /* bottomRowSelected.png */; };
 		E74543FE1110EAD600FD9036 /* middleRow.png in Resources */ = {isa = PBXBuildFile; fileRef = E74543F61110EAD600FD9036 /* middleRow.png */; };
@@ -72,7 +73,7 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* SkateScoreGuideAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkateScoreGuideAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* SkateScoreGuideAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkateScoreGuideAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* SkateScoreGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkateScoreGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* Sk8 Score!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sk8 Score!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* SkateScoreGuide_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkateScoreGuide_Prefix.pch; sourceTree = "<group>"; };
@@ -87,6 +88,8 @@
 		E722A4C81118AD6800843FFC /* ProgramGroupAddController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramGroupAddController.m; sourceTree = "<group>"; };
 		E722A4C91118AD6800843FFC /* ProgramGroupAddController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProgramGroupAddController.xib; path = Classes/ProgramGroupAddController.xib; sourceTree = "<group>"; };
 		E722A52F1118C17400843FFC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E722A63C1119272500843FFC /* skate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = skate.png; path = Images/skate.png; sourceTree = "<group>"; };
+		E722A68111192E4D00843FFC /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
 		E74540C0111006D900FD9036 /* NSData-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/NSData-SQLitePersistence.h"; sourceTree = "<group>"; };
 		E74540C1111006D900FD9036 /* NSData-SQLitePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData-SQLitePersistence.m"; path = "sqlitepersistentobjects/src/NSData-SQLitePersistence.m"; sourceTree = "<group>"; };
 		E74540C2111006D900FD9036 /* NSDate-SQLitePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate-SQLitePersistence.h"; path = "sqlitepersistentobjects/src/NSDate-SQLitePersistence.h"; sourceTree = "<group>"; };
@@ -137,7 +140,6 @@
 		E74543A61110C5F800FD9036 /* ProgramElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramElement.h; sourceTree = "<group>"; };
 		E74543A71110C5F800FD9036 /* ProgramElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramElement.m; sourceTree = "<group>"; };
 		E74543DE1110E7ED00FD9036 /* indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = indicator.png; path = Images/indicator.png; sourceTree = "<group>"; };
-		E74543E61110E8D100FD9036 /* imageA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = imageA.png; path = Images/imageA.png; sourceTree = "<group>"; };
 		E74543F41110EAD600FD9036 /* bottomRow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottomRow.png; path = Images/bottomRow.png; sourceTree = "<group>"; };
 		E74543F51110EAD600FD9036 /* bottomRowSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottomRowSelected.png; path = Images/bottomRowSelected.png; sourceTree = "<group>"; };
 		E74543F61110EAD600FD9036 /* middleRow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = middleRow.png; path = Images/middleRow.png; sourceTree = "<group>"; };
@@ -208,7 +210,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* SkateScoreGuide.app */,
+				1D6058910D05DD3D006BFB54 /* Sk8 Score!.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -298,6 +300,8 @@
 		E74541111110094700FD9036 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E722A68111192E4D00843FFC /* AppIcon.png */,
+				E722A63C1119272500843FFC /* skate.png */,
 				E722A52F1118C17400843FFC /* Default.png */,
 				E722A42911189C1F00843FFC /* whiteButtonBackground.png */,
 				E7AC09541116A47E00802AFF /* tableBackground.jpg */,
@@ -310,7 +314,6 @@
 				E74543F91110EAD600FD9036 /* topAndBottomRowSelected.png */,
 				E74543FA1110EAD600FD9036 /* topRow.png */,
 				E74543FB1110EAD600FD9036 /* topRowSelected.png */,
-				E74543E61110E8D100FD9036 /* imageA.png */,
 				E74543DE1110E7ED00FD9036 /* indicator.png */,
 				E74541121110095A00FD9036 /* tableBackground.png */,
 			);
@@ -337,9 +340,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* SkateScoreGuide */ = {
+		1D6058900D05DD3D006BFB54 /* Sk8 Score */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "SkateScoreGuide" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Sk8 Score" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -349,9 +352,9 @@
 			);
 			dependencies = (
 			);
-			name = SkateScoreGuide;
+			name = "Sk8 Score";
 			productName = SkateScoreGuide;
-			productReference = 1D6058910D05DD3D006BFB54 /* SkateScoreGuide.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* Sk8 Score!.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -373,7 +376,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* SkateScoreGuide */,
+				1D6058900D05DD3D006BFB54 /* Sk8 Score */,
 			);
 		};
 /* End PBXProject section */
@@ -388,7 +391,6 @@
 				E74541131110095A00FD9036 /* tableBackground.png in Resources */,
 				E745419D111087CC00FD9036 /* ProgramGroupViewController.xib in Resources */,
 				E74543DF1110E7ED00FD9036 /* indicator.png in Resources */,
-				E74543E71110E8D100FD9036 /* imageA.png in Resources */,
 				E74543FC1110EAD600FD9036 /* bottomRow.png in Resources */,
 				E74543FD1110EAD600FD9036 /* bottomRowSelected.png in Resources */,
 				E74543FE1110EAD600FD9036 /* middleRow.png in Resources */,
@@ -406,6 +408,8 @@
 				E722A42A11189C1F00843FFC /* whiteButtonBackground.png in Resources */,
 				E722A4CB1118AD6800843FFC /* ProgramGroupAddController.xib in Resources */,
 				E722A5301118C17400843FFC /* Default.png in Resources */,
+				E722A63D1119272500843FFC /* skate.png in Resources */,
+				E722A68211192E4D00843FFC /* AppIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +470,7 @@
 				GCC_PREFIX_HEADER = SkateScoreGuide_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				INFOPLIST_FILE = "SkateScoreGuide-Info.plist";
-				PRODUCT_NAME = SkateScoreGuide;
+				PRODUCT_NAME = "Sk8 Score!";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -512,7 +516,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "SkateScoreGuide" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Sk8 Score" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,

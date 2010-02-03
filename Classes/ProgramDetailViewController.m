@@ -69,6 +69,12 @@
 			}
 		}
 		
+		if (programGroup == nil) {
+			programGroup = [[ProgramGroup alloc] init];
+			programGroup.description = @"My Programs";
+			[programGroup save];
+		}
+		
 		newProgram.programGroup = programGroup;
 		[newProgram save];
 	} else {

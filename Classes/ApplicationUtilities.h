@@ -16,7 +16,7 @@
 
 #define APPLICATION_NAME		@"Sk8Score!"
 
-#define LOAD_TEST_DATA						1
+#define LOAD_TEST_DATA						0
 #define LOAD_TEST_DATA_FOR_SOV_VALIDATION	(0 && LOAD_TEST_DATA)
 
 
