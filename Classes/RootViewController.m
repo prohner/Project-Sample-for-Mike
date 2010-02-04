@@ -447,6 +447,23 @@
 		[programGroupPrograms addObject:programs];
 		[programs release];
 	}
+	
+//	[self performSelectorInBackground:@selector(updateProgramScores) withObject:nil];
+	[self performSelector:(@selector(updateProgramScores)) withObject:(nil) afterDelay:0.5];
+
+}
+
+- (void)updateProgramScores {
+	// Used in background to force programs to recalculate.  Trying to reduce "laggy-ness"
+	NSAutoreleasePool *autoreleasepool = [[NSAutoreleasePool alloc] init];
+	for (NSArray *programs in programGroupPrograms) {
+		for (Program *program in programs) {
+			[program programScore];
+			[program release];
+		}
+		[programs release];
+	}
+	[autoreleasepool release];
 }
 
 - (id)addProgram {
@@ -681,7 +698,9 @@
 	if (thereArePrograms) {
 		// Navigation logic may go here -- for example, create and push another view controller.
 		ProgramElementsViewController *programElementsViewController = [[ProgramElementsViewController alloc] initWithNibName:@"ProgramElementsViewController" bundle:nil];
-		programElementsViewController.program = [self programForRowAtIndexPath:indexPath];
+		Program *program = [self programForRowAtIndexPath:indexPath];
+		programElementsViewController.program = program;
+		program.cachedScoresAreDirty = YES;
 		[self.navigationController pushViewController:programElementsViewController animated:YES];
 		[programElementsViewController release];
 	}

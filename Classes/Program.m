@@ -13,7 +13,13 @@
 
 @implementation Program
 
-@synthesize description, programGroup, ordinalPosition;
+@synthesize description, programGroup, ordinalPosition, cachedScoresAreDirty;
+
+- (id)init {
+	[super init];
+	cachedScoresAreDirty = YES;
+	return self;
+}
 
 -(NSMutableArray *)programElements {
 	return [[self findRelated:[ProgramElement class] filter:@"1 = 1 order by ordinal_position"] mutableCopy];
@@ -48,15 +54,27 @@
 			scores.elementsInProgram++;
 		}
 	}
+	
+	cachedScoresAreDirty	= NO;
+	cached_baseScore		= scores.baseScore;
+	cached_scoreWithGOE		= scores.scoreWithGOE;
+	
 	return scores;
 }
 
 - (NSString *)programSubDescription {
 	NSString *subDescription = @"No elements in this program.";
-	ScoreSet scores = [self programScore];
 
-	if (scores.elementsInProgram > 0) {
-		subDescription = [NSString stringWithFormat:@"Base score: %.2f\nWith GOEs: %.2f", scores.baseScore, scores.scoreWithGOE];
+	NSLog(@"Getting program sub description %@", description);
+	if (cachedScoresAreDirty) {
+		// Forcing update of the cached_* scores
+		[self programScore];
+		NSLog(@"\tHad to look it up");
+	}
+
+
+	if (cached_baseScore > 0) {
+		subDescription = [NSString stringWithFormat:@"Base score: %.2f\nWith GOEs: %.2f", cached_baseScore, cached_scoreWithGOE];
 	}
 
 	return subDescription;
@@ -70,7 +88,8 @@
 
 +(NSArray *)transients
 {
-	return [NSArray arrayWithObject:@"programSubDescription"];
+	return [NSArray arrayWithObjects:@"programSubDescription", @"cachedScoresAreDirty", nil];
+	
 }
 
 @end

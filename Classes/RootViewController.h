@@ -40,6 +40,7 @@
 - (void)shareAppWithFriend;
 - (void)sendFeedback;
 - (void)organizeProgramGroups;	
+- (void)updateProgramScores;
 
 #if LOAD_TEST_DATA
 - (void)addTo:(Program *)prog 
