@@ -42,7 +42,7 @@
 - (void)organizeProgramGroups;	
 - (void)updateProgramScores;
 
-#if LOAD_TEST_DATA
+#if LOAD_TEST_DATA || LOAD_SAMPLE_DATA_TO_PUBLISH
 - (void)addTo:(Program *)prog 
 		ijsId:(NSString *)ijsId 
   ijsIdSecond:(NSString *)ijsIdSecond 

@@ -65,11 +65,11 @@
 - (NSString *)programSubDescription {
 	NSString *subDescription = @"No elements in this program.";
 
-	NSLog(@"Getting program sub description %@", description);
+//	NSLog(@"Getting program sub description %@", description);
 	if (cachedScoresAreDirty) {
 		// Forcing update of the cached_* scores
 		[self programScore];
-		NSLog(@"\tHad to look it up");
+//		NSLog(@"\tHad to look it up");
 	}
 
 

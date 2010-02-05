@@ -16,10 +16,10 @@
 
 #define APPLICATION_NAME		@"Sk8 Score!"
 
+#define LOAD_SAMPLE_DATA_TO_PUBLISH			0
 #define LOAD_TEST_DATA						0
 #define LOAD_TEST_DATA_FOR_SOV_VALIDATION	(0 && LOAD_TEST_DATA)
 
-// TODO Check base scores for preset programs
 #define ASSERT_BASE_SCORES					(1 && LOAD_TEST_DATA)
 
 
