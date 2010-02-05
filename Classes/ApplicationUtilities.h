@@ -34,7 +34,7 @@
 #define JUMP_COMBO_TYPE_SEQ		@"sequence"
 #define JUMP_COMBO_TYPE_COMBO	@"combo"
 
-#define TABLE_MAIN_LABEL_TEXT_COLOR				[UIColor colorWithRed:0.25 green:0.0 blue:0.0 alpha:1.0]
+#define TABLE_MAIN_LABEL_TEXT_COLOR				[UIColor colorWithRed:0.75 green:0.0 blue:0.0 alpha:1.0]
 #define TABLE_MAIN_LABEL_HIGHLIGHT_TEXT_COLOR	[UIColor colorWithRed:1.0 green:1.0 blue:0.9 alpha:1.0]
 
 #define TABLE_SUB_LABEL_TEXT_COLOR				[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0]

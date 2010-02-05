@@ -34,7 +34,7 @@
     self.navigationItem.rightBarButtonItem = addButton;
 
 	NSArray *testProgramGroups = [[ProgramGroup findByCriteria: @"WHERE 1 = 1"] retain];
-	NSLog(@"Program Group count %i", [testProgramGroups count]);
+
 	if ([testProgramGroups count] == 0) {
 		[self fabricateData];
 	}
@@ -900,10 +900,11 @@
 	
 	NSString *subject = [[NSString alloc] initWithFormat:@"%@ on iPhone/iTouch", APPLICATION_NAME];
 
-	NSString *message = [[NSString alloc] initWithFormat:@"Check out this app I've been using to calculate my figure skating IJS scores.<br />"
-						 "It's called %@ and you can <a href=\"%@\">learn more at the web site.</a>",
-						 APPLICATION_NAME, 
-						 WEB_URL];						  
+	NSString *message = [[NSString alloc] initWithFormat:@"Calculate your skating program IJS scores with <a href=\"%@\">%@</a><br />"
+						 "GET THE POINT.",
+						 WEB_URL,
+						 APPLICATION_NAME 
+						 ];						  
 	
 	
 	[controller setSubject:subject];

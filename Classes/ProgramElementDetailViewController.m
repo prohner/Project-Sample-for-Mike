@@ -55,11 +55,29 @@
 	jumpComboElement2 = @"";
 	jumpComboElement3 = @"";
 	
-	[self presetValuesForProgramElement];
+	Element *element = [Elements getElementFor:existingProgramElement.ijsId];
+
+	if ( ! existingProgramElement.isSingleElement) {
+		elementGroupChooser.selectedSegmentIndex = 3;
+	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_JUMPS]) {
+		elementGroupChooser.selectedSegmentIndex = 0;
+	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_SPINS]) {
+		elementGroupChooser.selectedSegmentIndex = 1;
+	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_STEP_SPIRAL]) {
+		elementGroupChooser.selectedSegmentIndex = 2;		
+	} else {
+		NSAssert(@"Could not identify the group for the element.", @"other");
+	}
 	
 	viewHasFinishedLoading = YES;
 //	[self refreshDisplayInfo];
-	[self performSelector:(@selector(refreshDisplayInfo)) withObject:(nil) afterDelay:0.5];
+//	[self performSelector:(@selector(refreshDisplayInfo)) withObject:(nil) afterDelay:0.5];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
+	[self presetValuesForProgramElement];
 }
 
 - (void)presetValuesForProgramElement {
@@ -74,7 +92,7 @@
 	Element *element = [Elements getElementFor:existingProgramElement.ijsId];
 	
 	if ( ! existingProgramElement.isSingleElement) {
-		elementGroupChooser.selectedSegmentIndex = 3;
+//		elementGroupChooser.selectedSegmentIndex = 3;
 		[self pickerView:jumpPickerView setRowForElement:existingProgramElement withArray:jumps];
 		if ([existingProgramElement.jumpComboType isEqualToString:JUMP_COMBO_TYPE_COMBO]) {
 			jumpComboSeqChooser.selectedSegmentIndex = 0;
@@ -84,15 +102,15 @@
 
 
 	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_JUMPS]) {
-		elementGroupChooser.selectedSegmentIndex = 0;
+//		elementGroupChooser.selectedSegmentIndex = 0;
 		[self pickerView:jumpPickerView setRowForElement:existingProgramElement withArray:jumps];
 
 	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_SPINS]) {
-		elementGroupChooser.selectedSegmentIndex = 1;
+//		elementGroupChooser.selectedSegmentIndex = 1;
 		[self pickerView:spinPickerView setRowForElement:existingProgramElement withArray:spins];
 
 	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_STEP_SPIRAL]) {
-		elementGroupChooser.selectedSegmentIndex = 2;
+//		elementGroupChooser.selectedSegmentIndex = 2;
 		[self pickerView:stepSpiralPickerView setRowForElement:existingProgramElement withArray:steps];
 
 	} else {
@@ -115,6 +133,8 @@
 		gradeOfExecutionChooser.selectedSegmentIndex = 6;
 	}
 
+	NSLog(@"Executed presetValuesForProgramElement");
+	[self performSelector:(@selector(refreshDisplayInfo)) withObject:(nil) afterDelay:1.0];
 	
 }
 
@@ -126,6 +146,8 @@
 	if ( ! viewHasFinishedLoading) {
 		return;
 	}
+
+	NSLog(@"Executed refreshDisplayInfo");
 
 	ProgramElement *pe = [[ProgramElement alloc] init];
 	

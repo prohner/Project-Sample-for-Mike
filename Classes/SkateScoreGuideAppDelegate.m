@@ -23,6 +23,7 @@
     
     // Override point for customization after app launch    
 	navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+	
 	[UIView setAnimationsEnabled:YES];
 	
 	[window addSubview:[navigationController view]];

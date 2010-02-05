@@ -9,9 +9,9 @@
 	};
 	1D3623250D0F684500981E51 /* SkateScoreGuideAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1076, 943}}";
-			sepNavSelRange = "{573, 21}";
-			sepNavVisRange = "{0, 962}";
+			sepNavIntBoundsRect = "{{0, 0}, {927, 875}}";
+			sepNavSelRange = "{596, 0}";
+			sepNavVisRange = "{0, 964}";
 		};
 	};
 	1D6058900D05DD3D006BFB54 /* Sk8 Score */ = {
@@ -29,9 +29,9 @@
 	};
 	28C286E00D94DF7D0034E888 /* RootViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1265, 13104}}";
-			sepNavSelRange = "{39751, 0}";
-			sepNavVisRange = "{38785, 2251}";
+			sepNavIntBoundsRect = "{{0, 0}, {1216, 12298}}";
+			sepNavSelRange = "{1243, 0}";
+			sepNavVisRange = "{589, 4022}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -45,19 +45,19 @@
 		breakpoints = (
 			E74544D811110BDB00FD9036 /* Program.m:75 */,
 			E745480D1111EE8B00FD9036 /* ProgramElementsViewController.m:453 */,
-			E7B1DEA011129A9F0053C0B5 /* ProgramElementDetailViewController.m:471 */,
+			E7B1DEA011129A9F0053C0B5 /* ProgramElementDetailViewController.m:493 */,
 			E7B1E14A11137A020053C0B5 /* ProgramElementsViewController.m:526 */,
 			E7B1E1921113EFE90053C0B5 /* ProgramElementsViewController.m:356 */,
 			E7B1E2C911153AAE0053C0B5 /* ProgramDetailViewController.m:60 */,
 			E7B1E70A11167BA20053C0B5 /* ProgramElementsViewController.m:296 */,
 			E7B1E72311167CAA0053C0B5 /* ProgramElementsViewController.m:315 */,
-			E7AC0A381117D49200802AFF /* ProgramElementDetailViewController.m:396 */,
-			E722A31B1117EBF900843FFC /* ProgramElementDetailViewController.m:134 */,
+			E722A31B1117EBF900843FFC /* ProgramElementDetailViewController.m:154 */,
 			E722A4B31118AC5900843FFC /* ProgramGroupViewController.m:167 */,
 			E722A60E1119209300843FFC /* RootViewController.m:560 */,
 			E745C178111BD59E00F10AC5 /* RootViewController.m:602 */,
-			E745C18D111BD77200F10AC5 /* RootViewController.m:38 */,
 			E745C1A0111BD90900F10AC5 /* RootViewController.m:498 */,
+			E7B778DB111BF38B007B15E0 /* ProgramElementDetailViewController.m:174 */,
+			E7B778EA111BF6F3007B15E0 /* ProgramElementDetailViewController.m:137 */,
 		);
 		codeSenseManager = E74540BE1110069B00FD9036 /* Code sense */;
 		executables = (
@@ -107,7 +107,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					749,
+					1350,
 					20,
 					48,
 					43,
@@ -210,6 +210,17 @@
 			E7B1E6F911167AEA0053C0B5 = E7B1E6F911167AEA0053C0B5 /* PBXTextBookmark */;
 			E7B1E787111686BB0053C0B5 = E7B1E787111686BB0053C0B5 /* PBXTextBookmark */;
 			E7B7788B111BDDB6007B15E0 /* PBXTextBookmark */ = E7B7788B111BDDB6007B15E0 /* PBXTextBookmark */;
+			E7B778A0111BE89F007B15E0 /* PBXTextBookmark */ = E7B778A0111BE89F007B15E0 /* PBXTextBookmark */;
+			E7B778CB111BEE75007B15E0 /* PBXTextBookmark */ = E7B778CB111BEE75007B15E0 /* PBXTextBookmark */;
+			E7B778CC111BEE75007B15E0 /* PBXTextBookmark */ = E7B778CC111BEE75007B15E0 /* PBXTextBookmark */;
+			E7B778CD111BEE75007B15E0 /* PBXTextBookmark */ = E7B778CD111BEE75007B15E0 /* PBXTextBookmark */;
+			E7B778CE111BEE75007B15E0 /* PBXTextBookmark */ = E7B778CE111BEE75007B15E0 /* PBXTextBookmark */;
+			E7B778CF111BEE75007B15E0 /* PBXTextBookmark */ = E7B778CF111BEE75007B15E0 /* PBXTextBookmark */;
+			E7B778D2111BF2EB007B15E0 /* PBXTextBookmark */ = E7B778D2111BF2EB007B15E0 /* PBXTextBookmark */;
+			E7B778D5111BF306007B15E0 /* PBXTextBookmark */ = E7B778D5111BF306007B15E0 /* PBXTextBookmark */;
+			E7B778D8111BF32B007B15E0 /* PBXTextBookmark */ = E7B778D8111BF32B007B15E0 /* PBXTextBookmark */;
+			E7B778FB111BFA9A007B15E0 /* XCBuildMessageTextBookmark */ = E7B778FB111BFA9A007B15E0 /* XCBuildMessageTextBookmark */;
+			E7B778FC111BFA9A007B15E0 /* PBXTextBookmark */ = E7B778FC111BFA9A007B15E0 /* PBXTextBookmark */;
 		};
 		sourceControlManager = E74540BD1110069B00FD9036 /* Source Control */;
 		userBuildSettings = {
@@ -217,7 +228,7 @@
 			SYMROOT = "/Users/Preston Air/Documents/App Builds/SkateScoreGuide";
 		};
 	};
-	E722A31B1117EBF900843FFC /* ProgramElementDetailViewController.m:134 */ = {
+	E722A31B1117EBF900843FFC /* ProgramElementDetailViewController.m:154 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -229,11 +240,11 @@
 		functionName = "-refreshDisplayInfo";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 134;
+		lineNumber = 154;
 		location = "Sk8 Score!";
-		modificationTime = 287037889.354621;
+		modificationTime = 287045507.178222;
 		originalNumberOfMultipleMatches = 1;
-		state = 1;
+		state = 2;
 	};
 	E722A4B31118AC5900843FFC /* ProgramGroupViewController.m:167 */ = {
 		isa = PBXFileBreakpoint;
@@ -249,7 +260,7 @@
 		ignoreCount = 0;
 		lineNumber = 167;
 		location = "Sk8 Score!";
-		modificationTime = 287037889.3800589;
+		modificationTime = 287045507.515945;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -287,11 +298,11 @@
 		delayBeforeContinue = 0;
 		fileReference = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		functionName = "-loadData";
-		hitCount = 1;
+		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 560;
 		location = "Sk8 Score!";
-		modificationTime = 287037935.855909;
+		modificationTime = 287045507.53918;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -507,15 +518,15 @@
 	};
 	E74540FE111007D900FD9036 /* ApplicationUtilities.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {927, 854}}";
-			sepNavSelRange = "{454, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {927, 852}}";
+			sepNavSelRange = "{944, 0}";
 			sepNavVisRange = "{0, 1674}";
 		};
 	};
 	E74540FF111007D900FD9036 /* ApplicationUtilities.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1031, 927}}";
-			sepNavSelRange = "{1065, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {927, 875}}";
+			sepNavSelRange = "{192, 0}";
 			sepNavVisRange = "{0, 1659}";
 		};
 	};
@@ -599,9 +610,9 @@
 	};
 	E74543A71110C5F800FD9036 /* ProgramElement.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {950, 2236}}";
-			sepNavSelRange = "{1325, 0}";
-			sepNavVisRange = "{179, 2099}";
+			sepNavIntBoundsRect = "{{0, 0}, {1154, 2288}}";
+			sepNavSelRange = "{1338, 0}";
+			sepNavVisRange = "{561, 1972}";
 			sepNavWindowFrame = "{{15, 58}, {1554, 1115}}";
 		};
 	};
@@ -619,7 +630,7 @@
 		ignoreCount = 0;
 		lineNumber = 75;
 		location = SkateScoreGuide;
-		modificationTime = 287037889.031566;
+		modificationTime = 287045507.177387;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -673,22 +684,22 @@
 		ignoreCount = 0;
 		lineNumber = 453;
 		location = "Sk8 Score!";
-		modificationTime = 287037889.172967;
+		modificationTime = 287045507.386363;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
 	E745491711123C6400FD9036 /* ProgramElementDetailViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1076, 925}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1154, 884}}";
 			sepNavSelRange = "{976, 19}";
 			sepNavVisRange = "{0, 1975}";
 		};
 	};
 	E745491811123C6400FD9036 /* ProgramElementDetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1307, 6331}}";
-			sepNavSelRange = "{2364, 89}";
-			sepNavVisRange = "{1949, 2441}";
+			sepNavIntBoundsRect = "{{0, 0}, {1376, 6513}}";
+			sepNavSelRange = "{2436, 0}";
+			sepNavVisRange = "{1949, 1103}";
 			sepNavWindowFrame = "{{15, 58}, {1554, 1115}}";
 		};
 	};
@@ -697,7 +708,7 @@
 		fRef = E745491811123C6400FD9036 /* ProgramElementDetailViewController.m */;
 		name = "ProgramElementDetailViewController.m: 62";
 		rLen = 89;
-		rLoc = 2364;
+		rLoc = 2960;
 		rType = 0;
 		vrLen = 2441;
 		vrLoc = 1949;
@@ -742,29 +753,11 @@
 		delayBeforeContinue = 0;
 		fileReference = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		functionName = "-viewWillAppear:";
-		hitCount = 1;
+		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 602;
 		location = "Sk8 Score!";
-		modificationTime = 287037934.180106;
-		originalNumberOfMultipleMatches = 1;
-		state = 1;
-	};
-	E745C18D111BD77200F10AC5 /* RootViewController.m:38 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
-		functionName = "-viewDidLoad";
-		hitCount = 1;
-		ignoreCount = 0;
-		lineNumber = 38;
-		location = "Sk8 Score!";
-		modificationTime = 287037902.107528;
+		modificationTime = 287045507.561105;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -778,11 +771,11 @@
 		delayBeforeContinue = 0;
 		fileReference = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		functionName = "-fabricateData";
-		hitCount = 1;
+		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 498;
 		location = "Sk8 Score!";
-		modificationTime = 287037919.514945;
+		modificationTime = 287045507.609154;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -821,7 +814,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 560";
 		rLen = 0;
-		rLoc = 32082;
+		rLoc = 32021;
 		rType = 0;
 		vrLen = 4094;
 		vrLoc = 29409;
@@ -831,7 +824,7 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 807";
 		rLen = 0;
-		rLoc = 40893;
+		rLoc = 40832;
 		rType = 0;
 		vrLen = 2346;
 		vrLoc = 38785;
@@ -841,7 +834,7 @@
 		fRef = 1D3623250D0F684500981E51 /* SkateScoreGuideAppDelegate.m */;
 		name = "SkateScoreGuideAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 597;
+		rLoc = 599;
 		rType = 0;
 		vrLen = 962;
 		vrLoc = 0;
@@ -855,24 +848,6 @@
 		rType = 0;
 		vrLen = 2269;
 		vrLoc = 195;
-	};
-	E7AC0A381117D49200802AFF /* ProgramElementDetailViewController.m:396 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = E745491811123C6400FD9036 /* ProgramElementDetailViewController.m */;
-		functionName = "-pickerView:titleForRow:forComponent:";
-		hitCount = 0;
-		ignoreCount = 0;
-		lineNumber = 396;
-		location = "Sk8 Score!";
-		modificationTime = 287037889.324656;
-		originalNumberOfMultipleMatches = 1;
-		state = 1;
 	};
 	E7AE5469111A75B300422713 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -894,7 +869,7 @@
 		vrLen = 2098;
 		vrLoc = 3696;
 	};
-	E7B1DEA011129A9F0053C0B5 /* ProgramElementDetailViewController.m:471 */ = {
+	E7B1DEA011129A9F0053C0B5 /* ProgramElementDetailViewController.m:493 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -906,9 +881,9 @@
 		functionName = "-jumpComboAdd:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 471;
+		lineNumber = 493;
 		location = SkateScoreGuide;
-		modificationTime = 287037889.03172;
+		modificationTime = 287045507.177464;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -926,7 +901,7 @@
 		ignoreCount = 0;
 		lineNumber = 526;
 		location = "Sk8 Score!";
-		modificationTime = 287037889.2061549;
+		modificationTime = 287045507.401298;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -944,7 +919,7 @@
 		ignoreCount = 0;
 		lineNumber = 356;
 		location = SkateScoreGuide;
-		modificationTime = 287037889.0317479;
+		modificationTime = 287045507.178036;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -996,7 +971,7 @@
 		ignoreCount = 0;
 		lineNumber = 60;
 		location = "Sk8 Score!";
-		modificationTime = 287037889.237658;
+		modificationTime = 287045507.431087;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -1012,7 +987,7 @@
 	};
 	E7B1E53A111646CE0053C0B5 /* ProgramElementViewCell.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1076, 927}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1154, 881}}";
 			sepNavSelRange = "{694, 0}";
 			sepNavVisRange = "{0, 700}";
 		};
@@ -1078,7 +1053,7 @@
 		ignoreCount = 0;
 		lineNumber = 296;
 		location = "Sk8 Score!";
-		modificationTime = 287037889.265845;
+		modificationTime = 287045507.445531;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -1096,7 +1071,7 @@
 		ignoreCount = 0;
 		lineNumber = 315;
 		location = "Sk8 Score!";
-		modificationTime = 287037889.296497;
+		modificationTime = 287045507.469856;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -1115,9 +1090,154 @@
 		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
 		name = "RootViewController.m: 768";
 		rLen = 0;
-		rLoc = 39426;
+		rLoc = 39365;
 		rType = 0;
 		vrLen = 2346;
 		vrLoc = 38785;
+	};
+	E7B778A0111BE89F007B15E0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 775";
+		rLen = 0;
+		rLoc = 39690;
+		rType = 0;
+		vrLen = 2251;
+		vrLoc = 38785;
+	};
+	E7B778CB111BEE75007B15E0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* SkateScoreGuideAppDelegate.m */;
+		name = "SkateScoreGuideAppDelegate.m: 26";
+		rLen = 0;
+		rLoc = 596;
+		rType = 0;
+		vrLen = 964;
+		vrLoc = 0;
+	};
+	E7B778CC111BEE75007B15E0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E74540FF111007D900FD9036 /* ApplicationUtilities.m */;
+		name = "ApplicationUtilities.m: 11";
+		rLen = 0;
+		rLoc = 192;
+		rType = 0;
+		vrLen = 1659;
+		vrLoc = 0;
+	};
+	E7B778CD111BEE75007B15E0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E74540FE111007D900FD9036 /* ApplicationUtilities.h */;
+		name = "ApplicationUtilities.h: 37";
+		rLen = 0;
+		rLoc = 944;
+		rType = 0;
+		vrLen = 1674;
+		vrLoc = 0;
+	};
+	E7B778CE111BEE75007B15E0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 736";
+		rLen = 27;
+		rLoc = 37849;
+		rType = 0;
+		vrLen = 3198;
+		vrLoc = 36939;
+	};
+	E7B778CF111BEE75007B15E0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 904";
+		rLen = 0;
+		rLoc = 44272;
+		rType = 0;
+		vrLen = 2352;
+		vrLoc = 43441;
+	};
+	E7B778D2111BF2EB007B15E0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 904";
+		rLen = 0;
+		rLoc = 44272;
+		rType = 0;
+		vrLen = 2302;
+		vrLoc = 43441;
+	};
+	E7B778D5111BF306007B15E0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 904";
+		rLen = 0;
+		rLoc = 44272;
+		rType = 0;
+		vrLen = 2302;
+		vrLoc = 43441;
+	};
+	E7B778D8111BF32B007B15E0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 904";
+		rLen = 0;
+		rLoc = 44272;
+		rType = 0;
+		vrLen = 2302;
+		vrLoc = 43441;
+	};
+	E7B778DB111BF38B007B15E0 /* ProgramElementDetailViewController.m:174 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = E745491811123C6400FD9036 /* ProgramElementDetailViewController.m */;
+		functionName = "-refreshDisplayInfo";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 174;
+		location = "Sk8 Score!";
+		modificationTime = 287045507.632961;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	E7B778EA111BF6F3007B15E0 /* ProgramElementDetailViewController.m:137 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = E745491811123C6400FD9036 /* ProgramElementDetailViewController.m */;
+		functionName = "-presetValuesForProgramElement";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 137;
+		location = "Sk8 Score!";
+		modificationTime = 287045507.655268;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	E7B778FB111BFA9A007B15E0 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'element' undeclared (first use in this function)";
+		fRef = E745491811123C6400FD9036 /* ProgramElementDetailViewController.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 61;
+		rType = 1;
+	};
+	E7B778FC111BFA9A007B15E0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E745491811123C6400FD9036 /* ProgramElementDetailViewController.m */;
+		name = "ProgramElementDetailViewController.m: 60";
+		rLen = 0;
+		rLoc = 2436;
+		rType = 0;
+		vrLen = 1151;
+		vrLoc = 1898;
 	};
 }
