@@ -33,6 +33,13 @@
 																			   action:@selector(addProgram)];
     self.navigationItem.rightBarButtonItem = addButton;
 
+	NSArray *testProgramGroups = [[ProgramGroup findByCriteria: @"WHERE 1 = 1"] retain];
+	NSLog(@"Program Group count %i", [testProgramGroups count]);
+	if ([testProgramGroups count] == 0) {
+		[self fabricateData];
+	}
+	[testProgramGroups release];
+	
 #if LOAD_SAMPLE_DATA_TO_PUBLISH
 	int elementOrdinal = 0;
 	ProgramGroup *pg1 = [[ProgramGroup alloc] init];
@@ -453,7 +460,6 @@
 
 }
 
-#if LOAD_TEST_DATA || LOAD_SAMPLE_DATA_TO_PUBLISH
 - (void)addTo:(Program *)prog 
 		ijsId:(NSString *)ijsId 
   ijsIdSecond:(NSString *)ijsIdSecond 
@@ -488,10 +494,69 @@
 
 #endif
 
-#endif
+- (void)fabricateData {
+	int elementOrdinal = 0;
+	ProgramGroup *pg1 = [[ProgramGroup alloc] init];
+	pg1.description = @"2010 Programs";
+	pg1.ordinalPosition = 0;
+	[pg1 save];
+	
+	ProgramGroup *pg2 = [[ProgramGroup alloc] init];
+	pg2.description = @"Old Programs";
+	pg2.ordinalPosition = 1;
+	[pg2 save];
+	
+	Program *p1 = [[Program alloc] init];
+	p1.description = @"Long";
+	p1.programGroup = pg1;
+	p1.ordinalPosition = 0;
+	[p1 save];
+	
+	[self addTo:p1	ijsId:@"CCoSp4"	ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+	[self addTo:p1	ijsId:@"2A"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_minus_3	inSecondHalf:NO		inPos:elementOrdinal++];
+	[self addTo:p1	ijsId:@"2Lz"	ijsIdSecond:@"2T"	ijsIdThird:@"1Lo"	comboType:JUMP_COMBO_TYPE_COMBO	estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+	[self addTo:p1	ijsId:@"1S"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+	[self addTo:p1	ijsId:@"SpSq4"	ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+	[self addTo:p1	ijsId:@"2A"		ijsIdSecond:@"2T"	ijsIdThird:@""		comboType:JUMP_COMBO_TYPE_COMBO	estGOE:GOE_0		inSecondHalf:YES	inPos:elementOrdinal++];
+	[self addTo:p1	ijsId:@"LSp1"	ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:YES	inPos:elementOrdinal++];
+	[self addTo:p1	ijsId:@"2F"		ijsIdSecond:@"1T"	ijsIdThird:@""		comboType:JUMP_COMBO_TYPE_COMBO	estGOE:GOE_0		inSecondHalf:YES	inPos:elementOrdinal++];
+	[self addTo:p1	ijsId:@"2Lz"	ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:YES	inPos:elementOrdinal++];
+	[self addTo:p1	ijsId:@"FSSp3"	ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:YES	inPos:elementOrdinal++];
+	
+	Program *p2 = [[Program alloc] init];
+	p2.description = @"Short";
+	p2.programGroup = pg1;
+	p2.ordinalPosition = 1;
+	[p2 save];
+	[self addTo:p2	ijsId:@"2Lz"	ijsIdSecond:@"2Lo"	ijsIdThird:@""		comboType:JUMP_COMBO_TYPE_COMBO	estGOE:GOE_minus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+	[self addTo:p2	ijsId:@"1A"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+	[self addTo:p2	ijsId:@"2F"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+	[self addTo:p2	ijsId:@"CCoSp4"	ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+	[self addTo:p2	ijsId:@"SpSq4"	ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_2	inSecondHalf:NO		inPos:elementOrdinal++];
+	[self addTo:p2	ijsId:@"LSp3"	ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+	
+	Program *p3 = [[Program alloc] init];
+	p3.description = @"Adult Gold Free Skate";
+	p3.programGroup = pg2;
+	p3.ordinalPosition = 2;
+	[p3 save];
+	
+	[self addTo:p3	ijsId:@"1A"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+	[self addTo:p3	ijsId:@"SSp2"	ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+	[self addTo:p3	ijsId:@"1F"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+	[self addTo:p3	ijsId:@"CCoSp1"	ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+	[self addTo:p3	ijsId:@"1Lz"	ijsIdSecond:@"1Lo"	ijsIdThird:@""		comboType:JUMP_COMBO_TYPE_COMBO	estGOE:GOE_minus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+	[self addTo:p3	ijsId:@"1A"		ijsIdSecond:@"1T"	ijsIdThird:@""		comboType:JUMP_COMBO_TYPE_COMBO	estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+	[self addTo:p3	ijsId:@"2S"		ijsIdSecond:@"1T"	ijsIdThird:@"1Lo"	comboType:JUMP_COMBO_TYPE_COMBO	estGOE:GOE_0		inSecondHalf:YES	inPos:elementOrdinal++];
+	[self addTo:p3	ijsId:@"SlSt1"	ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:YES	inPos:elementOrdinal++];
+	[self addTo:p3	ijsId:@"2S"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_minus_3	inSecondHalf:YES	inPos:elementOrdinal++];
+	[self addTo:p3	ijsId:@"LSp1"	ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:YES	inPos:elementOrdinal++];
+	
+}
 
 - (void)loadData {
 	thereArePrograms = NO;
+	programGroups = [[ProgramGroup findByCriteria: @"WHERE 1 = 1"] retain];
 	programGroupPrograms = [[NSMutableArray alloc] init];
 	// Create an array of arrays of programs for each section (program group)
 	for (int i = 0; i < [programGroups count]; i++) {
@@ -534,7 +599,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-	programGroups = [[ProgramGroup findByCriteria: @"WHERE 1 = 1"] retain];
 	[self loadData];
 	[self.tableView reloadData];
 }
@@ -740,7 +804,8 @@
 	} else {
 		cell.backgroundColor = [UIColor lightGrayColor];
 		cell.textLabel.textAlignment = UITextAlignmentCenter;
-		cell.textLabel.text = @"Tap + to add a program";
+		cell.textLabel.text = @"Tap + (upper right corner) to add a program";
+		cell.textLabel.numberOfLines = 0;
 		
 	}
 
@@ -834,8 +899,13 @@
 	controller.navigationBar.barStyle = UIBarStyleBlackOpaque;
 	
 	NSString *subject = [[NSString alloc] initWithFormat:@"%@ on iPhone/iTouch", APPLICATION_NAME];
-	NSString *message = @"Check out this app I've been using to calculate my figure skating IJS scores.";
 
+	NSString *message = [[NSString alloc] initWithFormat:@"Check out this app I've been using to calculate my figure skating IJS scores.<br />"
+						 "It's called %@ and you can <a href=\"%@\">learn more at the web site.</a>",
+						 APPLICATION_NAME, 
+						 WEB_URL];						  
+	
+	
 	[controller setSubject:subject];
 	
 	[controller setMessageBody:message isHTML:YES]; 

@@ -15,6 +15,7 @@
 #import "Element.h"
 
 #define APPLICATION_NAME		@"Sk8 Score!"
+#define WEB_URL					@"http://cooltoolapps.appspot.com/skate_score"
 
 #define LOAD_SAMPLE_DATA_TO_PUBLISH			0
 #define LOAD_TEST_DATA						0

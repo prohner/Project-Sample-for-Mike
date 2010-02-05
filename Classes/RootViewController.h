@@ -41,6 +41,7 @@
 - (void)sendFeedback;
 - (void)organizeProgramGroups;	
 - (void)updateProgramScores;
+- (void)fabricateData;
 
 #if LOAD_TEST_DATA || LOAD_SAMPLE_DATA_TO_PUBLISH
 - (void)addTo:(Program *)prog 

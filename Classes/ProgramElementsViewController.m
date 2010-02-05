@@ -541,9 +541,10 @@
 
 	NSString *salesPitch = [[NSString alloc] initWithFormat:@"<tr><td colspan=\"4\">"
 						   "Results presented by %@<br />"
-						   "<a href=\"http://cooltoolapps.appspot.com/\">Learn more.</a><br />"
+						   "<a href=\"%@\">Learn more.</a><br />"
 						   "</td></tr>",
-						   APPLICATION_NAME
+						   APPLICATION_NAME, 
+							WEB_URL
 						   ];						  
 	target = @"<!--salespitch-->";
 	body = [body stringByReplacingOccurrencesOfString:target withString:salesPitch];
