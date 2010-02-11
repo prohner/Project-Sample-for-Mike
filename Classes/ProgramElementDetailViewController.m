@@ -47,15 +47,15 @@
 	[workspaceView addSubview:jumpsView];
 	gradeOfExecutionChooser.selectedSegmentIndex = 3;
 	
-	jumps = [[Elements groupOfUniqueElementsIn:ELEMENT_GROUP_JUMPS] retain];
-	spins = [[Elements groupOfUniqueElementsIn:ELEMENT_GROUP_SPINS] retain];	
-	steps = [[Elements groupOfUniqueElementsIn:ELEMENT_GROUP_STEP_SPIRAL] retain];
+	jumps = [[Elements groupOfUniqueElementsIn:ELEMENT_GROUP_JUMPS inDiscipline:program.discipline] retain];
+	spins = [[Elements groupOfUniqueElementsIn:ELEMENT_GROUP_SPINS inDiscipline:program.discipline] retain];	
+	steps = [[Elements groupOfUniqueElementsIn:ELEMENT_GROUP_STEP_SPIRAL inDiscipline:program.discipline] retain];
 	
 	jumpComboElement1 = @"";
 	jumpComboElement2 = @"";
 	jumpComboElement3 = @"";
 	
-	Element *element = [Elements getElementFor:existingProgramElement.ijsId];
+	Element *element = [Elements getElementFor:existingProgramElement.ijsId inDiscipline:program.discipline];
 
 	if ( ! existingProgramElement.isSingleElement) {
 		elementGroupChooser.selectedSegmentIndex = 3;
@@ -89,7 +89,7 @@
 	jumpComboElement2 = existingProgramElement.ijsIdSecond;
 	jumpComboElement3 = existingProgramElement.ijsIdThird;
 
-	Element *element = [Elements getElementFor:existingProgramElement.ijsId];
+	Element *element = [Elements getElementFor:existingProgramElement.ijsId inDiscipline:program.discipline];
 	
 	if ( ! existingProgramElement.isSingleElement) {
 //		elementGroupChooser.selectedSegmentIndex = 3;
@@ -215,7 +215,7 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView setRowForElement:(ProgramElement *)programElement withArray:(NSArray *)elements {
-	Element *element = [Elements getElementFor:existingProgramElement.ijsId];
+	Element *element = [Elements getElementFor:existingProgramElement.ijsId inDiscipline:program.discipline];
 
 	NSString *letters = [[NSString alloc] initWithFormat:@"-%@", [element ijsIdLetters]];
 	NSString *digits = [element ijsIdDigits];

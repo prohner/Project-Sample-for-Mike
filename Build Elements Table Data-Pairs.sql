@@ -271,8 +271,8 @@ insert into #elements (discipline,  element_group, description, ijs_id, plus_3, 
 insert into #elements (discipline,  element_group, description, ijs_id, plus_3, plus_2, plus_1, base_score, minus_1, minus_2, minus_3) values ('pairs', 'pair spins', 'Pair Combination Level 3', 'PCoSp3',  1.5, 1.0, 0.5, 4.0, -0.3, -0.6, -1.0);
 insert into #elements (discipline,  element_group, description, ijs_id, plus_3, plus_2, plus_1, base_score, minus_1, minus_2, minus_3) values ('pairs', 'pair spins', 'Pair Combination Level 4', 'PCoSp4',  1.5, 1.0, 0.5, 4.5, -0.3, -0.6, -1.0);
 
-	select '[Elements addElement:@"' + ijs_id + '" discipline:@"' + discipline 
-	     + '" elementGroup:' + case when element_group = 'jumps'				then 'ELEMENT_GROUP_JUMPS' 
+	select '[Elements addElement:@"' + ijs_id + '" discipline:DISCIPLINE_PAIRS'
+	     + '  elementGroup:' + case when element_group = 'jumps'				then 'ELEMENT_GROUP_JUMPS' 
 	                                when element_group = 'spins'				then 'ELEMENT_GROUP_SPINS' 
 	                                when element_group = 'spiral/step'			then 'ELEMENT_GROUP_STEP_SPIRAL' 
 	                                when element_group = 'death spirals'		then 'ELEMENT_GROUP_DEATH_SPIRALS'
@@ -288,4 +288,5 @@ insert into #elements (discipline,  element_group, description, ijs_id, plus_3, 
 	     + ' minus_1:' + convert(varchar, minus_1) + ' minus_2:' + convert(varchar, minus_2) + ' minus_3:' + convert(varchar, minus_3) 
 	     + '];'
 	  from #elements
+
 set nocount off

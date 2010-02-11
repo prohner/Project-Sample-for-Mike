@@ -12,13 +12,13 @@
 
 @implementation ProgramElement
 
-@synthesize ijsId, ordinalPosition, estimatedGOE, isSecondHalf, ijsIdSecond, ijsIdThird, program, jumpComboType;
+@synthesize ijsId, ordinalPosition, estimatedGOE, isSecondHalf, ijsIdSecond, ijsIdThird, program, jumpComboType, discipline;
 
 -(NSString *)description {
 	NSString *desc;
 	if ([self isSingleElement]) {
 //		desc = [[NSString alloc] initWithFormat:@"%@ %@", [Elements getElementFor:ijsId].description, ijsId];
-		desc = [Elements getElementFor:ijsId].description;
+		desc = [Elements getElementFor:ijsId inDiscipline:[self discipline]].description;
 	} else {
 //		desc = [[NSString alloc] initWithFormat:@"%@ %@", [Elements getElementFor:ijsId].description, ijsId];;
 		desc = [[NSString alloc] initWithFormat:@"%@%@%@%@%@%@", 
@@ -41,6 +41,13 @@
 	return txt;
 }
 
+- (NSString *)discipline {
+	if (discipline == nil) {
+		discipline = DISCIPLINE_SINGLES;
+	}
+	return discipline;
+}
+
 
 -(BOOL)isSingleElement {
 	return (ijsIdSecond == nil || [ijsIdSecond isEqualToString:@""]) && (jumpComboType == nil || [jumpComboType isEqualToString:@""]);
@@ -48,15 +55,15 @@
 
 -(float)baseScore {
 	float score = 0;
-	Element *element1 = [Elements getElementFor:ijsId];
+	Element *element1 = [Elements getElementFor:ijsId inDiscipline:[self discipline]];
 	
 	if ([self isSingleElement]) {
 		// This is a single element
 		score = element1.baseScore;
 		
 	} else {
-		Element *element2 = [Elements getElementFor:ijsIdSecond];
-		Element *element3 = [Elements getElementFor:ijsIdThird];
+		Element *element2 = [Elements getElementFor:ijsIdSecond inDiscipline:[self discipline]];
+		Element *element3 = [Elements getElementFor:ijsIdThird inDiscipline:[self discipline]];
 		
 		float score1 = 0;
 		float score2 = 0;
@@ -115,11 +122,11 @@
 - (Element *)elementForGOE {
 	Element *element;
 	if ([self isSingleElement]) {
-		element = [Elements getElementFor:ijsId];
+		element = [Elements getElementFor:ijsId inDiscipline:[self discipline]];
 	} else {
-		Element *element1 = [Elements getElementFor:ijsId];
-		Element *element2 = [Elements getElementFor:ijsIdSecond];
-		Element *element3 = [Elements getElementFor:ijsIdThird];
+		Element *element1 = [Elements getElementFor:ijsId inDiscipline:[self discipline]];
+		Element *element2 = [Elements getElementFor:ijsIdSecond inDiscipline:[self discipline]];
+		Element *element3 = [Elements getElementFor:ijsIdThird inDiscipline:[self discipline]];
 		
 		if (element1.baseScore > element2.baseScore && element1.baseScore > element3.baseScore) {
 			element = element1;

@@ -23,6 +23,7 @@ typedef struct ScoreSet {
 	NSString *description;
 	ProgramGroup *programGroup;
 	int ordinalPosition;
+	NSString *discipline;
 
 	BOOL cachedScoresAreDirty;
 	float cached_baseScore;
@@ -32,6 +33,7 @@ typedef struct ScoreSet {
 @property (nonatomic, retain) NSString *description;
 @property (nonatomic, retain) ProgramGroup *programGroup;
 @property (nonatomic) int ordinalPosition;
+@property (nonatomic, retain) NSString *discipline;
 @property (nonatomic) BOOL cachedScoresAreDirty;
 
 -(NSString *)programSubDescription;

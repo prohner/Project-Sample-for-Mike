@@ -570,7 +570,11 @@
 	}
 	
 //	[self performSelectorInBackground:@selector(updateProgramScores) withObject:nil];
+#ifdef DEBUG
+	[self updateProgramScores];
+#else
 	[self performSelector:(@selector(updateProgramScores)) withObject:(nil) afterDelay:0.5];
+#endif
 
 }
 

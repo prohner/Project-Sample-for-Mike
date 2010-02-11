@@ -13,12 +13,20 @@
 
 @implementation Program
 
-@synthesize description, programGroup, ordinalPosition, cachedScoresAreDirty;
+@synthesize description, programGroup, ordinalPosition, discipline, cachedScoresAreDirty;
 
 - (id)init {
 	[super init];
 	cachedScoresAreDirty = YES;
+	discipline = DISCIPLINE_SINGLES;
 	return self;
+}
+
+- (NSString *)discipline {
+	if (discipline == nil) {
+		discipline = DISCIPLINE_SINGLES;
+	}
+	return discipline;
 }
 
 -(NSMutableArray *)programElements {
@@ -37,6 +45,9 @@
 	NSArray *programElements = [self programElements];
 	if ([programElements count] > 0) {
 		for (ProgramElement *programElement in programElements) {
+			if (programElement.discipline == nil) {
+				programElement.discipline = [self discipline];
+			}
 			NSString *goe = programElement.estimatedGOE;
 			
 			float baseScore = programElement.baseScore;

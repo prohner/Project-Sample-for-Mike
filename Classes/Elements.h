@@ -9,9 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "Element.h"
 
-#define ELEMENT_GROUP_JUMPS			@"jumps"
-#define ELEMENT_GROUP_SPINS			@"spins"
-#define ELEMENT_GROUP_STEP_SPIRAL	@"spiral/step"
+#define DISCIPLINE_SINGLES					@"singles"
+#define DISCIPLINE_PAIRS					@"pairs"
+
+#define ELEMENT_GROUP_JUMPS					@"jumps"
+#define ELEMENT_GROUP_SPINS					@"spins"
+#define ELEMENT_GROUP_STEP_SPIRAL			@"spiral/step"
+#define ELEMENT_GROUP_DEATH_SPIRALS			@"death spirals"
+#define ELEMENT_GROUP_LIFTS					@"lifts"
+#define ELEMENT_GROUP_PAIR_SPINS			@"pair spins"
+#define ELEMENT_GROUP_SIDE_BY_SIDE_JUMPS	@"side by side jumps"
+#define ELEMENT_GROUP_SIDE_BY_SIDE_SPINS	@"side by side spins"
+#define ELEMENT_GROUP_THROWS				@"throws"
+#define ELEMENT_GROUP_TWIST_LIFTS			@"twist lifts"
+
 
 @interface Elements : NSObject {
 //	static (NSDictionary *)elements;
@@ -30,8 +41,10 @@
 		   minus_3:(float)minus_3;
 + (void)checkElementsArray;
 + (void) initializeElements;
-+ (Element *)getElementFor:(NSString*)ijsId;
-+ (NSArray *)groupOfElements:(NSString *)elementGroup;
-+ (NSArray *)groupOfUniqueElementsIn:(NSString *)elementGroup;
++ (Element *)getElementFor:(NSString*)ijsId inDiscipline:(NSString *)discipline;
++ (NSArray *)groupOfElements:(NSString *)elementGroup inDiscipline:(NSString *)discipline;
++ (NSArray *)groupOfUniqueElementsIn:(NSString *)elementGroup inDiscipline:(NSString *)discipline;
++ (void)loadSinglesElements;
++ (void)loadPairsElements;
 
 @end

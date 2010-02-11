@@ -16,6 +16,7 @@
 	int ordinalPosition;
 	NSString *estimatedGOE;
 	BOOL isSecondHalf;
+	NSString *discipline;
 	
 	NSString *ijsIdSecond;
 	NSString *ijsIdThird;
@@ -28,6 +29,7 @@
 @property (nonatomic) int ordinalPosition;
 @property (nonatomic, retain) NSString *estimatedGOE;
 @property (nonatomic) BOOL isSecondHalf;
+@property (nonatomic, retain) NSString *discipline;
 @property (nonatomic, retain) NSString *jumpComboType;
 
 - (NSString *)description;
