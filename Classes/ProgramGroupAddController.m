@@ -36,6 +36,8 @@
 		  initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(finishAdd)];
 	self.navigationItem.rightBarButtonItem = bi;
 	
+	self.title = @"New Group";
+	
 	[ApplicationUtilities setupStandardTableLookFor:self.tableView inView:self.parentViewController.view];
 }
 
