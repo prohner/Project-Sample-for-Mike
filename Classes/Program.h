@@ -35,6 +35,9 @@ typedef struct ScoreSet {
 @property (nonatomic) int ordinalPosition;
 @property (nonatomic, retain) NSString *discipline;
 @property (nonatomic) BOOL cachedScoresAreDirty;
+- (BOOL)isSingles;
+- (BOOL)isPairs;
+- (BOOL)isDance;
 
 -(NSString *)programSubDescription;
 -(ScoreSet)programScore;

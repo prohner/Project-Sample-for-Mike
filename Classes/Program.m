@@ -29,6 +29,27 @@
 	return discipline;
 }
 
+- (BOOL)isSingles {
+	if ([[self discipline] isEqualToString:DISCIPLINE_SINGLES]) {
+		return YES;
+	}
+	return NO;
+}
+
+- (BOOL)isPairs {
+	if ([[self discipline] isEqualToString:DISCIPLINE_PAIRS]) {
+		return YES;
+	}
+	return NO;
+}
+
+- (BOOL)isDance {
+	if ([[self discipline] isEqualToString:DISCIPLINE_DANCE]) {
+		return YES;
+	}
+	return NO;
+}
+
 -(NSMutableArray *)programElements {
 	return [[self findRelated:[ProgramElement class] filter:@"1 = 1 order by ordinal_position"] mutableCopy];
 }

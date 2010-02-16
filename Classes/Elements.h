@@ -11,6 +11,7 @@
 
 #define DISCIPLINE_SINGLES					@"singles"
 #define DISCIPLINE_PAIRS					@"pairs"
+#define DISCIPLINE_DANCE					@"dance"
 
 #define ELEMENT_GROUP_JUMPS					@"jumps"
 #define ELEMENT_GROUP_SPINS					@"spins"
@@ -46,5 +47,8 @@
 + (NSArray *)groupOfUniqueElementsIn:(NSString *)elementGroup inDiscipline:(NSString *)discipline;
 + (void)loadSinglesElements;
 + (void)loadPairsElements;
+
++ (NSMutableDictionary *)arrayOfElementsFor:(NSString *)discipline;
+//+ (NSInteger) alphabeticSort(id string1, id string2, void *reverse);
 
 @end

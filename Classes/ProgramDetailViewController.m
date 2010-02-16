@@ -12,7 +12,7 @@
 
 @implementation ProgramDetailViewController
 
-@synthesize description;
+@synthesize description, typeOfProgram;
 
 /*
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -59,6 +59,20 @@
 		Program *newProgram = [[Program alloc] init];
 		newProgram.description = description.text;
 		
+		switch (typeOfProgram.selectedSegmentIndex) {
+			case 0:
+				newProgram.discipline = DISCIPLINE_SINGLES;
+				break;
+			case 1:
+				newProgram.discipline = DISCIPLINE_PAIRS;
+				break;
+			case 2:
+				newProgram.discipline = DISCIPLINE_DANCE;
+				break;
+			default:
+				break;
+		}
+		
 		int rowsInProgramGroupsSection = [self tableView:self.tableView numberOfRowsInSection: 1];
 		ProgramGroup *programGroup = nil;
 		for (int i = 0; i < rowsInProgramGroupsSection; i++) {
@@ -95,16 +109,16 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	if (section == 0) {
-		return 1;
-	} else {
+	if (section == 1) {
 		return [programGroups count]; 
+	} else {
+		return 1;
 	}
 }
 
@@ -116,6 +130,9 @@
 			break;
 		case 1:
 			v = [ApplicationUtilities getStandardTableSectionHeaderFor:aTableView with:@"Choose Group for New Program:"];
+			break;
+		case 2:
+			v = [ApplicationUtilities getStandardTableSectionHeaderFor:aTableView with:@"Type of Program:"];
 			break;
 		default:
 			break;
@@ -130,7 +147,7 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-	NSString *CellIdentifier = [[NSString alloc] initWithFormat: @"Cell", indexPath.section];
+	NSString *CellIdentifier = [[NSString alloc] initWithFormat: @"Cell %i", indexPath.section];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -144,12 +161,21 @@
 			r.size.height -= 4;
 			//		[description setFrame:r];
 			[cell addSubview:description];
-		} else {
+		} else if (indexPath.section == 1) {
 			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 			UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 270, 30)];
 			lbl.tag = 1;
 			[cell addSubview:lbl];
 			[lbl release];
+		} else if (indexPath.section == 2) {
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+			CGRect r = cell.contentView.frame;
+			r.origin.x += 9;
+			r.size.width -= 18;
+			r.size.height += 2;
+			
+			[typeOfProgram setFrame:r];
+			[cell addSubview:typeOfProgram];
 		}	
     }
     

@@ -11,6 +11,8 @@
 #import "ProgramElementDetailViewController.h"
 #import "ProgramElementViewCell.h"
 
+#import "PairsProgramElementDetailViewController.h"
+
 #define INDEXPATH_DUMMY_SECTION		2
 
 @implementation ProgramElementsViewController
@@ -106,16 +108,28 @@
 #endif
 
 - (void) elementDetailViewControllerFor:(ProgramElement *)programElement {
-	ProgramElementDetailViewController *addController = [[ProgramElementDetailViewController alloc] initWithNibName:@"ProgramElementDetailViewController" bundle:nil];
-	addController.program = program;
-	addController.existingProgramElement = programElement;
-	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addController];
-	navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-	[self.navigationController presentModalViewController:navigationController animated:YES];
-	[navigationController release];
-	[addController release];
+	if ([program isSingles]) {
+		ProgramElementDetailViewController *addController = [[ProgramElementDetailViewController alloc] initWithNibName:@"ProgramElementDetailViewController" bundle:nil];
+		addController.program = program;
+		addController.existingProgramElement = programElement;
+		UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addController];
+		navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+		[self.navigationController presentModalViewController:navigationController animated:YES];
+		[navigationController release];
+		[addController release];
+	} else if ([program isPairs]) {
+		PairsProgramElementDetailViewController *addController = [[PairsProgramElementDetailViewController alloc] initWithNibName:@"PairsProgramElementDetailViewController" bundle:nil];
+		addController.program = program;
+		addController.existingProgramElement = programElement;
+		UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addController];
+		navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+		[self.navigationController presentModalViewController:navigationController animated:YES];
+		[navigationController release];
+		[addController release];
+	}
 
 }
+
 - (id) addElement {
 	[self elementDetailViewControllerFor:nil];
 	

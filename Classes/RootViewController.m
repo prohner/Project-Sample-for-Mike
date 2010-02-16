@@ -12,7 +12,8 @@
 #import "ProgramDetailViewController.h"
 #import "ProgramGroupViewController.h"
 
-#define PROGRAMS_DECORATIVE_IMAGE	@"skate.png"
+#define PROGRAMS_DECORATIVE_IMAGE_SINGLES	@"program_singles_decoration.png"
+#define PROGRAMS_DECORATIVE_IMAGE_PAIRS		@"program_pairs_decoration.png"
 
 @implementation RootViewController
 
@@ -190,7 +191,12 @@
 		programGroupNationals.description = @"2010 US Championships";
 		programGroupNationals.ordinalPosition = 3;
 		[programGroupNationals save];
-
+		
+		ProgramGroup *programGroupPairs = [[ProgramGroup alloc] init];
+		programGroupPairs.description = @"2009 HomeSense";
+		programGroupPairs.ordinalPosition = 3;
+		[programGroupPairs save];
+		
 		int elementOrdinal = 0;
 		
 		Program *programLK = [[Program alloc] init];
@@ -356,6 +362,127 @@
 		[self addTo:programAT	ijsId:@"2A"		ijsIdSecond:@""		ijsIdThird:@""		comboType:JUMP_COMBO_TYPE_SEQ	estGOE:GOE_minus_3	inSecondHalf:YES	inPos:elementOrdinal++];
 		[self addTo:programAT	ijsId:@"FSSp3"	ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:YES	inPos:elementOrdinal++];
 
+		Program *programSS1 = [[Program alloc] init];
+		programSS1.description = @"Sav/Szol Short";
+		programSS1.programGroup = programGroupPairs;
+		programSS1.discipline = DISCIPLINE_PAIRS;
+		programSS1.ordinalPosition = 0;
+		[programSS1 save];
+		elementOrdinal = 0;
+		
+		[self addTo:programSS1	ijsId:@"3FTh"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_2	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSS1	ijsId:@"3T"			ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSS1	ijsId:@"3LzTw3"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSS1	ijsId:@"CCoSp4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSS1	ijsId:@"PCoSp4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSS1	ijsId:@"BoDs4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSS1	ijsId:@"SlSt3"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSS1	ijsId:@"4Li4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+
+		Program *programSS2 = [[Program alloc] init];
+		programSS2.description = @"Sav/Szol Free";
+		programSS2.programGroup = programGroupPairs;
+		programSS2.discipline = DISCIPLINE_PAIRS;
+		programSS2.ordinalPosition = 0;
+		[programSS2 save];
+		elementOrdinal = 0;
+		
+		[self addTo:programSS2	ijsId:@"3T"			ijsIdSecond:@"3T"	ijsIdThird:@""		comboType:JUMP_COMBO_TYPE_SEQ	estGOE:GOE_plus_2	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSS2	ijsId:@"3FTh"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_2	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSS2	ijsId:@"3S"			ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSS2	ijsId:@"CCoSp4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSS2	ijsId:@"BoDs4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSS2	ijsId:@"CiSt2"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_minus_2	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSS2	ijsId:@"3LzTw1"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programSS2	ijsId:@"5ALi4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programSS2	ijsId:@"5TLi4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programSS2	ijsId:@"PCoSp4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programSS2	ijsId:@"3Li4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programSS2	ijsId:@"3STh"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		
+		Program *programZZ = [[Program alloc] init];
+		programZZ.description = @"Zhang/Zhang Free";
+		programZZ.programGroup = programGroupPairs;
+		programZZ.discipline = DISCIPLINE_PAIRS;
+		programZZ.ordinalPosition = 0;
+		[programZZ save];
+		elementOrdinal = 0;
+		
+		[self addTo:programZZ	ijsId:@"2A"			ijsIdSecond:@"3T"	ijsIdThird:@""		comboType:JUMP_COMBO_TYPE_COMBO	estGOE:GOE_minus_2	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programZZ	ijsId:@"3STh"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_2	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programZZ	ijsId:@"3LzTw3"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_2	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programZZ	ijsId:@"5TLi4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programZZ	ijsId:@"FiDs4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programZZ	ijsId:@"CCoSp3"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programZZ	ijsId:@"3LoTh"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_2	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programZZ	ijsId:@"2S"			ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_minus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programZZ	ijsId:@"3Li4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programZZ	ijsId:@"5ALi4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programZZ	ijsId:@"SlSt3"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programZZ	ijsId:@"PCoSp4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+
+		Program *programKS = [[Program alloc] init];
+		programKS.description = @"Kava/Smirn Free";
+		programKS.programGroup = programGroupPairs;
+		programKS.discipline = DISCIPLINE_PAIRS;
+		programKS.ordinalPosition = 0;
+		[programKS save];
+		elementOrdinal = 0;
+		
+		[self addTo:programKS	ijsId:@"3T"			ijsIdSecond:@"2T"	ijsIdThird:@""		comboType:JUMP_COMBO_TYPE_SEQ	estGOE:GOE_minus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programKS	ijsId:@"3LzTw2"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programKS	ijsId:@"4STh"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_minus_3	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programKS	ijsId:@"5ALi4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programKS	ijsId:@"3Li4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programKS	ijsId:@"FiDs3"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programKS	ijsId:@"2A"			ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programKS	ijsId:@"3LoTh"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programKS	ijsId:@"5SLi4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programKS	ijsId:@"CCoSp4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programKS	ijsId:@"SlSt3"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programKS	ijsId:@"PCoSp4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		
+		Program *programPT = [[Program alloc] init];
+		programPT.description = @"Pang/Tong Free";
+		programPT.programGroup = programGroupPairs;
+		programPT.discipline = DISCIPLINE_PAIRS;
+		programPT.ordinalPosition = 0;
+		[programPT save];
+		elementOrdinal = 0;
+		
+		[self addTo:programPT	ijsId:@"2A"			ijsIdSecond:@"1A"	ijsIdThird:@""		comboType:JUMP_COMBO_TYPE_SEQ	estGOE:GOE_minus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programPT	ijsId:@"2T"			ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_minus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programPT	ijsId:@"4Li4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programPT	ijsId:@"SlSt3"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programPT	ijsId:@"CCoSp4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programPT	ijsId:@"3LzTw1"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programPT	ijsId:@"3STh"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programPT	ijsId:@"3LoTh"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programPT	ijsId:@"FiDs3"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programPT	ijsId:@"PCoSp4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programPT	ijsId:@"5TLi4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programPT	ijsId:@"5ALi4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_plus_1	inSecondHalf:YES	inPos:elementOrdinal++];
+
+		Program *programSG = [[Program alloc] init];
+		programSG.description = @"Serg/Gleb Free";
+		programSG.programGroup = programGroupPairs;
+		programSG.discipline = DISCIPLINE_PAIRS;
+		programSG.ordinalPosition = 0;
+		[programSG save];
+		elementOrdinal = 0;
+		
+		[self addTo:programSG	ijsId:@"3S"			ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_minus_2	inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSG	ijsId:@"2LzTw2"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSG	ijsId:@"LoTh"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSG	ijsId:@"5SLi4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSG	ijsId:@"CCoSp2"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSG	ijsId:@"5TLi4"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:NO		inPos:elementOrdinal++];
+		[self addTo:programSG	ijsId:@"2FTh"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programSG	ijsId:@"SlSt1"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programSG	ijsId:@"2A"			ijsIdSecond:@"2A"	ijsIdThird:@""		comboType:JUMP_COMBO_TYPE_SEQ	estGOE:GOE_minus_2	inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programSG	ijsId:@"BoDs1"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:YES	inPos:elementOrdinal++];
+		[self addTo:programSG	ijsId:@"3Li2"		ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:YES	inPos:elementOrdinal++];
+		
 	#if ASSERT_BASE_SCORES
 		[self verifyScoreFor:programLK is:48.10];
 		[self verifyScoreFor:programAC is:41.54];
@@ -366,6 +493,12 @@
 		[self verifyScoreFor:programAK is:28.28];
 		[self verifyScoreFor:programNR is:33.84];
 		[self verifyScoreFor:programAT is:29.91];
+		[self verifyScoreFor:programSS1 is:35.30];
+		[self verifyScoreFor:programSS2 is:59.80];
+		[self verifyScoreFor:programZZ is:56.78];
+		[self verifyScoreFor:programKS is:58.69];
+		[self verifyScoreFor:programPT is:52.94];
+		[self verifyScoreFor:programPT is:40.06];
 	#endif
 
 	#if LOAD_TEST_DATA_FOR_SOV_VALIDATION
@@ -469,6 +602,7 @@
  inSecondHalf:(BOOL)isSecondHalf 
 		inPos:(int)ordinalPosition {
 	ProgramElement *pe7		= [[ProgramElement alloc] init];
+	pe7.discipline			= prog.discipline;
 	pe7.ijsId				= ijsId;
 	pe7.ijsIdSecond			= ijsIdSecond;
 	pe7.ijsIdThird			= ijsIdThird;
@@ -726,7 +860,7 @@
 			cell.accessoryView = [[[UIImageView alloc] initWithImage:indicatorImage] autorelease];
 			
 //			UIImage *image = [UIImage imageNamed:@"imageA.png"];
-			UIImage *image = [UIImage imageNamed:PROGRAMS_DECORATIVE_IMAGE];
+			UIImage *image = [UIImage imageNamed:PROGRAMS_DECORATIVE_IMAGE_SINGLES];
 			
 			topLabel = [[[UILabel alloc] initWithFrame:CGRectMake(85, //image.size.width + 2.0 * cell.indentationWidth,
 																  0.25 * (aTableView.rowHeight - 2 * LABEL_HEIGHT),
@@ -800,7 +934,12 @@
 			}
 			[bottomLabel setFrame:r];
 			
-			cell.imageView.image = [UIImage imageNamed:PROGRAMS_DECORATIVE_IMAGE];
+			if ([program.discipline isEqualToString:DISCIPLINE_SINGLES]) {
+				cell.imageView.image = [UIImage imageNamed:PROGRAMS_DECORATIVE_IMAGE_SINGLES];
+			} else {
+				cell.imageView.image = [UIImage imageNamed:PROGRAMS_DECORATIVE_IMAGE_PAIRS];
+			}
+
 		} else {
 			topLabel.text = @"";
 			bottomLabel.text = @"";

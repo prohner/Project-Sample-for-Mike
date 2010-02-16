@@ -14,9 +14,12 @@
 	UITextField *description;
 	NSArray *programGroups;
 	int selectedProgramGroupIndex;
+
+	IBOutlet UISegmentedControl *typeOfProgram;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *description;
+@property (nonatomic, retain) IBOutlet UISegmentedControl *typeOfProgram;
 
 - (void)doneWithProgram;
 - (void)cancelProgram;

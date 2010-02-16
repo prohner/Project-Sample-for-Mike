@@ -38,5 +38,10 @@
 - (float)scoreForGOE:(NSString *)GOE;
 - (NSString *)ijsIdLetters;
 - (NSString *)ijsIdDigits;
+- (BOOL)isEligibleForSecondHalfBonus;
+
+- (BOOL)isSingles;
+- (BOOL)isPairs;
+- (BOOL)isDance;
 
 @end

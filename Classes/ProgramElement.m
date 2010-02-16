@@ -37,6 +37,9 @@
 	NSString *txt = [self description];
 
 	txt = [txt stringByReplacingOccurrencesOfString:@"Circular, Serpentine" withString:@"Cir., Serp."];
+	txt = [txt stringByReplacingOccurrencesOfString:@"Level" withString:@"Lvl"];
+	txt = [txt stringByReplacingOccurrencesOfString:@"Change" withString:@"Chg"];
+	txt = [txt stringByReplacingOccurrencesOfString:@"spin" withString:@""];
 	
 	return txt;
 }
@@ -50,6 +53,7 @@
 
 
 -(BOOL)isSingleElement {
+//	NSLog(@"Deciding on single-ness: %@, %@, %@", ijsId, ijsIdSecond, ijsIdThird);
 	return (ijsIdSecond == nil || [ijsIdSecond isEqualToString:@""]) && (jumpComboType == nil || [jumpComboType isEqualToString:@""]);
 }
 
@@ -84,14 +88,14 @@
 			score = score1 + score2 + score3;
 		} else {
 			// Jump sequence - add the two highest scores and multiply by 0.8
-			if (score1 > score2 && score1 > score3) {
+			if (score1 >= score2 && score1 >= score3) {
 				// score 1 is highest
 				if (score2 > score3) {
 					score = score1 + score2;
 				} else {
 					score = score1 + score3;
 				}
-			} else if (score2 > score1 && score2 > score3) {
+			} else if (score2 >= score1 && score2 >= score3) {
 				// score 2 is highest
 				if (score1 > score3) {
 					score = score2 + score1;
@@ -112,7 +116,7 @@
 
 	}
 
-	if (isSecondHalf && [element1.elementGroup isEqualToString:ELEMENT_GROUP_JUMPS]) {
+	if (isSecondHalf && element1.isEligibleForSecondHalfBonus) {
 		score *= 1.1;
 	}
 

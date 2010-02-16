@@ -9,6 +9,12 @@
 #import "Elements.h"
 #import "Element.h"
 
+NSInteger alphabeticSort(id string1, id string2, void *reverse)
+{
+    return [string1 localizedCaseInsensitiveCompare:string2];
+}
+
+
 @implementation Elements
 
 static NSMutableDictionary *singles_elements = nil;
@@ -35,17 +41,17 @@ static NSMutableDictionary *pairs_elements = nil;
 	
 	Element *newElement = [[Element alloc] init];
 	
-	newElement.ijsId  = ijsId ;
-	newElement.discipline  = discipline ;
-	newElement.elementGroup = elementGroup;
-	newElement.description = description;
-	newElement.baseScore = baseScore;
-	newElement.plus_1	 = plus_1	;
-	newElement.plus_2	 = plus_2	;
-	newElement.plus_3	 = plus_3	;
-	newElement.minus_1	 = minus_1	;
-	newElement.minus_2	 = minus_2	;
-	newElement.minus_3 = minus_3;
+	newElement.ijsId		= ijsId ;
+	newElement.discipline	= discipline ;
+	newElement.elementGroup	= elementGroup;
+	newElement.description	= description;
+	newElement.baseScore	= baseScore;
+	newElement.plus_1		= plus_1	;
+	newElement.plus_2		= plus_2	;
+	newElement.plus_3		= plus_3	;
+	newElement.minus_1		= minus_1	;
+	newElement.minus_2		= minus_2	;
+	newElement.minus_3		= minus_3;
 
 	if ([discipline isEqualToString:DISCIPLINE_SINGLES]) {
 		[singles_elements setValue:newElement forKey:newElement.ijsId];
@@ -55,27 +61,33 @@ static NSMutableDictionary *pairs_elements = nil;
 
 }
 
++ (NSMutableDictionary *)arrayOfElementsFor:(NSString *)discipline {
+	NSMutableDictionary *result = nil;
+	if ([discipline isEqualToString:DISCIPLINE_SINGLES]) {
+		result = singles_elements;
+	} else if ([discipline isEqualToString:DISCIPLINE_PAIRS]) {
+		result = pairs_elements;
+	}
+#ifdef DEBUG
+	if (! result) {
+		NSLog(@"Hunting for the elements array for \"%@\"", discipline);
+	}
+#endif
+	NSAssert1(result, @"Couldn't find the right kind of elements array for \"%@\".", discipline);
+	return result;
+}
+
 + (Element *)getElementFor:(NSString*)ijsId inDiscipline:(NSString *)discipline {
 	[self checkElementsArray];
-	if ([discipline isEqualToString:DISCIPLINE_SINGLES]) {
-		return (Element *)[[singles_elements valueForKey:ijsId] retain];
-	} else if ([discipline isEqualToString:DISCIPLINE_PAIRS]) {
-		return (Element *)[[pairs_elements valueForKey:ijsId] retain];
-	}
-	NSAssert(nil, @"Couldn't find the right kind of elements array.");
-	return nil;
+	
+	NSMutableDictionary *elements = [self arrayOfElementsFor:discipline];
+	return (Element *)[[elements valueForKey:ijsId] retain];
 }
 
 + (NSArray *)groupOfElements:(NSString *)elementGroup inDiscipline:(NSString *)discipline {
 	[self checkElementsArray];
 
-	NSMutableDictionary *elements = nil;
-	if ([discipline isEqualToString:DISCIPLINE_SINGLES]) {
-		elements = singles_elements;
-	} else if ([discipline isEqualToString:DISCIPLINE_PAIRS]) {
-		elements = pairs_elements;
-	}
-	NSAssert(elements, @"Couldn't find the right kind of elements array.");
+	NSMutableDictionary *elements = [self arrayOfElementsFor:discipline];
 	
 	NSMutableArray *theElements = [[NSMutableArray alloc] init];
 	for (NSString *ijsId in elements) {
@@ -97,21 +109,18 @@ static NSMutableDictionary *pairs_elements = nil;
 + (NSArray *)groupOfUniqueElementsIn:(NSString *)elementGroup inDiscipline:(NSString *)discipline {
 	[self checkElementsArray];
 
-	NSMutableDictionary *elements = nil;
-	if ([discipline isEqualToString:DISCIPLINE_SINGLES]) {
-		elements = singles_elements;
-	} else if ([discipline isEqualToString:DISCIPLINE_PAIRS]) {
-		elements = pairs_elements;
-	}
-	NSAssert(elements, @"Couldn't find the right kind of elements array.");
-	
+	NSMutableDictionary *elements = [self arrayOfElementsFor:discipline];
+
 	NSMutableSet *theElements = [[NSMutableSet alloc] init];
 	for (id ijsId in elements) {
 		Element *element = [self getElementFor:ijsId inDiscipline:discipline];
 		if ([element.elementGroup isEqualToString:elementGroup]) {
 			NSString *ijs;
 			NSString *desc;
-			if ([element.elementGroup isEqualToString:ELEMENT_GROUP_JUMPS]) {
+			if ([element.elementGroup isEqualToString:ELEMENT_GROUP_JUMPS] 
+				|| [element.elementGroup isEqualToString:ELEMENT_GROUP_SIDE_BY_SIDE_JUMPS] 
+				|| [element.elementGroup isEqualToString:ELEMENT_GROUP_THROWS] 
+				) {
 				ijs = [element.ijsId substringFromIndex:1];
 				desc = [element.description stringByReplacingOccurrencesOfString:@"Double " withString:@""];
 				desc = [desc stringByReplacingOccurrencesOfString:@"Triple " withString:@""];
@@ -123,10 +132,10 @@ static NSMutableDictionary *pairs_elements = nil;
 				desc = [desc stringByReplacingOccurrencesOfString:@" Level 3" withString:@""];
 				desc = [desc stringByReplacingOccurrencesOfString:@" Level 4" withString:@""];
 			}
-			[theElements addObject:[[NSString alloc] initWithFormat:@"%@-%@", desc, ijs]];
+			[theElements addObject:[[NSString alloc] initWithFormat:@"%@^%@", desc, ijs]];
 		}
 	}
-	return [theElements allObjects];
+	return [[theElements allObjects] sortedArrayUsingFunction:alphabeticSort context:nil];
 }
 
 + (void)initializeElements {
