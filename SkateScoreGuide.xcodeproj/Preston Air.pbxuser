@@ -29,9 +29,9 @@
 	};
 	28C286E00D94DF7D0034E888 /* RootViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1376, 15743}}";
-			sepNavSelRange = "{53137, 0}";
-			sepNavVisRange = "{44836, 1096}";
+			sepNavIntBoundsRect = "{{0, 0}, {1328, 13715}}";
+			sepNavSelRange = "{36571, 0}";
+			sepNavVisRange = "{32175, 4799}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -55,11 +55,13 @@
 			E722A4B31118AC5900843FFC /* ProgramGroupViewController.m:167 */,
 			E7B778EA111BF6F3007B15E0 /* ProgramElementDetailViewController.m:137 */,
 			E7EB7A601125106E005BA199 /* ProgramDetailViewController.m:172 */,
-			E7EB7B5C11252ED7005BA199 /* PairsProgramElementDetailViewController.m:374 */,
-			E7EB7BD111266FC6005BA199 /* PairsProgramElementDetailViewController.m:255 */,
-			E7EB7E09112A5779005BA199 /* PairsProgramElementDetailViewController.m:173 */,
-			E7EB7E1F112A5A1E005BA199 /* PairsProgramElementDetailViewController.m:541 */,
-			E7EB7E5C112A643E005BA199 /* PairsProgramElementDetailViewController.m:528 */,
+			E7EB7B5C11252ED7005BA199 /* PairsProgramElementDetailViewController.m:392 */,
+			E7EB7BD111266FC6005BA199 /* PairsProgramElementDetailViewController.m:248 */,
+			E7EB7E09112A5779005BA199 /* PairsProgramElementDetailViewController.m:166 */,
+			E7EB7E1F112A5A1E005BA199 /* PairsProgramElementDetailViewController.m:538 */,
+			E7EB7E5C112A643E005BA199 /* PairsProgramElementDetailViewController.m:525 */,
+			E7EB7E97112B9F75005BA199 /* PairsProgramElementDetailViewController.m:70 */,
+			E7EB7EA1112BA10E005BA199 /* PairsProgramElementDetailViewController.m:52 */,
 		);
 		codeSenseManager = E74540BE1110069B00FD9036 /* Code sense */;
 		executables = (
@@ -743,6 +745,27 @@
 			E7EB7E7B112A6AB0005BA199 /* PBXTextBookmark */ = E7EB7E7B112A6AB0005BA199 /* PBXTextBookmark */;
 			E7EB7E7C112A6AB0005BA199 /* PBXTextBookmark */ = E7EB7E7C112A6AB0005BA199 /* PBXTextBookmark */;
 			E7EB7E7D112A6AB0005BA199 /* PBXTextBookmark */ = E7EB7E7D112A6AB0005BA199 /* PBXTextBookmark */;
+			E7EB7E8C112AEB35005BA199 /* PBXTextBookmark */ = E7EB7E8C112AEB35005BA199 /* PBXTextBookmark */;
+			E7EB7E8D112AEB35005BA199 /* PBXTextBookmark */ = E7EB7E8D112AEB35005BA199 /* PBXTextBookmark */;
+			E7EB7E8E112AEB35005BA199 /* PBXTextBookmark */ = E7EB7E8E112AEB35005BA199 /* PBXTextBookmark */;
+			E7EB7E8F112AEB35005BA199 /* PBXTextBookmark */ = E7EB7E8F112AEB35005BA199 /* PBXTextBookmark */;
+			E7EB7E94112B9F10005BA199 /* PBXTextBookmark */ = E7EB7E94112B9F10005BA199 /* PBXTextBookmark */;
+			E7EB7E9B112B9F78005BA199 /* PBXTextBookmark */ = E7EB7E9B112B9F78005BA199 /* PBXTextBookmark */;
+			E7EB7E9C112B9F78005BA199 /* PBXTextBookmark */ = E7EB7E9C112B9F78005BA199 /* PBXTextBookmark */;
+			E7EB7E9D112B9F78005BA199 /* PBXTextBookmark */ = E7EB7E9D112B9F78005BA199 /* PBXTextBookmark */;
+			E7EB7EA5112BA116005BA199 /* PBXTextBookmark */ = E7EB7EA5112BA116005BA199 /* PBXTextBookmark */;
+			E7EB7EA6112BA116005BA199 /* PBXTextBookmark */ = E7EB7EA6112BA116005BA199 /* PBXTextBookmark */;
+			E7EB7EA7112BA116005BA199 /* PBXTextBookmark */ = E7EB7EA7112BA116005BA199 /* PBXTextBookmark */;
+			E7EB7EA8112BA116005BA199 /* PBXTextBookmark */ = E7EB7EA8112BA116005BA199 /* PBXTextBookmark */;
+			E7EB7EA9112BA116005BA199 /* PBXTextBookmark */ = E7EB7EA9112BA116005BA199 /* PBXTextBookmark */;
+			E7EB7EAE112BA1EA005BA199 /* PBXTextBookmark */ = E7EB7EAE112BA1EA005BA199 /* PBXTextBookmark */;
+			E7EB7EB2112BA266005BA199 /* PBXTextBookmark */ = E7EB7EB2112BA266005BA199 /* PBXTextBookmark */;
+			E7EB7EB5112BA40B005BA199 /* PBXTextBookmark */ = E7EB7EB5112BA40B005BA199 /* PBXTextBookmark */;
+			E7EB7EB6112BA40B005BA199 /* PBXTextBookmark */ = E7EB7EB6112BA40B005BA199 /* PBXTextBookmark */;
+			E7EB7EB9112BA496005BA199 /* PBXTextBookmark */ = E7EB7EB9112BA496005BA199 /* PBXTextBookmark */;
+			E7EB7EBA112BA496005BA199 /* PBXTextBookmark */ = E7EB7EBA112BA496005BA199 /* PBXTextBookmark */;
+			E7EB7EBB112BA496005BA199 /* PBXTextBookmark */ = E7EB7EBB112BA496005BA199 /* PBXTextBookmark */;
+			E7EB7EBC112BA496005BA199 /* PBXTextBookmark */ = E7EB7EBC112BA496005BA199 /* PBXTextBookmark */;
 		};
 		sourceControlManager = E74540BD1110069B00FD9036 /* Source Control */;
 		userBuildSettings = {
@@ -804,7 +827,7 @@
 		ignoreCount = 0;
 		lineNumber = 154;
 		location = "Sk8 Score!";
-		modificationTime = 287991019.81912;
+		modificationTime = 288072171.859514;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -822,7 +845,7 @@
 		ignoreCount = 0;
 		lineNumber = 167;
 		location = "Sk8 Score!";
-		modificationTime = 287991019.819141;
+		modificationTime = 288072171.859533;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -1066,14 +1089,14 @@
 	};
 	E74540FE111007D900FD9036 /* ApplicationUtilities.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {820, 899}}";
-			sepNavSelRange = "{583, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1077, 878}}";
+			sepNavSelRange = "{582, 0}";
 			sepNavVisRange = "{0, 1674}";
 		};
 	};
 	E74540FF111007D900FD9036 /* ApplicationUtilities.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {927, 875}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1077, 901}}";
 			sepNavSelRange = "{192, 0}";
 			sepNavVisRange = "{0, 1659}";
 		};
@@ -1122,7 +1145,7 @@
 	};
 	E74542771110A95B00FD9036 /* Elements.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1077, 927}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1077, 878}}";
 			sepNavSelRange = "{319, 498}";
 			sepNavVisRange = "{0, 1761}";
 		};
@@ -1178,7 +1201,7 @@
 		ignoreCount = 0;
 		lineNumber = 107;
 		location = SkateScoreGuide;
-		modificationTime = 287991019.818951;
+		modificationTime = 288072171.859306;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -1232,7 +1255,7 @@
 		ignoreCount = 0;
 		lineNumber = 467;
 		location = "Sk8 Score!";
-		modificationTime = 287991019.819003;
+		modificationTime = 288072171.859365;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -1335,7 +1358,7 @@
 		ignoreCount = 0;
 		lineNumber = 493;
 		location = SkateScoreGuide;
-		modificationTime = 287991019.819021;
+		modificationTime = 288072171.859396;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -1353,7 +1376,7 @@
 		ignoreCount = 0;
 		lineNumber = 540;
 		location = "Sk8 Score!";
-		modificationTime = 287991019.819041;
+		modificationTime = 288072171.859415;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -1371,7 +1394,7 @@
 		ignoreCount = 0;
 		lineNumber = 370;
 		location = SkateScoreGuide;
-		modificationTime = 287991019.819055;
+		modificationTime = 288072171.859432;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -1423,7 +1446,7 @@
 		ignoreCount = 0;
 		lineNumber = 74;
 		location = "Sk8 Score!";
-		modificationTime = 287991019.81907;
+		modificationTime = 288072171.859449;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -1505,7 +1528,7 @@
 		ignoreCount = 0;
 		lineNumber = 310;
 		location = "Sk8 Score!";
-		modificationTime = 287991019.819089;
+		modificationTime = 288072171.859468;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -1523,7 +1546,7 @@
 		ignoreCount = 0;
 		lineNumber = 329;
 		location = "Sk8 Score!";
-		modificationTime = 287991019.819103;
+		modificationTime = 288072171.859496;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -1571,7 +1594,7 @@
 		ignoreCount = 0;
 		lineNumber = 137;
 		location = "Sk8 Score!";
-		modificationTime = 287991019.819172;
+		modificationTime = 288072171.859553;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -2667,7 +2690,7 @@
 		ignoreCount = 0;
 		lineNumber = 172;
 		location = "Sk8 Score!";
-		modificationTime = 287991019.819208;
+		modificationTime = 288072171.859569;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -2757,17 +2780,17 @@
 	};
 	E7EB7A7B11251507005BA199 /* PairsProgramElementDetailViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1077, 923}}";
-			sepNavSelRange = "{1943, 0}";
-			sepNavVisRange = "{114, 1892}";
+			sepNavIntBoundsRect = "{{0, 0}, {1077, 936}}";
+			sepNavSelRange = "{1914, 0}";
+			sepNavVisRange = "{114, 1926}";
 		};
 	};
 	E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{5364, 155}\";\n            s = 0;\n        },\n                {\n            r = \"{5545, 83}\";\n            s = 0;\n        },\n                {\n            r = \"{5649, 45}\";\n            s = 0;\n        },\n                {\n            r = \"{6541, 101}\";\n            s = 0;\n        },\n                {\n            r = \"{6719, 101}\";\n            s = 0;\n        },\n                {\n            r = \"{7079, 101}\";\n            s = 0;\n        },\n                {\n            r = \"{7431, 101}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 18237}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1758, 6903}}";
-			sepNavSelRange = "{9197, 25}";
-			sepNavVisRange = "{9157, 1827}";
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{4923, 155}\";\n            s = 0;\n        },\n                {\n            r = \"{5104, 83}\";\n            s = 0;\n        },\n                {\n            r = \"{5208, 45}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 17881}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1307, 7176}}";
+			sepNavSelRange = "{2121, 0}";
+			sepNavVisRange = "{664, 2771}";
 		};
 	};
 	E7EB7A8511251717005BA199 /* XCBuildMessageTextBookmark */ = {
@@ -3068,7 +3091,7 @@
 		fRef = E7EB7A7B11251507005BA199 /* PairsProgramElementDetailViewController.h */;
 		name = "PairsProgramElementDetailViewController.h: 68";
 		rLen = 0;
-		rLoc = 2000;
+		rLoc = 2034;
 		rType = 0;
 		vrLen = 877;
 		vrLoc = 1012;
@@ -3078,7 +3101,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 529";
 		rLen = 0;
-		rLoc = 18237;
+		rLoc = 17881;
 		rType = 0;
 		vrLen = 752;
 		vrLoc = 15278;
@@ -3098,7 +3121,7 @@
 		fRef = E7EB7A7B11251507005BA199 /* PairsProgramElementDetailViewController.h */;
 		name = "PairsProgramElementDetailViewController.h: 68";
 		rLen = 0;
-		rLoc = 2000;
+		rLoc = 2034;
 		rType = 0;
 		vrLen = 1989;
 		vrLoc = 0;
@@ -3108,7 +3131,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 474";
 		rLen = 0;
-		rLoc = 16831;
+		rLoc = 16475;
 		rType = 0;
 		vrLen = 2347;
 		vrLoc = 13683;
@@ -3168,7 +3191,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 59";
 		rLen = 0;
-		rLoc = 2627;
+		rLoc = 2186;
 		rType = 0;
 		vrLen = 3099;
 		vrLoc = 418;
@@ -3315,7 +3338,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 65";
 		rLen = 0;
-		rLoc = 2627;
+		rLoc = 2186;
 		rType = 0;
 		vrLen = 3412;
 		vrLoc = 1001;
@@ -3325,7 +3348,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 53";
 		rLen = 0;
-		rLoc = 2624;
+		rLoc = 2183;
 		rType = 0;
 		vrLen = 3207;
 		vrLoc = 312;
@@ -3432,7 +3455,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 106";
 		rLen = 0;
-		rLoc = 7535;
+		rLoc = 7094;
 		rType = 0;
 		vrLen = 1858;
 		vrLoc = 6004;
@@ -3442,7 +3465,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 455";
 		rLen = 0;
-		rLoc = 16831;
+		rLoc = 16475;
 		rType = 0;
 		vrLen = 1900;
 		vrLoc = 12703;
@@ -3484,7 +3507,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 351";
 		rLen = 0;
-		rLoc = 12433;
+		rLoc = 12756;
 		rType = 0;
 		vrLen = 1559;
 		vrLoc = 10815;
@@ -3494,7 +3517,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 351";
 		rLen = 0;
-		rLoc = 12484;
+		rLoc = 12807;
 		rType = 0;
 		vrLen = 1478;
 		vrLoc = 10815;
@@ -3504,12 +3527,12 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 352";
 		rLen = 0;
-		rLoc = 12484;
+		rLoc = 12807;
 		rType = 0;
 		vrLen = 1527;
 		vrLoc = 10815;
 	};
-	E7EB7B5C11252ED7005BA199 /* PairsProgramElementDetailViewController.m:374 */ = {
+	E7EB7B5C11252ED7005BA199 /* PairsProgramElementDetailViewController.m:392 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -3521,9 +3544,9 @@
 		functionName = "-segmentedControlValueChanged:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 374;
+		lineNumber = 392;
 		location = "Sk8 Score!";
-		modificationTime = 287991019.819226;
+		modificationTime = 288072171.859596;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -3532,7 +3555,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 352";
 		rLen = 0;
-		rLoc = 12484;
+		rLoc = 12807;
 		rType = 0;
 		vrLen = 1527;
 		vrLoc = 10815;
@@ -3542,7 +3565,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 352";
 		rLen = 0;
-		rLoc = 12484;
+		rLoc = 12807;
 		rType = 0;
 		vrLen = 1527;
 		vrLoc = 10815;
@@ -3562,7 +3585,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 318";
 		rLen = 0;
-		rLoc = 12049;
+		rLoc = 11608;
 		rType = 0;
 		vrLen = 1545;
 		vrLoc = 10227;
@@ -3572,7 +3595,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 352";
 		rLen = 0;
-		rLoc = 12448;
+		rLoc = 12771;
 		rType = 0;
 		vrLen = 1547;
 		vrLoc = 10227;
@@ -3592,7 +3615,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 356";
 		rLen = 0;
-		rLoc = 12566;
+		rLoc = 12844;
 		rType = 0;
 		vrLen = 1751;
 		vrLoc = 10529;
@@ -3602,7 +3625,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 369";
 		rLen = 0;
-		rLoc = 13118;
+		rLoc = 12844;
 		rType = 0;
 		vrLen = 2030;
 		vrLoc = 10529;
@@ -3612,7 +3635,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 385";
 		rLen = 53;
-		rLoc = 13474;
+		rLoc = 13118;
 		rType = 0;
 		vrLen = 2025;
 		vrLoc = 11160;
@@ -3662,7 +3685,7 @@
 		fRef = E7EB7A7B11251507005BA199 /* PairsProgramElementDetailViewController.h */;
 		name = "PairsProgramElementDetailViewController.h: 64";
 		rLen = 0;
-		rLoc = 1880;
+		rLoc = 1914;
 		rType = 0;
 		vrLen = 1944;
 		vrLoc = 0;
@@ -3672,7 +3695,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 386";
 		rLen = 0;
-		rLoc = 13601;
+		rLoc = 13245;
 		rType = 0;
 		vrLen = 1627;
 		vrLoc = 11868;
@@ -3682,7 +3705,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 72";
 		rLen = 27;
-		rLoc = 2933;
+		rLoc = 2492;
 		rType = 0;
 		vrLen = 2772;
 		vrLoc = 1366;
@@ -3692,7 +3715,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 72";
 		rLen = 27;
-		rLoc = 2933;
+		rLoc = 2492;
 		rType = 0;
 		vrLen = 1363;
 		vrLoc = 1366;
@@ -3702,7 +3725,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 76";
 		rLen = 0;
-		rLoc = 3489;
+		rLoc = 3048;
 		rType = 0;
 		vrLen = 1255;
 		vrLoc = 2310;
@@ -3712,7 +3735,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 81";
 		rLen = 0;
-		rLoc = 3482;
+		rLoc = 3041;
 		rType = 0;
 		vrLen = 1349;
 		vrLoc = 2498;
@@ -3722,7 +3745,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 76";
 		rLen = 0;
-		rLoc = 3489;
+		rLoc = 3048;
 		rType = 0;
 		vrLen = 1255;
 		vrLoc = 2310;
@@ -3762,7 +3785,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 111";
 		rLen = 0;
-		rLoc = 4763;
+		rLoc = 4322;
 		rType = 0;
 		vrLen = 1297;
 		vrLoc = 4250;
@@ -3772,7 +3795,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 121";
 		rLen = 0;
-		rLoc = 5324;
+		rLoc = 4883;
 		rType = 0;
 		vrLen = 1281;
 		vrLoc = 4250;
@@ -3792,7 +3815,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 118";
 		rLen = 0;
-		rLoc = 4912;
+		rLoc = 4471;
 		rType = 0;
 		vrLen = 1495;
 		vrLoc = 2731;
@@ -3802,7 +3825,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 118";
 		rLen = 0;
-		rLoc = 4912;
+		rLoc = 4471;
 		rType = 0;
 		vrLen = 1186;
 		vrLoc = 4144;
@@ -3832,7 +3855,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 121";
 		rLen = 0;
-		rLoc = 5323;
+		rLoc = 4882;
 		rType = 0;
 		vrLen = 2773;
 		vrLoc = 4144;
@@ -3842,7 +3865,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 400";
 		rLen = 0;
-		rLoc = 12739;
+		rLoc = 12844;
 		rType = 0;
 		vrLen = 1955;
 		vrLoc = 12588;
@@ -3852,7 +3875,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 431";
 		rLen = 0;
-		rLoc = 14533;
+		rLoc = 14177;
 		rType = 0;
 		vrLen = 2300;
 		vrLoc = 12395;
@@ -3862,7 +3885,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 431";
 		rLen = 0;
-		rLoc = 14533;
+		rLoc = 14177;
 		rType = 0;
 		vrLen = 2169;
 		vrLoc = 12395;
@@ -3976,7 +3999,7 @@
 		vrLen = 1138;
 		vrLoc = 0;
 	};
-	E7EB7BD111266FC6005BA199 /* PairsProgramElementDetailViewController.m:255 */ = {
+	E7EB7BD111266FC6005BA199 /* PairsProgramElementDetailViewController.m:248 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -3986,11 +4009,11 @@
 		delayBeforeContinue = 0;
 		fileReference = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		functionName = "-refreshDisplayInfo";
-		hitCount = 1;
+		hitCount = 3;
 		ignoreCount = 0;
-		lineNumber = 255;
+		lineNumber = 248;
 		location = "Sk8 Score!";
-		modificationTime = 287991031.767381;
+		modificationTime = 288072233.207818;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -4009,7 +4032,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 212";
 		rLen = 0;
-		rLoc = 8711;
+		rLoc = 8270;
 		rType = 0;
 		vrLen = 1982;
 		vrLoc = 8050;
@@ -4019,7 +4042,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 248";
 		rLen = 0;
-		rLoc = 9361;
+		rLoc = 8920;
 		rType = 0;
 		vrLen = 2020;
 		vrLoc = 8050;
@@ -4038,7 +4061,7 @@
 		isa = PBXTextBookmark;
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		rLen = 0;
-		rLoc = 424;
+		rLoc = 421;
 		rType = 1;
 	};
 	E7EB7BDE112670AB005BA199 /* PBXTextBookmark */ = {
@@ -4046,7 +4069,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 423";
 		rLen = 0;
-		rLoc = 14032;
+		rLoc = 13676;
 		rType = 0;
 		vrLen = 2219;
 		vrLoc = 12632;
@@ -4056,7 +4079,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 256";
 		rLen = 0;
-		rLoc = 9361;
+		rLoc = 8920;
 		rType = 0;
 		vrLen = 1719;
 		vrLoc = 10424;
@@ -4146,7 +4169,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 226";
 		rLen = 0;
-		rLoc = 9361;
+		rLoc = 8920;
 		rType = 0;
 		vrLen = 1974;
 		vrLoc = 8448;
@@ -4156,7 +4179,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 226";
 		rLen = 0;
-		rLoc = 9361;
+		rLoc = 8920;
 		rType = 0;
 		vrLen = 2008;
 		vrLoc = 8448;
@@ -4195,7 +4218,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 248";
 		rLen = 0;
-		rLoc = 9361;
+		rLoc = 8920;
 		rType = 0;
 		vrLen = 1719;
 		vrLoc = 10461;
@@ -4295,7 +4318,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 123";
 		rLen = 0;
-		rLoc = 5326;
+		rLoc = 4885;
 		rType = 0;
 		vrLen = 2455;
 		vrLoc = 2762;
@@ -4315,7 +4338,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 123";
 		rLen = 0;
-		rLoc = 5145;
+		rLoc = 4704;
 		rType = 0;
 		vrLen = 2537;
 		vrLoc = 2606;
@@ -4325,7 +4348,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 124";
 		rLen = 0;
-		rLoc = 5108;
+		rLoc = 4667;
 		rType = 0;
 		vrLen = 2546;
 		vrLoc = 2575;
@@ -4335,7 +4358,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 127";
 		rLen = 0;
-		rLoc = 5205;
+		rLoc = 4764;
 		rType = 0;
 		vrLen = 2560;
 		vrLoc = 2575;
@@ -4345,7 +4368,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 123";
 		rLen = 0;
-		rLoc = 5079;
+		rLoc = 4638;
 		rType = 0;
 		vrLen = 2560;
 		vrLoc = 2575;
@@ -4355,7 +4378,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 92";
 		rLen = 0;
-		rLoc = 3953;
+		rLoc = 3512;
 		rType = 0;
 		vrLen = 2601;
 		vrLoc = 2575;
@@ -4395,7 +4418,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 92";
 		rLen = 0;
-		rLoc = 3953;
+		rLoc = 3512;
 		rType = 0;
 		vrLen = 2570;
 		vrLoc = 2606;
@@ -4405,7 +4428,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 129";
 		rLen = 0;
-		rLoc = 5247;
+		rLoc = 4806;
 		rType = 0;
 		vrLen = 1938;
 		vrLoc = 3675;
@@ -4415,7 +4438,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 385";
 		rLen = 0;
-		rLoc = 12433;
+		rLoc = 12756;
 		rType = 0;
 		vrLen = 1739;
 		vrLoc = 11440;
@@ -4425,7 +4448,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 393";
 		rLen = 0;
-		rLoc = 12739;
+		rLoc = 12844;
 		rType = 0;
 		vrLen = 1737;
 		vrLoc = 11546;
@@ -4558,7 +4581,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 295";
 		rLen = 0;
-		rLoc = 11091;
+		rLoc = 10650;
 		rType = 0;
 		vrLen = 1976;
 		vrLoc = 9502;
@@ -4568,7 +4591,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 301";
 		rLen = 0;
-		rLoc = 11091;
+		rLoc = 10650;
 		rType = 0;
 		vrLen = 1902;
 		vrLoc = 9502;
@@ -4578,7 +4601,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 301";
 		rLen = 0;
-		rLoc = 11091;
+		rLoc = 10650;
 		rType = 0;
 		vrLen = 1902;
 		vrLoc = 9502;
@@ -4638,7 +4661,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 322";
 		rLen = 0;
-		rLoc = 11091;
+		rLoc = 10650;
 		rType = 0;
 		vrLen = 2095;
 		vrLoc = 9553;
@@ -4918,7 +4941,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 316";
 		rLen = 0;
-		rLoc = 11091;
+		rLoc = 10650;
 		rType = 0;
 		vrLen = 1765;
 		vrLoc = 9943;
@@ -4928,7 +4951,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 316";
 		rLen = 0;
-		rLoc = 11091;
+		rLoc = 10650;
 		rType = 0;
 		vrLen = 1765;
 		vrLoc = 9943;
@@ -5795,7 +5818,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 316";
 		rLen = 0;
-		rLoc = 11091;
+		rLoc = 10650;
 		rType = 0;
 		vrLen = 1740;
 		vrLoc = 9943;
@@ -5805,7 +5828,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 72";
 		rLen = 27;
-		rLoc = 2933;
+		rLoc = 2492;
 		rType = 0;
 		vrLen = 2513;
 		vrLoc = 2732;
@@ -5885,7 +5908,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 74";
 		rLen = 0;
-		rLoc = 2984;
+		rLoc = 2543;
 		rType = 0;
 		vrLen = 2516;
 		vrLoc = 2731;
@@ -5895,7 +5918,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 413";
 		rLen = 52;
-		rLoc = 13607;
+		rLoc = 13251;
 		rType = 0;
 		vrLen = 2194;
 		vrLoc = 12541;
@@ -5915,7 +5938,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 178";
 		rLen = 0;
-		rLoc = 6100;
+		rLoc = 5659;
 		rType = 0;
 		vrLen = 2818;
 		vrLoc = 5549;
@@ -5925,7 +5948,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 179";
 		rLen = 0;
-		rLoc = 6100;
+		rLoc = 5659;
 		rType = 0;
 		vrLen = 2879;
 		vrLoc = 5549;
@@ -5935,7 +5958,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 179";
 		rLen = 0;
-		rLoc = 6100;
+		rLoc = 5659;
 		rType = 0;
 		vrLen = 2882;
 		vrLoc = 5549;
@@ -5955,7 +5978,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 373";
 		rLen = 51;
-		rLoc = 12139;
+		rLoc = 12462;
 		rType = 0;
 		vrLen = 1077;
 		vrLoc = 12355;
@@ -5965,7 +5988,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 463";
 		rLen = 95;
-		rLoc = 14826;
+		rLoc = 14470;
 		rType = 0;
 		vrLen = 1118;
 		vrLoc = 14884;
@@ -5985,7 +6008,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 179";
 		rLen = 0;
-		rLoc = 6100;
+		rLoc = 5659;
 		rType = 0;
 		vrLen = 1291;
 		vrLoc = 5613;
@@ -5995,7 +6018,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 174";
 		rLen = 107;
-		rLoc = 5993;
+		rLoc = 5552;
 		rType = 0;
 		vrLen = 788;
 		vrLoc = 5436;
@@ -6015,7 +6038,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 172";
 		rLen = 0;
-		rLoc = 5990;
+		rLoc = 5549;
 		rType = 0;
 		vrLen = 2720;
 		vrLoc = 5436;
@@ -6045,7 +6068,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 169";
 		rLen = 0;
-		rLoc = 5826;
+		rLoc = 5385;
 		rType = 0;
 		vrLen = 2762;
 		vrLoc = 0;
@@ -6055,7 +6078,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 169";
 		rLen = 0;
-		rLoc = 5826;
+		rLoc = 5385;
 		rType = 0;
 		vrLen = 2731;
 		vrLoc = 0;
@@ -6065,7 +6088,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 169";
 		rLen = 0;
-		rLoc = 5826;
+		rLoc = 5385;
 		rType = 0;
 		vrLen = 2731;
 		vrLoc = 0;
@@ -6131,14 +6154,14 @@
 		isa = PBXTextBookmark;
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		rLen = 0;
-		rLoc = 84;
+		rLoc = 77;
 		rType = 1;
 	};
 	E7EB7DBE1129933C005BA199 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 46";
-		rLen = 768;
+		rLen = 327;
 		rLoc = 1822;
 		rType = 0;
 		vrLen = 3191;
@@ -6159,7 +6182,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 52";
 		rLen = 0;
-		rLoc = 2025;
+		rLoc = 2147;
 		rType = 0;
 		vrLen = 2990;
 		vrLoc = 797;
@@ -6169,7 +6192,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 166";
 		rLen = 37;
-		rLoc = 5734;
+		rLoc = 5293;
 		rType = 0;
 		vrLen = 3058;
 		vrLoc = 802;
@@ -6199,7 +6222,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 255";
 		rLen = 0;
-		rLoc = 9361;
+		rLoc = 8920;
 		rType = 0;
 		vrLen = 1961;
 		vrLoc = 8737;
@@ -6209,7 +6232,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 255";
 		rLen = 0;
-		rLoc = 9361;
+		rLoc = 8920;
 		rType = 0;
 		vrLen = 1961;
 		vrLoc = 8737;
@@ -6258,7 +6281,7 @@
 		isa = PBXTextBookmark;
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		rLen = 19;
-		rLoc = 2599;
+		rLoc = 2158;
 		rType = 0;
 	};
 	E7EB7DCE112A4CA1005BA199 /* PBXTextBookmark */ = {
@@ -6266,7 +6289,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 213";
 		rLen = 0;
-		rLoc = 7535;
+		rLoc = 7094;
 		rType = 0;
 		vrLen = 2642;
 		vrLoc = 6888;
@@ -6295,7 +6318,7 @@
 		isa = PBXTextBookmark;
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		rLen = 0;
-		rLoc = 254;
+		rLoc = 247;
 		rType = 1;
 	};
 	E7EB7DDB112A4E17005BA199 /* PBXTextBookmark */ = {
@@ -6303,7 +6326,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 462";
 		rLen = 0;
-		rLoc = 13935;
+		rLoc = 13579;
 		rType = 0;
 		vrLen = 1760;
 		vrLoc = 14362;
@@ -6333,7 +6356,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 499";
 		rLen = 0;
-		rLoc = 15255;
+		rLoc = 14899;
 		rType = 0;
 		vrLen = 1776;
 		vrLoc = 15761;
@@ -6343,7 +6366,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 258";
 		rLen = 0;
-		rLoc = 8568;
+		rLoc = 8127;
 		rType = 0;
 		vrLen = 3248;
 		vrLoc = 6809;
@@ -6353,7 +6376,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 495";
 		rLen = 0;
-		rLoc = 15090;
+		rLoc = 14734;
 		rType = 0;
 		vrLen = 1849;
 		vrLoc = 15830;
@@ -6363,7 +6386,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 267";
 		rLen = 26;
-		rLoc = 8776;
+		rLoc = 8335;
 		rType = 0;
 		vrLen = 1789;
 		vrLoc = 9997;
@@ -6373,7 +6396,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 267";
 		rLen = 26;
-		rLoc = 8763;
+		rLoc = 8322;
 		rType = 0;
 		vrLen = 1857;
 		vrLoc = 3779;
@@ -6383,7 +6406,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 264";
 		rLen = 26;
-		rLoc = 8763;
+		rLoc = 8322;
 		rType = 0;
 		vrLen = 1856;
 		vrLoc = 3779;
@@ -6422,7 +6445,7 @@
 		isa = PBXTextBookmark;
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		rLen = 0;
-		rLoc = 178;
+		rLoc = 171;
 		rType = 1;
 	};
 	E7EB7E02112A555B005BA199 /* PBXTextBookmark */ = {
@@ -6430,7 +6453,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 143";
 		rLen = 0;
-		rLoc = 5331;
+		rLoc = 4890;
 		rType = 0;
 		vrLen = 1661;
 		vrLoc = 4246;
@@ -6440,7 +6463,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 413";
 		rLen = 0;
-		rLoc = 12273;
+		rLoc = 12596;
 		rType = 0;
 		vrLen = 1932;
 		vrLoc = 13412;
@@ -6450,12 +6473,12 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 402";
 		rLen = 0;
-		rLoc = 13576;
+		rLoc = 13220;
 		rType = 0;
 		vrLen = 2052;
 		vrLoc = 11889;
 	};
-	E7EB7E09112A5779005BA199 /* PairsProgramElementDetailViewController.m:173 */ = {
+	E7EB7E09112A5779005BA199 /* PairsProgramElementDetailViewController.m:166 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -6465,11 +6488,11 @@
 		delayBeforeContinue = 0;
 		fileReference = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		functionName = "-presetValuesForProgramElement";
-		hitCount = 0;
+		hitCount = 1;
 		ignoreCount = 0;
-		lineNumber = 173;
+		lineNumber = 166;
 		location = "Sk8 Score!";
-		modificationTime = 287991019.8195;
+		modificationTime = 288072194.341907;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -6478,7 +6501,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 167";
 		rLen = 37;
-		rLoc = 3360;
+		rLoc = 2919;
 		rType = 0;
 		vrLen = 2634;
 		vrLoc = 2203;
@@ -6488,7 +6511,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 127";
 		rLen = 0;
-		rLoc = 4920;
+		rLoc = 4479;
 		rType = 0;
 		vrLen = 5832;
 		vrLoc = 2405;
@@ -6518,7 +6541,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 176";
 		rLen = 0;
-		rLoc = 5993;
+		rLoc = 5552;
 		rType = 0;
 		vrLen = 2230;
 		vrLoc = 13374;
@@ -6558,7 +6581,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 172";
 		rLen = 0;
-		rLoc = 5827;
+		rLoc = 5386;
 		rType = 0;
 		vrLen = 2224;
 		vrLoc = 13410;
@@ -6583,7 +6606,7 @@
 		vrLen = 1818;
 		vrLoc = 1619;
 	};
-	E7EB7E1F112A5A1E005BA199 /* PairsProgramElementDetailViewController.m:541 */ = {
+	E7EB7E1F112A5A1E005BA199 /* PairsProgramElementDetailViewController.m:538 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -6595,9 +6618,9 @@
 		functionName = "-jumpComboAdd:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 541;
+		lineNumber = 538;
 		location = "Sk8 Score!";
-		modificationTime = 287991019.819578;
+		modificationTime = 288072171.8606;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -6616,7 +6639,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 521";
 		rLen = 35;
-		rLoc = 15948;
+		rLoc = 15592;
 		rType = 0;
 		vrLen = 1715;
 		vrLoc = 14973;
@@ -6626,7 +6649,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 472";
 		rLen = 35;
-		rLoc = 15948;
+		rLoc = 15592;
 		rType = 0;
 		vrLen = 1428;
 		vrLoc = 15604;
@@ -6636,7 +6659,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 548";
 		rLen = 0;
-		rLoc = 18071;
+		rLoc = 17715;
 		rType = 0;
 		vrLen = 1831;
 		vrLoc = 15801;
@@ -6646,7 +6669,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 554";
 		rLen = 0;
-		rLoc = 18095;
+		rLoc = 17739;
 		rType = 0;
 		vrLen = 1860;
 		vrLoc = 15790;
@@ -6656,7 +6679,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 535";
 		rLen = 0;
-		rLoc = 17358;
+		rLoc = 17002;
 		rType = 0;
 		vrLen = 1862;
 		vrLoc = 15790;
@@ -6666,7 +6689,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 233";
 		rLen = 26;
-		rLoc = 8776;
+		rLoc = 8335;
 		rType = 0;
 		vrLen = 1929;
 		vrLoc = 8745;
@@ -6676,7 +6699,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 543";
 		rLen = 28;
-		rLoc = 17358;
+		rLoc = 17002;
 		rType = 0;
 		vrLen = 1066;
 		vrLoc = 16814;
@@ -6686,7 +6709,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 252";
 		rLen = 0;
-		rLoc = 9361;
+		rLoc = 8920;
 		rType = 0;
 		vrLen = 1161;
 		vrLoc = 8821;
@@ -6696,7 +6719,7 @@
 		fRef = E7EB7A7B11251507005BA199 /* PairsProgramElementDetailViewController.h */;
 		name = "PairsProgramElementDetailViewController.h: 65";
 		rLen = 0;
-		rLoc = 1944;
+		rLoc = 1978;
 		rType = 0;
 		vrLen = 1948;
 		vrLoc = 0;
@@ -6706,7 +6729,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 282";
 		rLen = 65;
-		rLoc = 9840;
+		rLoc = 9399;
 		rType = 0;
 		vrLen = 1729;
 		vrLoc = 10269;
@@ -6716,7 +6739,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 307";
 		rLen = 0;
-		rLoc = 11117;
+		rLoc = 10676;
 		rType = 0;
 		vrLen = 1755;
 		vrLoc = 9720;
@@ -6726,7 +6749,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 353";
 		rLen = 51;
-		rLoc = 12139;
+		rLoc = 12462;
 		rType = 0;
 		vrLen = 1694;
 		vrLoc = 11226;
@@ -6756,7 +6779,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 242";
 		rLen = 0;
-		rLoc = 8980;
+		rLoc = 8539;
 		rType = 0;
 		vrLen = 1885;
 		vrLoc = 8486;
@@ -6766,7 +6789,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 528";
 		rLen = 0;
-		rLoc = 16800;
+		rLoc = 16444;
 		rType = 0;
 		vrLen = 1853;
 		vrLoc = 16075;
@@ -6776,7 +6799,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 527";
 		rLen = 0;
-		rLoc = 16800;
+		rLoc = 16444;
 		rType = 0;
 		vrLen = 1899;
 		vrLoc = 16103;
@@ -6796,7 +6819,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 527";
 		rLen = 0;
-		rLoc = 16800;
+		rLoc = 16444;
 		rType = 0;
 		vrLen = 1852;
 		vrLoc = 16103;
@@ -6806,12 +6829,12 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 531";
 		rLen = 0;
-		rLoc = 16797;
+		rLoc = 16441;
 		rType = 0;
 		vrLen = 1856;
 		vrLoc = 16266;
 	};
-	E7EB7E5C112A643E005BA199 /* PairsProgramElementDetailViewController.m:528 */ = {
+	E7EB7E5C112A643E005BA199 /* PairsProgramElementDetailViewController.m:525 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -6823,9 +6846,9 @@
 		functionName = "-pickerView:didSelectRow:inComponent:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 528;
+		lineNumber = 525;
 		location = "Sk8 Score!";
-		modificationTime = 287991019.81966;
+		modificationTime = 288072171.860682;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -6834,7 +6857,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 531";
 		rLen = 0;
-		rLoc = 16117;
+		rLoc = 15761;
 		rType = 0;
 		vrLen = 1856;
 		vrLoc = 15586;
@@ -6844,7 +6867,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 303";
 		rLen = 0;
-		rLoc = 10911;
+		rLoc = 10470;
 		rType = 0;
 		vrLen = 1943;
 		vrLoc = 9614;
@@ -6854,7 +6877,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 303";
 		rLen = 0;
-		rLoc = 10911;
+		rLoc = 10470;
 		rType = 0;
 		vrLen = 1931;
 		vrLoc = 8486;
@@ -6884,7 +6907,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 303";
 		rLen = 0;
-		rLoc = 10911;
+		rLoc = 10470;
 		rType = 0;
 		vrLen = 1984;
 		vrLoc = 8484;
@@ -6894,7 +6917,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 312";
 		rLen = 0;
-		rLoc = 11115;
+		rLoc = 10674;
 		rType = 0;
 		vrLen = 1745;
 		vrLoc = 9947;
@@ -6904,7 +6927,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 312";
 		rLen = 0;
-		rLoc = 11115;
+		rLoc = 10674;
 		rType = 0;
 		vrLen = 1745;
 		vrLoc = 9947;
@@ -6944,7 +6967,7 @@
 		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
 		name = "PairsProgramElementDetailViewController.m: 275";
 		rLen = 25;
-		rLoc = 9877;
+		rLoc = 9436;
 		rType = 0;
 		vrLen = 1827;
 		vrLoc = 9837;
@@ -6964,9 +6987,255 @@
 		fRef = E7EB7A7B11251507005BA199 /* PairsProgramElementDetailViewController.h */;
 		name = "PairsProgramElementDetailViewController.h: 66";
 		rLen = 0;
-		rLoc = 1943;
+		rLoc = 1977;
 		rType = 0;
 		vrLen = 1892;
 		vrLoc = 114;
+	};
+	E7EB7E8C112AEB35005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E7EB7A7B11251507005BA199 /* PairsProgramElementDetailViewController.h */;
+		name = "PairsProgramElementDetailViewController.h: 66";
+		rLen = 0;
+		rLoc = 1914;
+		rType = 0;
+		vrLen = 1926;
+		vrLoc = 114;
+	};
+	E7EB7E8D112AEB35005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
+		name = "PairsProgramElementDetailViewController.m: 360";
+		rLen = 0;
+		rLoc = 11762;
+		rType = 0;
+		vrLen = 1832;
+		vrLoc = 11724;
+	};
+	E7EB7E8E112AEB35005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E74540FE111007D900FD9036 /* ApplicationUtilities.h */;
+		name = "ApplicationUtilities.h: 24";
+		rLen = 0;
+		rLoc = 583;
+		rType = 0;
+		vrLen = 1674;
+		vrLoc = 0;
+	};
+	E7EB7E8F112AEB35005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E74540FE111007D900FD9036 /* ApplicationUtilities.h */;
+		name = "ApplicationUtilities.h: 24";
+		rLen = 0;
+		rLoc = 583;
+		rType = 0;
+		vrLen = 1674;
+		vrLoc = 0;
+	};
+	E7EB7E94112B9F10005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E74540FE111007D900FD9036 /* ApplicationUtilities.h */;
+		name = "ApplicationUtilities.h: 24";
+		rLen = 0;
+		rLoc = 583;
+		rType = 0;
+		vrLen = 1674;
+		vrLoc = 0;
+	};
+	E7EB7E97112B9F75005BA199 /* PairsProgramElementDetailViewController.m:70 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
+		functionName = "-viewWillAppear:";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 70;
+		location = "Sk8 Score!";
+		modificationTime = 288072185.188134;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	E7EB7E9B112B9F78005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E74540FE111007D900FD9036 /* ApplicationUtilities.h */;
+		name = "ApplicationUtilities.h: 24";
+		rLen = 0;
+		rLoc = 583;
+		rType = 0;
+		vrLen = 1674;
+		vrLoc = 0;
+	};
+	E7EB7E9C112B9F78005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
+		name = "PairsProgramElementDetailViewController.m: 29";
+		rLen = 19;
+		rLoc = 896;
+		rType = 0;
+		vrLen = 2902;
+		vrLoc = 581;
+	};
+	E7EB7E9D112B9F78005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
+		name = "PairsProgramElementDetailViewController.m: 29";
+		rLen = 19;
+		rLoc = 896;
+		rType = 0;
+		vrLen = 2829;
+		vrLoc = 581;
+	};
+	E7EB7EA1112BA10E005BA199 /* PairsProgramElementDetailViewController.m:52 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
+		functionName = "-viewDidLoad";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 52;
+		location = "Sk8 Score!";
+		modificationTime = 288072171.86084;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	E7EB7EA5112BA116005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E74540FF111007D900FD9036 /* ApplicationUtilities.m */;
+		name = "ApplicationUtilities.m: 11";
+		rLen = 0;
+		rLoc = 192;
+		rType = 0;
+		vrLen = 1659;
+		vrLoc = 0;
+	};
+	E7EB7EA6112BA116005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E74540FE111007D900FD9036 /* ApplicationUtilities.h */;
+		name = "ApplicationUtilities.h: 24";
+		rLen = 0;
+		rLoc = 583;
+		rType = 0;
+		vrLen = 1674;
+		vrLoc = 0;
+	};
+	E7EB7EA7112BA116005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E74542771110A95B00FD9036 /* Elements.h */;
+		name = "Elements.h: 15";
+		rLen = 498;
+		rLoc = 319;
+		rType = 0;
+		vrLen = 1761;
+		vrLoc = 0;
+	};
+	E7EB7EA8112BA116005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
+		name = "PairsProgramElementDetailViewController.m: 70";
+		rLen = 0;
+		rLoc = 2014;
+		rType = 0;
+		vrLen = 2898;
+		vrLoc = 896;
+	};
+	E7EB7EA9112BA116005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
+		name = "PairsProgramElementDetailViewController.m: 70";
+		rLen = 0;
+		rLoc = 2014;
+		rType = 0;
+		vrLen = 2707;
+		vrLoc = 896;
+	};
+	E7EB7EAE112BA1EA005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
+		name = "PairsProgramElementDetailViewController.m: 52";
+		rLen = 0;
+		rLoc = 2013;
+		rType = 0;
+		vrLen = 2753;
+		vrLoc = 1001;
+	};
+	E7EB7EB2112BA266005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
+		name = "PairsProgramElementDetailViewController.m: 55";
+		rLen = 0;
+		rLoc = 2121;
+		rType = 0;
+		vrLen = 2679;
+		vrLoc = 369;
+	};
+	E7EB7EB5112BA40B005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E7EB7A7C11251507005BA199 /* PairsProgramElementDetailViewController.m */;
+		name = "PairsProgramElementDetailViewController.m: 55";
+		rLen = 0;
+		rLoc = 2121;
+		rType = 0;
+		vrLen = 2771;
+		vrLoc = 664;
+	};
+	E7EB7EB6112BA40B005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E74540FE111007D900FD9036 /* ApplicationUtilities.h */;
+		name = "ApplicationUtilities.h: 21";
+		rLen = 0;
+		rLoc = 484;
+		rType = 0;
+		vrLen = 1674;
+		vrLoc = 0;
+	};
+	E7EB7EB9112BA496005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 501";
+		rLen = 0;
+		rLoc = 36571;
+		rType = 0;
+		vrLen = 4799;
+		vrLoc = 32175;
+	};
+	E7EB7EBA112BA496005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E74540FF111007D900FD9036 /* ApplicationUtilities.m */;
+		name = "ApplicationUtilities.m: 11";
+		rLen = 0;
+		rLoc = 192;
+		rType = 0;
+		vrLen = 1659;
+		vrLoc = 0;
+	};
+	E7EB7EBB112BA496005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E74540FE111007D900FD9036 /* ApplicationUtilities.h */;
+		name = "ApplicationUtilities.h: 21";
+		rLen = 0;
+		rLoc = 484;
+		rType = 0;
+		vrLen = 1674;
+		vrLoc = 0;
+	};
+	E7EB7EBC112BA496005BA199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E74540FE111007D900FD9036 /* ApplicationUtilities.h */;
+		name = "ApplicationUtilities.h: 24";
+		rLen = 0;
+		rLoc = 582;
+		rType = 0;
+		vrLen = 1674;
+		vrLoc = 0;
 	};
 }

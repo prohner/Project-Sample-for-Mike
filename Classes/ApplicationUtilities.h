@@ -18,7 +18,7 @@
 #define WEB_URL					@"http://cooltoolapps.appspot.com/skate_score"
 
 #define LOAD_SAMPLE_DATA_TO_PUBLISH			0
-#define LOAD_TEST_DATA						0
+#define LOAD_TEST_DATA						1
 #define LOAD_TEST_DATA_FOR_SOV_VALIDATION	(0 && LOAD_TEST_DATA)
 
 #define ASSERT_BASE_SCORES					(1 && LOAD_TEST_DATA)

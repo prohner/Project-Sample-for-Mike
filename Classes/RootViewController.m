@@ -498,7 +498,7 @@
 		[self verifyScoreFor:programZZ is:56.78];
 		[self verifyScoreFor:programKS is:58.69];
 		[self verifyScoreFor:programPT is:52.94];
-		[self verifyScoreFor:programPT is:40.06];
+		[self verifyScoreFor:programSG is:40.06];
 	#endif
 
 	#if LOAD_TEST_DATA_FOR_SOV_VALIDATION

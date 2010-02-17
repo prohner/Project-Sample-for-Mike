@@ -47,21 +47,14 @@
 	jumpComboElement1 = @"";
 	jumpComboElement2 = @"";
 	jumpComboElement3 = @"";
-	
-	Element *element = [Elements getElementFor:existingProgramElement.ijsId inDiscipline:program.discipline];
-	
-	if ( ! existingProgramElement.isSingleElement) {
-		elementGroupChooser.selectedSegmentIndex = 3;
-	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_JUMPS]) {
+
+	if ( ! existingProgramElement) {
+		// presetValuesForProgramElement will set all the values for actual elements
 		elementGroupChooser.selectedSegmentIndex = 0;
-	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_SPINS]) {
-		elementGroupChooser.selectedSegmentIndex = 1;
-	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_STEP_SPIRAL]) {
-		elementGroupChooser.selectedSegmentIndex = 2;		
-	} else {
-		NSAssert(@"Could not identify the group for the element.", @"other");
+		elementSubGroupChooser.selectedSegmentIndex = 0;
+		[self loadCurrentElements];
 	}
-	[element release];
+
 	
 //	[self loadCurrentElements];
 	
@@ -356,24 +349,8 @@
  }
  */
 
-- (IBAction)segmentedControlValueChanged:(id)sender {
-	if ( ! viewHasFinishedLoading) {
-		return;
-	}
-	
-	changingElementGroup = YES;
-
-	if (currentView != nil) {
-		[currentView removeFromSuperview];
-	}
-
-	resetButton.hidden = YES;
-	addJumpButton.hidden = YES;
-	jumpComboSeqChooser.hidden = YES;
-	
-	[workspaceView addSubview:elementSubGroupChooser];
-	
-	switch ([sender selectedSegmentIndex]) {
+- (void)setSubGroupChooserTitles {
+	switch ([elementGroupChooser selectedSegmentIndex]) {
 		case 0:
 			[elementSubGroupChooser setTitle:@"S-by-S" forSegmentAtIndex:0];
 			[elementSubGroupChooser setTitle:@"Throws" forSegmentAtIndex:1];
@@ -395,6 +372,26 @@
 			break;
 	}
 	
+}
+
+- (IBAction)segmentedControlValueChanged:(id)sender {
+	if ( ! viewHasFinishedLoading) {
+		return;
+	}
+	
+	changingElementGroup = YES;
+
+	if (currentView != nil) {
+		[currentView removeFromSuperview];
+	}
+
+	resetButton.hidden = YES;
+	addJumpButton.hidden = YES;
+	jumpComboSeqChooser.hidden = YES;
+	
+	[workspaceView addSubview:elementSubGroupChooser];
+	
+	[self setSubGroupChooserTitles];
 	[self loadCurrentElements];
 	//	[self.view addSubview:currentView];
 	

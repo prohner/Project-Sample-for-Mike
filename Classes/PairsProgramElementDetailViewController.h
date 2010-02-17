@@ -63,6 +63,7 @@
 - (void)resetJumpListBackgroundColor;
 - (void)jumpListText:(NSString *)txt;
 
+- (void)setSubGroupChooserTitles;
 - (ProgramElement *)getProgramElement:(BOOL)mustBeTempVariable;
 - (NSString *)ijsIdFromPicker:(UIPickerView *)picker;
 

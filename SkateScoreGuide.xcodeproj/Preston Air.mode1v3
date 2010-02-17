@@ -273,7 +273,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>15</integer>
+									<integer>13</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -316,7 +316,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PairsProgramElementDetailViewController.h</string>
+								<string>ApplicationUtilities.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,11 +324,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PairsProgramElementDetailViewController.h</string>
+										<string>ApplicationUtilities.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E7EB7E7D112A6AB0005BA199</string>
+										<string>E7EB7EBC112BA496005BA199</string>
 										<key>history</key>
 										<array>
 											<string>E74547B911116C6200FD9036</string>
@@ -352,7 +352,6 @@
 											<string>E722A7191119470100843FFC</string>
 											<string>E7AE546D111A75B300422713</string>
 											<string>E7B778CB111BEE75007B15E0</string>
-											<string>E7B778CC111BEE75007B15E0</string>
 											<string>E70633BA1123B13E001706CB</string>
 											<string>E70633E01123B645001706CB</string>
 											<string>E70633E11123B645001706CB</string>
@@ -368,11 +367,8 @@
 											<string>E7EB7C7F1126F3A8005BA199</string>
 											<string>E7EB7C881126F477005BA199</string>
 											<string>E7EB7D6D1127C337005BA199</string>
-											<string>E7EB7D8411287878005BA199</string>
-											<string>E7EB7DB21129926F005BA199</string>
 											<string>E7EB7DC411299516005BA199</string>
 											<string>E7EB7DCB112A4CA1005BA199</string>
-											<string>E7EB7DCC112A4CA1005BA199</string>
 											<string>E7EB7DD9112A4E17005BA199</string>
 											<string>E7EB7DE4112A4FE2005BA199</string>
 											<string>E7EB7E10112A5861005BA199</string>
@@ -380,8 +376,12 @@
 											<string>E7EB7E59112A63D7005BA199</string>
 											<string>E7EB7E79112A6AB0005BA199</string>
 											<string>E7EB7E7A112A6AB0005BA199</string>
-											<string>E7EB7E7B112A6AB0005BA199</string>
-											<string>E7EB7E7C112A6AB0005BA199</string>
+											<string>E7EB7E8C112AEB35005BA199</string>
+											<string>E7EB7EA7112BA116005BA199</string>
+											<string>E7EB7EB5112BA40B005BA199</string>
+											<string>E7EB7EB9112BA496005BA199</string>
+											<string>E7EB7EBA112BA496005BA199</string>
+											<string>E7EB7EBB112BA496005BA199</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
