@@ -274,7 +274,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>18</integer>
+									<integer>16</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -317,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ProgramDetailViewController.m</string>
+								<string>PairsProgramElementDetailViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ProgramDetailViewController.m</string>
+										<string>PairsProgramElementDetailViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E73600D0112E45420038ED48</string>
+										<string>E7360128112F42300038ED48</string>
 										<key>history</key>
 										<array>
 											<string>E74547B911116C6200FD9036</string>
@@ -352,7 +352,6 @@
 											<string>E722A7171119470100843FFC</string>
 											<string>E722A7191119470100843FFC</string>
 											<string>E7B778CB111BEE75007B15E0</string>
-											<string>E70633E11123B645001706CB</string>
 											<string>E7EB79F21123CED1005BA199</string>
 											<string>E7EB79F41123CED1005BA199</string>
 											<string>E7EB7B5311252E80005BA199</string>
@@ -375,14 +374,15 @@
 											<string>E736000B112E120A0038ED48</string>
 											<string>E736000D112E120A0038ED48</string>
 											<string>E7360014112E129D0038ED48</string>
-											<string>E736003D112E17CB0038ED48</string>
-											<string>E736003E112E17CB0038ED48</string>
-											<string>E7360046112E181A0038ED48</string>
 											<string>E736006A112E1A260038ED48</string>
 											<string>E7360074112E1A710038ED48</string>
 											<string>E73600CE112E45420038ED48</string>
-											<string>E73600CF112E45420038ED48</string>
-											<string>E7EB7B8011265C05005BA199</string>
+											<string>E73600FD112E648B0038ED48</string>
+											<string>E7360104112E66800038ED48</string>
+											<string>E7360105112E66800038ED48</string>
+											<string>E7360116112F40900038ED48</string>
+											<string>E7360123112F41D30038ED48</string>
+											<string>E7360124112F41D30038ED48</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -595,11 +595,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>E7360129112F42300038ED48</string>
 		<string>E7360038112E172B0038ED48</string>
 		<string>E7360039112E172B0038ED48</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E74540BB1110069A00FD9036</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/Preston Air/work/SkateScoreGuide/SkateScoreGuide.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -974,7 +975,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

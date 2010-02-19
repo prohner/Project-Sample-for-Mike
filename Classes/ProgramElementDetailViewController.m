@@ -57,9 +57,9 @@
 	
 	Element *element = [Elements getElementFor:existingProgramElement.ijsId inDiscipline:program.discipline];
 
-	if ( ! existingProgramElement.isSingleElement) {
+	if (existingProgramElement != nil && ! existingProgramElement.isSingleElement) {
 		elementGroupChooser.selectedSegmentIndex = 3;
-	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_JUMPS]) {
+	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_JUMPS] || existingProgramElement == nil) {
 		elementGroupChooser.selectedSegmentIndex = 0;
 	} else if ([element.elementGroup isEqualToString:ELEMENT_GROUP_SPINS]) {
 		elementGroupChooser.selectedSegmentIndex = 1;
@@ -78,6 +78,7 @@
 	[super viewWillAppear:animated];
 	
 	[self presetValuesForProgramElement];
+	[self performSelector:(@selector(refreshDisplayInfo)) withObject:(nil) afterDelay:1.0];
 }
 
 - (void)presetValuesForProgramElement {
@@ -134,7 +135,7 @@
 	}
 
 	NSLog(@"Executed presetValuesForProgramElement");
-	[self performSelector:(@selector(refreshDisplayInfo)) withObject:(nil) afterDelay:1.0];
+//	[self performSelector:(@selector(refreshDisplayInfo)) withObject:(nil) afterDelay:1.0];
 	
 }
 
@@ -161,7 +162,7 @@
 		
 		pe.ijsIdThird = jumpComboElement3;
 		if ([pe.ijsId isEqualToString:@""]) {
-			[self jumpListText:@"Select your jumps and press +"];
+			[self jumpListText:DEFAULT_JUMP_COMBO_LABEL];
 			return;
 //			pe.ijsId = [self ijsIdFromPicker:jumpComboPickerView];;
 		}

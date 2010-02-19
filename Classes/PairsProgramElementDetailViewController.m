@@ -278,7 +278,7 @@
 	
 	programElement.discipline = program.discipline;
 	
-	if (elementGroupChooser.selectedSegmentIndex == 0) {
+	if (elementGroupChooser.selectedSegmentIndex == 0 && elementSubGroupChooser.selectedSegmentIndex == 0) {
 		// Could be a jump combo or sequence
 		programElement.ijsId			= jumpComboElement1;
 		programElement.ijsIdSecond		= jumpComboElement2;
@@ -533,7 +533,10 @@
 		jumpComboElement2 = @"";
 		jumpComboElement3 = @"";
 	}
-	[self refreshDisplayInfo];
+
+	if (elementGroupChooser.selectedSegmentIndex > 0 || elementSubGroupChooser.selectedSegmentIndex > 0) {
+		[self refreshDisplayInfo];
+	}
 }
 
 #pragma mark Button Actions

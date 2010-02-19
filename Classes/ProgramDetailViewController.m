@@ -31,7 +31,9 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
 	self.title = @"New Program";
-
+	self.navigationItem.prompt = @"Enter a description and tap \"Done\"";
+	
+	
 	self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelProgram)] autorelease];
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneWithProgram)] autorelease];
 
@@ -41,6 +43,9 @@
 	[ApplicationUtilities setupStandardTableLookFor:self.tableView inView:self.parentViewController.view];
 }
 
+//- (void)viewWillAppear:(BOOL)animated {
+//	[description becomeFirstResponder];
+//}
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -115,7 +120,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	if (section == 1) {
+	if (section == 2) {
 		return [programGroups count]; 
 	} else {
 		return 1;
@@ -126,13 +131,13 @@
 	UIView *v;
 	switch (section) {
 		case 0:
-			v = [ApplicationUtilities getStandardTableSectionHeaderFor:aTableView with:@"Enter Program Description:"];
-			break;
-		case 1:
-			v = [ApplicationUtilities getStandardTableSectionHeaderFor:aTableView with:@"Choose Group for New Program:"];
+			v = [ApplicationUtilities getStandardTableSectionHeaderFor:aTableView with:@"Program Description"];
 			break;
 		case 2:
-			v = [ApplicationUtilities getStandardTableSectionHeaderFor:aTableView with:@"Type of Program:"];
+			v = [ApplicationUtilities getStandardTableSectionHeaderFor:aTableView with:@"Choose Group for New Program"];
+			break;
+		case 1:
+			v = [ApplicationUtilities getStandardTableSectionHeaderFor:aTableView with:@"Type of Program"];
 			break;
 		default:
 			break;
@@ -161,13 +166,13 @@
 			r.size.height -= 4;
 			//		[description setFrame:r];
 			[cell addSubview:description];
-		} else if (indexPath.section == 1) {
+		} else if (indexPath.section == 2) {
 			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 			UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, 270, 30)];
 			lbl.tag = 1;
 			[cell addSubview:lbl];
 			[lbl release];
-		} else if (indexPath.section == 2) {
+		} else if (indexPath.section == 1) {
 			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 			CGRect r = cell.contentView.frame;
 			r.origin.x += 9;
@@ -180,7 +185,7 @@
     }
     
     // Set up the cell...
-	if (indexPath.section == 1) {
+	if (indexPath.section == 2) {
 		if (indexPath.row == selectedProgramGroupIndex) {
 			cell.accessoryType = UITableViewCellAccessoryCheckmark;
 		}
@@ -200,7 +205,7 @@
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
 	// [self.navigationController pushViewController:anotherViewController];
 	// [anotherViewController release];
-	if (indexPath.section == 1) {
+	if (indexPath.section == 2) {
 		UITableViewCell *cell;
 		
 		cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedProgramGroupIndex inSection:1]];
