@@ -22,6 +22,7 @@
 	UIButton *btnSendEmail;
 	NSIndexPath *indexPathOfDummyElement;
 	UIToolbar* toolbarForAddEdit;
+	UIBarButtonItem* addBarButton;
 }
 
 @property (nonatomic, retain) Program *program;
@@ -38,6 +39,7 @@
 - (IBAction)sendEmail:(id)sender;
 - (void)refreshDisplay:(UITableView *)tableView;
 - (void) elementDetailViewControllerFor:(ProgramElement *)programElement;
+//- (void)highlightAddButton;
 
 
 #ifdef DEBUG

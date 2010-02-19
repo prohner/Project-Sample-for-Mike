@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Program.h"
 
-@interface ProgramDetailViewController : UITableViewController {
+@interface ProgramDetailViewController : UITableViewController <UITextFieldDelegate> {
 	Program *program;
 	UITextField *description;
 	NSArray *programGroups;

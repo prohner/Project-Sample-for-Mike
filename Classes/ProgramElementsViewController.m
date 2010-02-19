@@ -41,13 +41,13 @@
 	NSMutableArray* buttons = [[NSMutableArray alloc] initWithCapacity:3];
 	
 	// create a standard "add" button
-	UIBarButtonItem* bi = [[UIBarButtonItem alloc]
+	addBarButton = [[UIBarButtonItem alloc]
 						   initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addElement)];
-	bi.style = UIBarButtonItemStyleBordered;
-	[buttons addObject:bi];
-	[bi release];
+	addBarButton.style = UIBarButtonItemStyleBordered;
+	[buttons addObject:addBarButton];
 	
 	// create a spacer
+	UIBarButtonItem *bi;
 	bi = [[UIBarButtonItem alloc]
 		  initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
 	[buttons addObject:bi];
@@ -151,15 +151,28 @@
 }
 
 /*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
-/*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+	if ([programElements count] == 0) {
+		NSLog(@"Setting toolbar background");
+		toolbarForAddEdit.barStyle = UIBarStyleDefault;
+		
+		[self performSelector:(@selector(highlightAddButton)) withObject:(nil) afterDelay:0.5];
+	}
+}
+
+- (void)highlightAddButton {
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:.5];
+	[UIView setAnimationDelegate:self]; 
+	toolbarForAddEdit.barStyle = UIBarStyleBlackOpaque;
+	NSLog(@"Resetting toolbar background");
+
+	[UIView commitAnimations];	
+	
 }
 */
+
 /*
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
@@ -219,6 +232,36 @@
 	
 	if (section < INDEXPATH_DUMMY_SECTION) {
 		v = [ApplicationUtilities getStandardTableSectionHeaderFor:aTableView with:title];
+	}
+	
+	return v;
+}
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//	CGFloat result = 35;
+//	if (section == 0) {
+//		if ([[program programElements] count] > 0 ) {
+//			result = 0;
+//		}
+//	}
+//	return result;
+//}
+
+- (UIView *)tableView:(UITableView *)aTableView viewForFooterInSection:(NSInteger)section {
+	UIView *v = nil;
+
+//	if (section == 0) {
+//		NSString *title = @"Use \"+\" to add program elements.";
+//		v = [ApplicationUtilities getStandardTableSectionFooterFor:aTableView with:title];
+//		if ([[program programElements] count] > 0 ) {
+//			[v setFrame:CGRectMake(0, 0, .01, .01)];
+//			v = nil;
+//		}
+//
+//	} else 
+		if (section == 1) {
+		NSString *title = @"Use \"Edit\" and the bars on the right to move elements to second half. Use \"+\" to add program elements.";
+		v = [ApplicationUtilities getStandardTableSectionFooterFor:aTableView with:title];
 	}
 	
 	return v;
@@ -493,6 +536,7 @@
     [super dealloc];
 	[programElements dealloc];
 	[toolbarForAddEdit dealloc];
+	[addBarButton release];
 }
 
 

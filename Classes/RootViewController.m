@@ -34,17 +34,19 @@
 																			   action:@selector(addProgram)];
     self.navigationItem.rightBarButtonItem = addButton;
 
+#if LOAD_SAMPLE_PROGRAMS_ON_START
 	NSArray *testProgramGroups = [[ProgramGroup findByCriteria: @"WHERE 1 = 1"] retain];
 
 	if ([testProgramGroups count] == 0) {
 		[self fabricateData];
 	}
 	[testProgramGroups release];
+#endif	
 	
 #if LOAD_SAMPLE_DATA_TO_PUBLISH
 	int elementOrdinal = 0;
 	ProgramGroup *pg1 = [[ProgramGroup alloc] init];
-	pg1.description = @"2010 Programs";
+	pg1.description = @"Current Programs";
 	pg1.ordinalPosition = 0;
 	[pg1 save];
 	
@@ -628,6 +630,7 @@
 
 #endif
 
+#if LOAD_SAMPLE_PROGRAMS_ON_START
 - (void)fabricateData {
 	int elementOrdinal = 0;
 	ProgramGroup *pg1 = [[ProgramGroup alloc] init];
@@ -687,6 +690,7 @@
 	[self addTo:p3	ijsId:@"LSp1"	ijsIdSecond:@""		ijsIdThird:@""		comboType:@""					estGOE:GOE_0		inSecondHalf:YES	inPos:elementOrdinal++];
 	
 }
+#endif
 
 - (void)loadData {
 	thereArePrograms = NO;
@@ -803,6 +807,7 @@
 		//NSAssert(count == 0, @"Count should be 0 if we believe there are no programs.");
 		count = 1;
 	}
+	NSLog(@"numberOfRowsInSection returning %i", count);
 	
     return count;
 }
@@ -818,10 +823,11 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	CGFloat f = 40;
+	CGFloat f = 200;
 	if (indexPath.section < [programGroups count]) {
 		f = 85;
 	}
+	NSLog(@"heightForRowAtIndexPath returning %.2f, section=%i", f, indexPath.section);
 	
 	return f;
 }
@@ -846,6 +852,7 @@
 	UILabel *topLabel;
 	UILabel *bottomLabel;
 	
+	NSLog(@"Loading cells ");
     NSString *CellIdentifier = @"Cell Regular";
 	if ( ! thereArePrograms) {
 		CellIdentifier = @"Cell Empty";
@@ -877,10 +884,12 @@
 			
 			bottomLabel = [[[UILabel alloc] initWithFrame:CGRectMake(90, //image.size.width + 2.0 * cell.indentationWidth, 
 																	 -4 + 0.5 * (aTableView.rowHeight - 2 * LABEL_HEIGHT) + LABEL_HEIGHT, 
-																	 aTableView.bounds.size.width - image.size.width - 4.0 * cell.indentationWidth - indicatorImage.size.width, 
-																	 LABEL_HEIGHT)] 
+																	 aTableView.bounds.size.width - image.size.width - 2.0 * cell.indentationWidth - indicatorImage.size.width, 
+																	 LABEL_HEIGHT*4)] 
 						   autorelease];
-			bottomLabel.numberOfLines = 2;
+			bottomLabel.numberOfLines = 0;
+			bottomLabel.adjustsFontSizeToFitWidth = YES;
+			bottomLabel.lineBreakMode = UILineBreakModeWordWrap;
 			[cell.contentView addSubview:bottomLabel];
 			
 			bottomLabel.tag = BOTTOM_LABEL_TAG;
@@ -891,7 +900,20 @@
 			
 			cell.backgroundView = [[[UIImageView alloc] init] autorelease];
 			cell.selectedBackgroundView = [[[UIImageView alloc] init] autorelease];
+		} else {
+			cell.imageView.image = [UIImage imageNamed:PROGRAMS_DECORATIVE_IMAGE_SINGLES];
+			cell.backgroundView = [[[UIImageView alloc] init] autorelease];
+			
+			UIImage *rowBackground = [UIImage imageNamed:@"topAndBottomRow.png"];
+			((UIImageView *)cell.backgroundView).image = rowBackground;
+			cell.textLabel.textColor = [UIColor redColor];
+			cell.textLabel.backgroundColor = [UIColor clearColor];
+			cell.textLabel.textAlignment = UITextAlignmentCenter;
+			cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+			cell.textLabel.text = @"Ready to estimate the IJS scores of a program?  Tap the \"+\" button to add your first program.";
+			cell.textLabel.numberOfLines = 0;
 		}
+
 		
     }
     
@@ -945,10 +967,6 @@
 			bottomLabel.text = @"";
 		}
 	} else {
-		cell.backgroundColor = [UIColor lightGrayColor];
-		cell.textLabel.textAlignment = UITextAlignmentCenter;
-		cell.textLabel.text = @"Tap + (upper right corner) to add a program";
-		cell.textLabel.numberOfLines = 0;
 		
 	}
 
@@ -968,7 +986,10 @@
 		program.cachedScoresAreDirty = YES;
 		[self.navigationController pushViewController:programElementsViewController animated:YES];
 		[programElementsViewController release];
+	} else {
+		[self addProgram];
 	}
+
 	[aTableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -997,9 +1018,13 @@
 		[aTableView reloadData];
 		
 		// TODO When deleting the last program, make sure the cell saying "tap + to add program" shows up.
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+		// TODO When you delete last program in section it goes to "tap +" but it should be last program overall
+		if ([programs count] == 0) {
+			NSLog(@"No more program");
+			thereArePrograms = NO;
+			self.editing = NO;
+			[aTableView reloadData];
+		}
     }   
 }
 

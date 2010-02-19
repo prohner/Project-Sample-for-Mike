@@ -29,7 +29,7 @@
 }
 
 +(UIView *)getStandardTableSectionHeaderFor:(UITableView *)tableView with:(NSString *)description {
-
+	
     tableView.sectionHeaderHeight = 35;
     UIView *sectionHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.bounds.size.width, 35)];
 	
@@ -42,7 +42,29 @@
 	lblDescription.text = description;
 	
 	[sectionHeaderView addSubview:lblDescription];
+	
+	return sectionHeaderView;	
+}
 
++(UIView *)getStandardTableSectionFooterFor:(UITableView *)tableView with:(NSString *)description {
+	
+//    tableView.sectionFooterHeight = 35;
+    UIView *sectionHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.bounds.size.width, 39)];
+	
+	UILabel *lblDescription = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 4.0, tableView.bounds.size.width, 35)];
+	lblDescription.textAlignment = UITextAlignmentCenter;
+	lblDescription.textColor = [UIColor lightGrayColor];
+//	lblDescription.shadowColor = [UIColor blackColor];
+//	lblDescription.shadowOffset = CGSizeMake(0, 1);
+	lblDescription.numberOfLines = 0;
+	lblDescription.lineBreakMode = UILineBreakModeWordWrap;
+	lblDescription.font = [UIFont boldSystemFontOfSize:14];
+	lblDescription.backgroundColor = [UIColor blackColor];
+	lblDescription.text = description;
+	lblDescription.alpha = .3;
+	
+	[sectionHeaderView addSubview:lblDescription];
+	
 	return sectionHeaderView;	
 }
 

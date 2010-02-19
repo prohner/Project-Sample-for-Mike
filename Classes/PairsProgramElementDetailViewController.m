@@ -283,11 +283,17 @@
 		programElement.ijsId			= jumpComboElement1;
 		programElement.ijsIdSecond		= jumpComboElement2;
 		programElement.ijsIdThird		= jumpComboElement3;
-		if (jumpComboSeqChooser.selectedSegmentIndex == 0) {
-			programElement.jumpComboType = JUMP_COMBO_TYPE_COMBO;
+		
+		if ([programElement.ijsIdSecond isEqualToString:@""]) {
+			programElement.jumpComboType = @"";
 		} else {
-			programElement.jumpComboType = JUMP_COMBO_TYPE_SEQ;
+			if (jumpComboSeqChooser.selectedSegmentIndex == 0) {
+				programElement.jumpComboType = JUMP_COMBO_TYPE_COMBO;
+			} else {
+				programElement.jumpComboType = JUMP_COMBO_TYPE_SEQ;
+			}
 		}
+
 	} else {
 		programElement.ijsId = [self ijsIdFromPicker:jumpComboPickerView];
 		programElement.ijsIdSecond		= @"";

@@ -217,7 +217,7 @@
 - (void)pickerView:(UIPickerView *)pickerView setRowForElement:(ProgramElement *)programElement withArray:(NSArray *)elements {
 	Element *element = [Elements getElementFor:existingProgramElement.ijsId inDiscipline:program.discipline];
 
-	NSString *letters = [[NSString alloc] initWithFormat:@"-%@", [element ijsIdLetters]];
+	NSString *letters = [[NSString alloc] initWithFormat:@"^%@", [element ijsIdLetters]];
 	NSString *digits = [element ijsIdDigits];
 	for (int i = 0; i < [elements count]; i++) {
 		NSString *theElement = (NSString *)[elements objectAtIndex:i];
@@ -415,7 +415,7 @@
 			} else if (thePickerView == stepSpiralPickerView) {
 				txt = [steps objectAtIndex:row];
 			}
-			NSRange r = [txt rangeOfString:@"-"];
+			NSRange r = [txt rangeOfString:@"^"];
 			txt = [txt substringToIndex:r.location];
 //			txt = [txt stringByReplacingOccurrencesOfString:@"Level" withString:@"Lvl"];
 			return txt;
@@ -478,7 +478,7 @@
 		selectedElement = [[steps  objectAtIndex:jumpIndex] retain];
 	}
 	
-	NSRange r = [selectedElement rangeOfString:@"-"];
+	NSRange r = [selectedElement rangeOfString:@"^"];
 	NSString *jumpId = [selectedElement substringFromIndex:r.location + 1];
 	NSString *result = [[NSString alloc] initWithFormat:@"%i%@", revolutionIndex + 1, jumpId];
 	if (picker != jumpPickerView && picker != jumpComboPickerView) {

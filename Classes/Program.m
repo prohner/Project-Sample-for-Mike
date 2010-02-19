@@ -95,7 +95,7 @@
 }
 
 - (NSString *)programSubDescription {
-	NSString *subDescription = @"No elements in this program.";
+	NSString *subDescription = @"Tap here to add elements\n to your program.";
 
 //	NSLog(@"Getting program sub description %@", description);
 	if (cachedScoresAreDirty) {
