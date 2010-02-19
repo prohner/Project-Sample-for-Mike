@@ -237,9 +237,10 @@
 	ProgramElement *programElement;
 	if (existingProgramElement == nil) {
 		programElement = [[ProgramElement alloc] init];
-		programElement.ordinalPosition	= [program elementsInHalf:YES] - 1;
 		programElement.program			= program;
-		programElement.isSecondHalf		= NO;
+		int elementsInFirstHalf			= [program elementsInHalf:YES] - 1;
+		programElement.ordinalPosition	= [[program programElements] count] - 1;
+		programElement.isSecondHalf		= (elementsInFirstHalf < programElement.ordinalPosition);
 	} else {
 		programElement = existingProgramElement;
 	}
